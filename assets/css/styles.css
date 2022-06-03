@@ -1,0 +1,213 @@
+/* RESET CSS */
+
+a {
+    text-decoration: none;
+}
+
+
+/* FONT */
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('~assets/font/Segoe UI.ttf');
+    font-weight: normal;
+    font-display: swap;
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+#app {
+    font-family: 'Segoe UI';
+    font-weight: normal;
+    color: #fff;
+    background-color: #030305;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    text-align: center;
+    width: 100% !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+
+/* FONT RESIZE */
+
+
+/* LAYOUT */
+
+.vs-button--size-xl .vs-button__content {
+    padding: 30px 25px;
+}
+
+.OLED_header {
+    width: 100%;
+}
+
+#header img {
+    width: 100%;
+    height: 100vh;
+}
+
+#OfficialHeaderWrapper {
+    display: none;
+    height: 0px;
+}
+
+.OLED_card {
+    margin: 35px 30px 0;
+    max-width: 280px;
+}
+
+.img_OLED_PC {
+    margin: 0 auto;
+    max-width: 100%;
+    background-size: contain;
+}
+
+.v-application p {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+ ::-webkit-scrollbar {
+    width: 5px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: #030305;
+    border-radius: 5px
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 10px;
+}
+
+.logo_asus {
+    height: 16px;
+    width: 78px;
+    background-image: url('~assets/img/logo_asus_black.svg');
+}
+
+.logo_asus:hover {
+    height: 16px;
+    width: 78px;
+    background-image: url('~assets/img/logo_asus_blue.svg');
+}
+
+.home {
+    height: 100vh;
+}
+
+body,
+html {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+}
+
+.footer_haut {
+    background-color: #262626;
+}
+
+.banniere1 {
+    width: 100vw;
+}
+
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* MARGIN */
+
+.mx {
+    margin: 0 2em 0 2em;
+}
+
+.my {
+    margin: 2em 0 2em 0;
+}
+
+.mt1 {
+    margin: 2em 0 0 0;
+}
+
+.mt2 {
+    margin: 4em 0 0 0;
+}
+
+.mb {
+    margin: 0 0 2em 0;
+}
+
+.ma {
+    margin: 2em;
+}
+
+.m_podium {
+    margin: 8em 0 0 0;
+}
+
+
+/* animations */
+
+.zoom {
+    transition: transform 0.3s !important;
+}
+
+.zoom:hover {
+    transform: scale(1.1) !important;
+}
+
+.up {
+    transition: transform 0.2s !important;
+}
+
+.up:hover {
+    transform: translateY(-5px) !important;
+}
+
+.fly {
+    -webkit-animation: fly 3s ease-in-out infinite alternate both;
+    animation: fly 3s ease-in-out infinite alternate both;
+}
+
+@-webkit-keyframes fly {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-25px);
+    }
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-25px);
+    }
+}
