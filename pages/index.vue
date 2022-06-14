@@ -1,284 +1,667 @@
 <template>
-  <div class="mb-13">
-    <div id="header">
-      <img class="OLED_header" src="~/assets/img/Laptop_OLED.jpg" />
-    </div>
-
-    <vs-row class="mt-15" justify="center" align="center">
-      <vs-col w="10" justify="center" align="center">
-        <vs-row justify="center" align="center">
-          <vs-col w="3"
-            ><vs-button gradient size="xl" @click="conditions = true">
-              <p>Voir les conditions</p>
-            </vs-button></vs-col
-          >
-          <vs-col w="3">
-            <nuxt-link :to="{ path: '/oled' }"
-              ><vs-button gradient size="xl">
+  <div>
+    <section class="header">
+      <img align="start" class="OLED_header" src="~/assets/img/1920x756.jpg" />
+      <vs-row justify="center" align="center">
+        <vs-col w="10" sm="12" justify="center" align="center">
+          <vs-row justify="center" align="center">
+            <vs-col w="3" sm="6" xs="12"
+              ><vs-button class="mx-5" gradient size="xl" @click="CTA1 = true">
+                <p>Voir les conditions</p>
+              </vs-button></vs-col
+            >
+            <vs-col w="3" sm="6" xs="12">
+              <vs-button class="mx-5" @click="CTA1 = true" gradient size="xl">
                 <p>Acheter un PC ASUS OLED</p>
-              </vs-button></nuxt-link
-            ></vs-col
+              </vs-button></vs-col
+            ></vs-row
+          >
+        </vs-col>
+      </vs-row>
+    </section>
+    <!-- FIN HEADER -->
+    <section class="section_fonctionnement">
+      <vs-row justify="center" align="center">
+        <vs-col lg="10" w="12" sm="12" xs="12" justify="center" align="center">
+          <h1 class="mb-14">Comment ça fonctionne ?</h1>
+          <vs-row>
+            <vs-col w="3" sm="6" xs="12">
+              <vs-card class="ma-5" color="">
+                <template #title>
+                  <span class="mdi mdi-36px mdi-cart-outline"></span>
+                  <h2 class="my-5">Acheter un PC ASUS OLED</h2>
+                </template>
+                <template #text>
+                  <p class="mb-5">
+                    Cette offre de remboursement s’applique pour l’achat d’un PC
+                    de la sélection ASUS OLED présente sur la page suivante.
+                    Avec cette offre exclusive vous pourrez combiner le
+                    remboursement de votre ancien pc en plus des réductions liés
+                    soldes.
+                  </p>
+                </template>
+              </vs-card>
+            </vs-col>
+            <vs-col w="3" sm="6" xs="12">
+              <vs-card type="1" class="ma-5" color="">
+                <template #title>
+                  <span class="mdi mdi-36px mdi-file-sign"></span>
+                  <h2 class="my-5">Enregistrez-vous</h2>
+                </template>
+                <template #text>
+                  <p class="mb-5">
+                    Enregistrez-vous en 5 minutes sur le site
+                    asuspromotions.com/oled dans les 15 jours suivant votre
+                    achat. Nous vous inviterons à nous donner les détails de
+                    l’achat de votre nouvel ordinateur ainsi que certaines
+                    informations quant à l’ancien ordinateur que vous souhaitez
+                    faire reprendre.
+                  </p>
+                </template>
+              </vs-card></vs-col
+            >
+            <vs-col w="3" sm="6" xs="12">
+              <vs-card class="ma-5" color="">
+                <template #title>
+                  <span class="mdi mdi-36px mdi-cube-send"></span>
+                  <h2 class="my-5">Renvoyez-nous votre ancien ordinateur</h2>
+                </template>
+                <template #text>
+                  <p class="mb-5">
+                    Dans les 15 jours qui suivent votre enregistrement et après
+                    approbation de notre part il faut impérativement renvoyer
+                    votre ancien ordinateur. Vous trouverez l’ensemble des
+                    informations sur la page asuspromotions.com/oled
+                  </p>
+                </template>
+              </vs-card></vs-col
+            >
+            <vs-col w="3" sm="6" xs="12">
+              <vs-card class="ma-5" color="">
+                <template #title>
+                  <span class="mdi mdi-36px mdi-wallet-outline"></span>
+                  <h2 class="my-5">Faites-vous rembourser</h2>
+                </template>
+                <template #text>
+                  <p class="mb-5">
+                    Cette offre de remboursement s’applique pour l’achat d’un PC
+                    de la sélection ASUS OLED présente sur la page suivante.
+                    Avec cette offre exclusive vous pourrez combiner le
+                    remboursement de votre ancien pc en plus des réductions liés
+                    soldes.
+                  </p>
+                </template>
+              </vs-card></vs-col
+            >
+          </vs-row>
+        </vs-col></vs-row
+      >
+    </section>
+    <!-- FIN BLOC EXPLIQUATION -->
+    <section class="section">
+      <vs-row justify="center" align="center">
+        <vs-col w="6" sm="10" xs="10" justify="center" align="center">
+          <h1 class="mb-14">
+            Découvrez le processeur de votre PC ou de votre MAC pour connaître
+            le montant de votre remboursement
+          </h1>
+          <v-autocomplete
+            dark
+            :items="processors"
+            item-color="dark"
+            item-text="name"
+            label="Processeur"
+            v-model="selectedProcessor"
+            hide-data
+            hide-selected
+            item-value="API"
+            prepend-icon="mdi-chevron-right"
+            return-object
+            no-data-text="Pas de données pour votre processeur"
+          ></v-autocomplete>
+          <div v-show="selectedProcessor">
+            <h2 class="gradient-text">
+              Vous avez sélectionnée un processeur :
+              {{ selectedProcessor.name }}, vous pouvez donc percevoir entre
+              <span>{{ selectedProcessor.priceB }} €</span>
+              et
+              <span>{{ selectedProcessor.priceA }} €</span>
+              en fonction de l'état du matériel*.
+            </h2>
+          </div>
+          <div v-show="selectedProcessor">
+            <p>
+              * L’ordinateur ne doit pas être âgé de plus de 7 ans (date de
+              production) et doit répondre aux critères de qualité attendus.
+            </p>
+          </div>
+        </vs-col>
+      </vs-row>
+      <vs-row class="mt-14" justify="center" align="center"
+        ><vs-col class="mt-14" w="6" sm="10" xs="none">
+          <div class="center">
+            <vs-table striped vs-theme="dark">
+              <template #thead>
+                <vs-tr class="center">
+                  <vs-th> Processeur </vs-th>
+                  <vs-th> Prix Maximum </vs-th>
+                  <vs-th> Prix Minimum </vs-th>
+                </vs-tr>
+              </template>
+              <template #tbody>
+                <vs-tr
+                  :key="i"
+                  v-for="(processors, i) in $vs.getPage(processors, page, max)"
+                  :data="processors"
+                  class="center"
+                >
+                  <vs-td>
+                    {{ processors.name }}
+                  </vs-td>
+                  <vs-td>
+                    {{ processors.priceA }}
+                  </vs-td>
+                  <vs-td>
+                    {{ processors.priceB }}
+                  </vs-td>
+                </vs-tr>
+              </template>
+              <template #footer>
+                <vs-pagination
+                  v-model="page"
+                  :length="$vs.getLength(processors, max)"
+                />
+              </template>
+            </vs-table>
+          </div> </vs-col
+      ></vs-row>
+    </section>
+    <section class="section">
+      <vs-row justify="center" align="center">
+        <vs-col w="10" sm="10" justify="center" align="center">
+          <h1 class="title-content">5 raisons de choisir les PC ASUS OLED</h1>
+          <vs-row class="mt-14" justify="center" align="center"
+            ><vs-col w="2" justify="center" align="center">
+              <vs-card
+                type="2"
+                @click="
+                  $router.push({
+                    hash: `#couleur`,
+                  })
+                "
+                ><template #title>
+                  <h1>
+                    Espace de couleurs 100% DCI-P3, le meilleur de sa catégorie
+                  </h1> </template
+                ><template #img>
+                  <img
+                    height="100%"
+                    class="img_card"
+                    src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_1.webp"
+                  />
+                </template>
+                <template #text
+                  >Dalles aux couleurs vives pour gagner en précision sur vos
+                  projets de création et de colorisation ainsi que pour profiter
+                  de vos divertissements.</template
+                >
+              </vs-card>
+            </vs-col>
+            <vs-col w="2"
+              ><vs-card type="2"
+                ><template #title>
+                  <h1>70% de lumière bleue en moins</h1></template
+                ><template #img>
+                  <img
+                    height="100%"
+                    src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_2.webp"
+                    alt=""
+                  />
+                </template>
+                <template #text
+                  >Avec leurs faibles niveaux d'émission de lumière bleue, les
+                  dalles OLED protègent vos yeux et améliorent la qualité de
+                  votre sommeil.</template
+                >
+              </vs-card></vs-col
+            >
+            <vs-col w="2"
+              ><vs-card type="2"
+                ><template #title>
+                  <h1>
+                    Des images plus nettes quel que soit le niveau de luminosité
+                    de l'écran
+                  </h1> </template
+                ><template #img>
+                  <img
+                    height="100%"
+                    src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_3.webp"
+                    alt=""
+                  />
+                </template>
+                <template #text
+                  >Des couleurs riches même à faible niveau de luminosité :
+                  toujours plus superbes !</template
+                >
+              </vs-card></vs-col
+            >
+            <vs-col w="2"
+              ><vs-card type="2"
+                ><template #title>
+                  <h1>
+                    DisplayHDR™ <br />
+                    500/600 True Black
+                  </h1> </template
+                ><template #img>
+                  <img
+                    height="100%"
+                    src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_4.webp"
+                    alt=""
+                  />
+                </template>
+                <template #text
+                  >Les noirs profonds vous permettent de repérer des détails
+                  jusque là cachés dans les scènes sombres de vos films
+                  préférés.</template
+                >
+              </vs-card>
+            </vs-col>
+            <vs-col w="2"
+              ><vs-card type="2"
+                ><template #title>
+                  <h1>Temps de réponse ultra-rapide de 0,2 ms</h1> </template
+                ><template #img>
+                  <img
+                    height="100%"
+                    src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_5.webp"
+                    alt=""
+                  />
+                </template>
+                <template #text
+                  >Des jeux et films aux scènes d'action sans flou cinétique ;
+                  des textes que vous pouvez faire défiler en toute
+                  fluidité.</template
+                >
+              </vs-card></vs-col
+            ></vs-row
+          >
+          <vs-row>
+            <p class="text-content mt-14">
+              Les PC portables ASUS avec dalle OLED sont dotés de la meilleure
+              gamme de couleurs de leur catégorie. Ils reproduisent chaque
+              couleur avec une fidélité épatante pour un rendu plus vrai que
+              nature et des images d'une qualité professionnelle. Ces
+              ordinateurs conviennent particulièrement aux créateurs ou tout
+              utilisateur souhaitant profiter de couleurs exceptionnelles sur
+              son écran. Les dalles OLED sont composées de diodes
+              électroluminescentes organiques qui réduisent naturellement les
+              émissions de lumière bleue jusqu'à 70 % comparées aux dalles LCD
+              classiques. Ces dalles protègent l'utilisateur contre le risque de
+              dégradation de sa vue.
+            </p>
+          </vs-row>
+        </vs-col>
+      </vs-row>
+    </section>
+
+    <section id="couleurs" class="section">
+      <vs-row class="mb-14" justify="center" align="center">
+        <vs-row class="mb-14" justify="center" align="center"
+          ><vs-col w="6">
+            <h1 class="gradient-text">Haut en couleurs</h1>
+            <h1 class="title-content mb-4">Affichage professionnel</h1>
+            <p class="text-content">
+              Les PC portables ASUS avec dalle OLED sont capables d'afficher un
+              niveau de détail et de réalisme tout bonnement exceptionnel
+              notamment grâce à l'espace de couleurs 100 % DCI-P3. Cela signifie
+              que les couleurs reproduites à l'écran sont plus riches et vives
+              pour vos projets artistiques mais aussi pour mettre en valeur tout
+              type de contenu.
+            </p></vs-col
           ></vs-row
         >
-      </vs-col>
-    </vs-row>
-    <vs-row class="mt2 mb-14" justify="center" align="center">
-      <vs-col w="6">
-        <h2>
-          Nous avons pensé à vous, voici une vidéo explicative pour faciliter
-          votre remboursement
-        </h2>
-      </vs-col>
-    </vs-row>
-    <vs-row class="mt1" justify="center" align="center">
-      <vs-col w="6">
-        <div class="mx">
-          <img
-            @click="popupVid1 = true"
-            src="~/assets/img/Video 1.jpg"
-            class="zoom responsive"
-            width="70%"
-            alt="Vivobook 13 Slate OLED"
+
+        <vs-col w="8" justify="center" align="center">
+          <VueCompareImage
+            :style="{ maxWidth: '100%' }"
+            leftImage="https://asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/animation/s3/before.webp"
+            rightImage="https://asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/animation/s3/after.webp"
+            rightLabel="ASUS OLED"
+            leftLabel="LCD"
           />
-        </div>
-      </vs-col>
-    </vs-row>
-    <vs-row justify="center" class="mt-14" align="center">
-      <vs-col w="6" justify="center" align="center">
-        <h2 class="mt-15 mb-2">Recherchez votre Processeur</h2>
-        <v-autocomplete
-          dark
-          class="mb-2"
-          :items="processors"
-          item-color="dark"
-          item-text="name"
-          label="Processeur"
-          v-model="selectedProcessor"
-          hide-data
-          hide-selected
-          item-value="API"
-          prepend-icon="mdi-chevron-right"
-          return-object
-          no-data-text="Pas de données pour votre processeur"
-        ></v-autocomplete>
-        <div class="mt-14 mb-14" align="start">
-          <p>
-            L’ordinateur ne doit pas être âgé de plus de 7 ans (date de
-            production) et doit répondre aux critères de qualité attendus.
+        </vs-col>
+      </vs-row>
+    </section>
+
+    <section id="bleu" class="section">
+      <vs-row justify="center" align="center">
+        <vs-col w="10" justify="center" align="center">
+          <vs-row justify="center" align="center">
+            <vs-col w="6" justify="center" align="center">
+              <vs-row justify="center" align="center">
+                <h1 class="gradient-text">Eye Care</h1>
+                <h1 align="start" class="title-content">
+                  Se protéger les yeux, un geste encore plus important pour les
+                  enfants
+                </h1>
+                <p align="start" class="text-content2">
+                  Les yeux des enfants ne sont pas encore entièrement
+                  développés, leur cristallin et leur cornée sont plus
+                  transparents. La lumière bleue nocive pénètre dans l'œil plus
+                  facilement ce qui peut causer un vieillissement prématuré de
+                  la rétine. La recherche4 a montré que 60 % de la lumière bleue
+                  émise par un écran passe à travers la rétine d'un enfant de 5
+                  ans, alors que ce chiffre n'atteint que les 20 % pour un
+                  adulte de 60 ans. Nos dalles ASUS OLED au niveau d'émission de
+                  lumière bleue réduit, vous aident à mieux protéger les yeux de
+                  vos enfants.
+                </p></vs-row
+              > </vs-col
+            ><vs-col w="6">
+              <img
+                src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/1x/s6.jpg"
+                alt=""
+            /></vs-col>
+          </vs-row>
+        </vs-col>
+      </vs-row>
+    </section>
+    <section id="lumos" class="section mt-14">
+      <vs-row justify="center" align="center"
+        ><vs-col w="6">
+          <h1 class="gradient-text2">Luminosité perçue</h1>
+          <h1 class="title-content my-5">
+            L'OLED bénéficie d'une bien meilleure luminosité perçue
+          </h1>
+          <p class="text-content2 mb-10">
+            Les PC portables ASUS OLED sont capables d'afficher continuellement
+            une bonne reproduction des couleurs quel que soit le niveau de
+            luminosité défini, afin que vous puissiez ajuster ce dernier comme
+            bon vous semble sans vous inquiéter des répercussions sur le
+            dynamisme des couleurs. Par exemple dans un salon avec une intensité
+            lumineuse généralement évaluée à 100 lux, vous pourrez définir la
+            luminosité de votre dalle OLED à seulement 177 nits et profiter des
+            mêmes images nettes que celles proposées sur une dalle LCD avec une
+            luminosité réglée à 400 nits ! Plus le niveau de luminosité d'une
+            dalle OLED est faible, moins vous subirez les effets nocifs des
+            émissions de lumière bleue.
           </p>
-        </div>
-        <div align="start" v-if="selectedProcessor">
-          <p>
-            Vous avez sélectionnée un processeur : {{ selectedProcessor.name }},
-            vous pouvez donc percevoir entre {{ selectedProcessor.priceB }}€ et
-            {{ selectedProcessor.priceA }}€ en fonction de l'état du matériel.
+
+          <vs-row> </vs-row> </vs-col
+      ></vs-row>
+      <vs-row justify="center" align="center">
+        <vs-col w="8" justify="center" align="center">
+          <VueCompareImage
+            :style="{ maxWidth: '100%' }"
+            leftImage="https://asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/1x/animation/s7/before.jpg"
+            rightImage="https://asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/1x/animation/s7/after.jpg"
+            rightLabel="OLED"
+            leftLabel="LCD"
+          />
+        </vs-col>
+      </vs-row>
+    </section>
+    <section id="contraste" class="section">
+      <vs-row class="mt-14" justify="center" align="center"
+        ><vs-col w="6">
+          <h1 class="gradient-text3 mt-14 mb-3">Contraste</h1>
+          <h1 class="title-content">True black : voir l'imperceptible</h1>
+          <p class="text-content2 my-5">
+            Les PC portables ASUS OLED reproduisent les noirs à la perfection.
+            Un pixel OLED consiste en trois sous-pixels, chacun générant sa
+            propre luminosité : une dalle OLED Full HD (1920x1080) intègre 2 073
+            600 pixels, ce qui signifie qu'elle possède 6 220 800 sous-pixels
+            auto-éclairés. À l'inverse les dalles LCD Full HD ne possèdent
+            qu'une dizaine de LED rétroéclairées. Lorsqu'il affiche du noir sur
+            une dalle OLED, le pixel est simplement éteint pour produire la
+            nuance la plus foncée possible. Vous profitez ainsi d'images claires
+            et nettes mêmes dans les zones les plus sombres de votre image. Vous
+            serez surpris de voir tous les nouveaux détails que vous pourrez
+            découvrir dans vos films préférés !
           </p>
-        </div>
-      </vs-col>
-    </vs-row>
-    <vs-row class="mt-14 mb-14" justify="center" align="center">
-      <vs-col w="6" align="start">
-        <h3 class="my-5">
-          1 - Enregistrez-vous sur le site asuspromotions.com/oled dans les 15
-          jours suivant votre achat.
-        </h3>
-        <h3 class="my-5">
-          2 - Puis renvoyez-nous votre ancien ordinateur dans les 15 jours
-        </h3>
-        <h3 class="my-5">
-          3 -Vous recevrez par virement le montant de votre remboursement + 15€
-          de participation aux frais d’envoi de votre ancien PC
-        </h3>
-      </vs-col>
-    </vs-row>
-    <!--<vs-row class="mt-14" justify="center" align="center"
-      ><vs-col w="6">
-        <div class="center">
-          <vs-table striped vs-theme="dark">
-            <template #thead>
-              <vs-tr class="center">
-                <vs-th> Processeur </vs-th>
-                <vs-th> Prix Maximum </vs-th>
-                <vs-th> Prix Minimum </vs-th>
-              </vs-tr>
-            </template>
-            <template #tbody>
-              <vs-tr
-                :key="i"
-                v-for="(processors, i) in $vs.getPage(processors, page, max)"
-                :data="processors"
-                class="center"
+          <p class="mb-2">Jusqu'à</p>
+        </vs-col></vs-row
+      >
+      <vs-row justify="center" align="center">
+        <vs-col w="8">
+          <vs-row>
+            <vs-col w="4"
+              ><h1 class="gradient-text3 text-content">1 000 000:1</h1>
+              <p>rapport de contraste</p></vs-col
+            >
+            <vs-col w="4">
+              <h1 class="gradient-text3 title-content">600nits</h1>
+              <p>de luminosité maximale5</p>
+            </vs-col>
+            <vs-col w="4"
+              ><h1 class="gradient-text3 title-content">0,0005nits</h1>
+              <p>true black</p></vs-col
+            ></vs-row
+          >
+        </vs-col>
+      </vs-row>
+      <vs-row class="mt-14" justify="center" align="center">
+        <vs-col w="8" justify="center" align="center">
+          <VueCompareImage
+            :style="{ maxWidth: '100%' }"
+            leftImage="https://asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/animation/s8/before.webp"
+            rightImage="https://asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/animation/s8/after.webp"
+            rightLabel="OLED"
+            leftLabel="LCD"
+          />
+        </vs-col>
+      </vs-row>
+    </section>
+    <section id="ms" class="section mt-14">
+      <vs-row class="mt-14" justify="center" align="center">
+        <vs-col w="6">
+          <h1 class="gradient-text">Temps de réponse</h1>
+          <h1 class="title-content my-5">
+            Le temps de réponse le plus rapide jamais observé sur un PC portable
+          </h1>
+          <p class="content-text2 mb-5">
+            Pour un écran, le temps de réponse correspond au temps nécessaire
+            pour remplacer une couleur par une autre : plus il est rapide, mieux
+            le mouvement est reproduit. Le diagramme ci-dessous montre une
+            transition de couleur du violet au bleu. Sur un ASUS OLED, cette
+            transition ne prend que 0,2 milliseconde, alors que sur un LCD, elle
+            peut atteindre 10 ms sinon plus. Cela fait une grande différence,
+            car les couleurs OLED sont correctes pendant la majeure partie de
+            l'affichage d'une image, alors que les images LCD peuvent être
+            floues au cours du processus de transition.
+          </p>
+          <p class="content-text2 mb-5">
+            Les dalles ASUS OLED profitent d'un temps de réponse de 0,2 ms, le
+            plus rapide jamais observé sur un PC portable ! Ce temps de réponse
+            et par ailleurs 50 fois 6 plus rapide que celui des PC portables à
+            dalle LCD. En effet la plupart des dalles LCD présentent un temps de
+            réponse entre 10 et 25 ms. Nos dalles OLED fluidifient les scènes
+            animées, réduisent la latence sur vos jeux et améliorent le niveau
+            de détails lorsque vous faites par exemple défiler du texte.
+          </p>
+        </vs-col>
+      </vs-row>
+      <vs-row justify="center" align="center"
+        ><vs-col w="6">
+          <vs-row>
+            <vs-col w="6"
+              ><h1 class="gradient-text">0,2ms</h1>
+              <p>Temps de réponse ultrarapide</p></vs-col
+            ><vs-col w="6"
+              ><h1 class="gradient-text">50X</h1>
+              <p>Temps de réponse plus rapide</p></vs-col
+            >
+          </vs-row>
+        </vs-col>
+      </vs-row>
+      <vs-row class="mt-5" justify="center" align="center">
+        <vs-col w="8"
+          ><vs-row justify="center" align="center">
+            <vs-col w="6"
+              ><h1>LCD</h1>
+              <h1>temps de réponse de 10 ms</h1>
+              <video
+                autoplay
+                width="100%"
+                height="100%"
+                muted="muted"
+                loop="loop"
+                playsinline="playsinline"
+                src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/video/large/s9/video-s9-0.mp4"
               >
-                <vs-td>
-                  {{ processors.name }}
-                </vs-td>
-                <vs-td>
-                  {{ processors.priceA }}
-                </vs-td>
-                <vs-td>
-                  {{ processors.priceA }}
-                </vs-td>
-              </vs-tr>
-            </template>
-            <template #footer>
-              <vs-pagination
-                v-model="page"
-                :length="$vs.getLength(processors, max)"
-              />
-            </template>
-          </vs-table>
-        </div> </vs-col
-    ></vs-row>-->
+                <source
+                  type="video/mp4"
+                  src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/video/large/s9/video-s9-0.mp4"
+                />
+                <source
+                  type="video/ogg"
+                  src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/video/large/s9/video-s9-0.ogg"
+                />
+                <source
+                  type="video/webm"
+                  src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/video/large/s9/video-s9-0.webm"
+                /></video></vs-col
+            ><vs-col w="6"
+              ><h1>OLED</h1>
+              <h1>Temps de réponse ultra rapide de 0,2 ms</h1>
+              <video
+                autoplay
+                width="100%"
+                height="100%"
+                muted="muted"
+                loop="loop"
+                playsinline="playsinline"
+                src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/video/large/s9/video-s9-1.mp4"
+              >
+                <source
+                  type="video/mp4"
+                  src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/video/large/s9/video-s9-1.mp4"
+                />
+                <source
+                  type="video/ogg"
+                  src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/video/large/s9/video-s9-1.ogg"
+                />
+                <source
+                  type="video/webm"
+                  src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/video/large/s9/video-s9-1.webm"
+                />
+              </video>
+            </vs-col>
+          </vs-row>
+        </vs-col>
+      </vs-row>
+    </section>
 
-    <vs-dialog width="60%" v-model="popupVid1" not-padding>
-      <div class="video-responsive">
-        <iframe
-          width="100%"
-          height="100%"
-          src="https://www.youtube.com/embed/0sjUjl_7nI8"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe></div
-    ></vs-dialog>
-
-     
-    <v-dialog v-model="conditions" width="40%">
-      <template v-slot:activator="{ on, attrs }"></template>
-      <v-card>
-        <v-card-title>
-          <span class="text-h5">Use Google's location service?</span>
-        </v-card-title>
-        <v-card-text>
-          Lorem ipsum dolor sit amet, semper quis, sapien id natoque elit.
-          Nostra urna at, magna at neque sed sed ante imperdiet, dolor mauris
-          cursus velit, velit non, sem nec. Volutpat sem ridiculus placerat leo,
-          augue in, duis erat proin condimentum in a eget, sed fermentum sed
-          vestibulum varius ac, vestibulum volutpat orci ut elit eget tortor.
-          Ultrices nascetur nulla gravida ante arcu. Pharetra rhoncus morbi
-          ipsum, nunc tempor debitis, ipsum pellentesque, vitae id quam ut
-          mauris dui tempor, aptent non. Quisque turpis. Phasellus quis lectus
-          luctus orci eget rhoncus. Amet donec vestibulum mattis commodo, nulla
-          aliquet, nibh praesent, elementum nulla. Sit lacus pharetra tempus
-          magna neque pellentesque, nulla vel erat. Justo ex quisque nulla
-          accusamus venenatis, sed quis. Nibh phasellus gravida metus in, fusce
-          aenean ut erat commodo eros. Ut turpis, dui integer, nonummy pede
-          placeat nec in sit leo. Faucibus porttitor illo taciti odio, amet
-          viverra scelerisque quis quis et tortor, curabitur morbi a. Enim
-          tempor at, rutrum elit condimentum, amet rutrum vitae tempor torquent
-          nunc. Praesent vestibulum integer maxime felis. Neque aenean quia
-          vitae nostra, tempus elit enim id dui, at egestas pulvinar. Integer
-          libero vestibulum, quis blandit scelerisque mattis fermentum nulla,
-          tortor donec vestibulum dolor amet eget, elit nullam. Aliquam leo
-          phasellus aliquam curabitur metus a, nulla justo mattis duis interdum
-          vel, mollis vitae et id, vestibulum erat ridiculus sit pulvinar justo
-          sed. Vehicula convallis, et nulla wisi, amet vestibulum risus, quam ac
-          egestas. Et vitae, nulla gravida erat scelerisque nullam nunc
-          pellentesque, a dictumst cras augue, purus imperdiet non. Varius
-          montes cursus varius vel tortor, nec leo a qui, magni cras, velit vel
-          consectetuer lobortis vel. Nibh erat et wisi felis leo porttitor,
-          sapien nibh sapien pede mi, sed eget porttitor, repellendus arcu ac
-          quis. Luctus vulputate aut est sem magna, placerat accumsan nunc
-          vestibulum ipsum ac auctor, maecenas lorem in ut nec mauris tortor,
-          doloribus varius sem tortor vestibulum mollis, eleifend tortor felis
-          tempus lacus eu eu. Eleifend vel eu, nullam maecenas mauris nec nunc
-          euismod, tortor porta ridiculus potenti, massa tristique nam magna, et
-          wisi placerat et erat ante. Eget pede erat in facilisis, fermentum
-          venenatis sodales. Ac tortor sociis et non animi tristique, rhoncus
-          malesuada, ut arcu volutpat scelerisque sollicitudin, elit curabitur
-          dui pede purus dolor, integer aenean risus taciti nulla eleifend
-          accumsan. At pulvinar diam parturient, interdum mi velit aliquet et a.
-          Arcu at ac placerat eget justo semper, purus sociis curabitur mi ipsum
-          consequat ut, mollis vestibulum, est ante ornare lacus sem. Neque
-          magna mauris, commodo quisque, praesent semper suscipit lobortis nam.
-          Justo malesuada cursus ac nunc litora nunc. Tellus ac, in lobortis
-          nunc, montes lectus purus fermentum. Ac sit wisi. Sodales aliquam, sed
-          vestibulum nullam arcu sit risus arcu, id luctus vitae lorem nibh,
-          integer nec nullam class cursus mi, purus arcu lectus. Vel ante
-          suscipit volutpat potenti mattis sed, wisi eu placerat aliquam erat,
-          lectus morbi lobortis at assumenda. Consequat neque purus ipsum
-          voluptas odio, netus vestibulum ut nec, suspendisse pellentesque nec
-          enim in. Wisi dictum sed semper a, ipsum erat tellus habitasse est,
-          erat sem ornare, vitae quisque ultricies. Dui sed blandit. Tempor et
-          faucibus justo sed luctus, nec vitae vitae. Nunc nibh pede, ipsum
-          vestibulum aenean leo ante ultricies, nam cras quis sed penatibus
-          amet. In mauris a. Integer metus mauris tortor, et rutrum vestibulum
-          ultricies, ut phasellus in ullamcorper ut mollit, eu justo. Cursus
-          pretium venenatis. Cras pellentesque vel sodales accumsan aenean.
-          Feugiat metus sit nec in aliquet amet, porttitor pretium vulputate
-          massa. Consequat ipsum luctus quisque adipiscing libero. Wisi
-          sollicitudin. Eget vitae ac lobortis, lorem natoque vestibulum et,
-          aliquet faucibus at morbi nibh, vel condimentum. Massa unde orci sed
-          id sed, odio donec congue nec praesent amet. Hymenaeos velit lacus,
-          quis vivamus libero tempus duis, eu nisi eu, ipsum at accumsan pede
-          justo morbi donec, massa et libero sit risus neque tortor. Ut sed sed
-          etiam hendrerit dapibus, quis metus suspendisse nibh. Fringilla tempor
-          felis augue magna. Cum arcu a, id vitae. Pellentesque pharetra in cras
-          sociis adipiscing est. Nibh nec mattis at maecenas, nisl orci aliquam
-          nulla justo egestas venenatis, elementum duis vel porta eros, massa
-          vitae, eligendi imperdiet amet. Nec neque luctus suscipit, justo sem
-          praesent, ut nisl quisque, volutpat torquent wisi tellus aliquam
-          reprehenderit, curabitur cras at quis massa porttitor mauris. Eros sed
-          ultrices. Amet dignissim justo urna feugiat mauris litora, etiam
-          accumsan, lobortis a orci suspendisse. Semper ac mauris, varius
-          bibendum pretium, orci urna nunc ullamcorper auctor, saepe sem integer
-          quam, at feugiat egestas duis. Urna ligula ante. Leo elementum
-          nonummy. Sagittis mauris est in ipsum, nulla amet non justo, proin id
-          potenti platea posuere sit ut, nunc sit erat bibendum. Nibh id auctor,
-          ab nulla vivamus ultrices, posuere morbi nunc tellus gravida vivamus.
-          Mauris nec, facilisi quam fermentum, ut mauris integer, orci tellus
-          tempus diam ut in pellentesque. Wisi faucibus tempor et odio leo diam,
-          eleifend quis integer curabitur sit scelerisque ac, mauris consequat
-          luctus quam penatibus fringilla dis, vitae lacus in, est eu ac tempus.
-          Consectetuer amet ipsum amet dui, sed blandit id sed. Tellus integer,
-          dignissim id pede sodales quis, felis dolorem id mauris orci, orci
-          tempus ut. Nullam hymenaeos. Curabitur in a, tortor ut praesent
-          placerat tincidunt interdum, ac dignissim metus nonummy hendrerit
-          wisi, etiam ut. Semper praesent integer fusce, tortor suspendisse,
-          augue ligula orci ante asperiores ullamcorper. In sit per mi sed sed,
-          mi vestibulum mus nam, morbi mauris neque vitae aliquam proin
-          senectus. Ac amet arcu mollis ante congue elementum, inceptos eget
-          optio quam pellentesque quis lobortis, sollicitudin sed vestibulum
-          sollicitudin, lectus parturient nullam, leo orci ligula ultrices. At
-          tincidunt enim, suspendisse est sit sem ac. Amet tellus molestie est
-          purus magna augue, non etiam et in wisi id. Non commodo, metus lorem
-          facilisi lobortis ac velit, montes neque sed risus consectetuer
-          fringilla dolor. Quam justo et integer aliquam, cursus nulla enim
-          orci, nam cursus adipiscing, integer torquent non, fringilla per
-          maecenas. Libero ipsum sed tellus purus et. Duis molestie placerat
-          erat donec ut. Dolor enim erat massa faucibus ultrices in, ante
-          ultricies orci lacus, libero consectetuer mauris magna feugiat neque
-          dapibus, donec pretium et. Aptent dui, aliquam et et amet nostra
-          ligula. Augue curabitur duis dui volutpat, tempus sed ut pede donec.
-          Interdum luctus, lectus nulla aenean elit, id sit magna, vulputate
-          ultrices pellentesque vel id fermentum morbi. Tortor et. Adipiscing
-          augue lorem cum non lacus, rutrum sodales laoreet duis tortor, modi
-          placerat facilisis et malesuada eros ipsum, vehicula tempus. Ac
-          vivamus amet non aliquam venenatis lectus, sociosqu adipiscing
-          consequat nec arcu odio. Blandit orci nec nec, posuere in pretium,
-          enim ut, consectetuer nullam urna, risus vel. Nullam odio vehicula
-          massa sed, etiam sociis mauris, lacus ullamcorper, libero imperdiet
-          non sodales placerat justo vehicula. Nec morbi imperdiet. Fermentum
-          sem libero iaculis bibendum et eros, eget maecenas non nunc, ad
-          pellentesque. Ut nec diam elementum interdum. Elementum vitae tellus
-          lacus vitae, ipsum phasellus, corporis vehicula in ac sed massa
-          vivamus, rutrum elit, ultricies metus volutpat. Semper wisi et,
-          sollicitudin nunc vestibulum, cursus accumsan nunc pede tempus mi
-          ipsum, ligula sed. Non condimentum ac dolor sit. Mollis eu aliquam,
-          vel mattis mollis massa ut dolor ante, tempus lacinia arcu. Urna
-          vestibulum lorem, nulla fermentum, iaculis ut congue ac vivamus. Nam
-          libero orci, pulvinar nulla, enim pellentesque consectetuer leo,
-          feugiat rhoncus rhoncus vel. Magna sociosqu donec, dictum cursus
-          ullamcorper viverra. Ultricies quis orci lorem, suspendisse ut
-          vestibulum integer, purus sed lorem pulvinar habitasse turpis. +
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <vs-button gradient @click="conditions = false">FERMER</vs-button>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+    <section class="section mt-14">
+      <vs-row class="mt-14" justify="center" align="center">
+        <vs-col class="mt-14" w="6" sm="10" xs="12">
+          <div class="mx">
+            <img
+              @click="popupVid1 = true"
+              src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/oled_video.jpg"
+              class="up img_oled responsive"
+              width="90%"
+              alt="Vivobook 13 Slate OLED"
+            />
+            <div class="img__oled-play" @click="popupVid1 = true"></div>
+          </div>
+        </vs-col>
+      </vs-row>
+      <v-row justify="center" align="center">
+        <v-col w="10" justify="center" align="center">
+          <nuxt-link :to="{ path: '/oled' }"
+            ><vs-button gradient size="xl">
+              <h3>DÉCOUVRIR L'OLED ASUS</h3>
+            </vs-button></nuxt-link
+          >
+        </v-col></v-row
+      >
+      <vs-dialog blur width="550px" not-center v-model="CTA1">
+        <template #header>
+          <h4 class="mt-2 mb-2">OÙ ACHETER</h4>
+        </template>
+        <div class="con-content">
+          <vs-row class="mb-2 mt-2">
+            <vs-col w="3" xs="6"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/ASUS.png"
+                alt=""
+                srcset=""
+            /></vs-col>
+            <vs-col w="3" xs="6"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/fnac.png"
+                alt=""
+                srcset=""
+            /></vs-col>
+            <vs-col w="3" xs="6"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/darty.png"
+                alt=""
+                srcset=""
+            /></vs-col>
+            <vs-col w="3" xs="6"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/LDLC.jpg"
+                alt=""
+                srcset=""
+            /></vs-col>
+            <vs-col w="3" xs="6"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/LDLC.jpg"
+                alt=""
+                srcset=""
+            /></vs-col>
+            <vs-col w="3" xs="6"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/LDLC.jpg"
+                alt=""
+                srcset=""
+            /></vs-col>
+            <vs-col w="3" xs="6"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/LDLC.jpg"
+                alt=""
+                srcset=""
+            /></vs-col>
+            <vs-col w="3" xs="6"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/LDLC.jpg"
+                alt=""
+                srcset=""
+            /></vs-col>
+          </vs-row>
+        </div>
+        <template #footer>
+          <div class="con-footer">
+            <vs-button size="xl" @click="CTA1 = false" transparent>
+              Ok
+            </vs-button>
+          </div>
+        </template>
+      </vs-dialog>
+      <vs-dialog width="60%" v-model="popupVid1" not-padding blur>
+        <div class="video-responsive">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/zgZlXb1c794"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe></div
+      ></vs-dialog>
+    </section>
+    <!-- FIN VIDEO -->
   </div>
 </template>
 <style>
@@ -288,15 +671,13 @@
 import aosMixin from '~/mixins/aos'
 export default {
   mixins: [aosMixin],
-  computed: {
-    scrollToTop() {
-      window.scrollTo(0, 0)
-    },
-  },
+  computed: {},
+  methods: {},
   data() {
     return {
+      CTA1: false,
       page: 1,
-      max: 10,
+      max: 11,
       conditions: false,
       selectedProcessor: '',
       popupVid1: false,
@@ -506,6 +887,233 @@ export default {
         { id: '38', name: 'AMD Ryzen 3', priceA: '150', priceB: '105' },
         { id: '39', name: 'AMD SERIES A', priceA: '100', priceB: '70' },
         { id: '40', name: 'AMD SERIES FX', priceA: '125', priceB: '88' },
+        {
+          id: '41',
+          name: 'Apple MacBook 12" 2017',
+          priceA: '525',
+          priceB: '?',
+        },
+        {
+          id: '42',
+          name: 'Apple MacBook 12" Early 2016',
+          priceA: '434',
+          priceB: '?',
+        },
+        {
+          id: '43',
+          name: 'Apple MacBook 12" Early 2015',
+          priceA: '349',
+          priceB: '?',
+        },
+        {
+          id: '44',
+          name: 'Apple MacBook Pro 14" 2021',
+          priceA: '1000',
+          priceB: '?',
+        },
+        {
+          id: '45',
+          name: 'Apple MacBook Air (M1 2020)',
+          priceA: '650',
+          priceB: '?',
+        },
+        {
+          id: '46',
+          name: 'Apple MacBook Pro 13" (M1 2020)',
+          priceA: '800',
+          priceB: '?',
+        },
+        {
+          id: '47',
+          name: 'Apple MacBook Pro 13" 2020 (2 Thunderbolt 3) ',
+          priceA: '850',
+          priceB: '?',
+        },
+        {
+          id: '48',
+          name: 'Apple MacBook Pro 13" 2020 (4 Thunderbolt 3)',
+          priceA: '900',
+          priceB: '?',
+        },
+        { id: '49', name: 'MacBook Pro 16" 2019', priceA: '900', priceB: '?' },
+        {
+          id: '50',
+          name: 'MacBook Pro 13" 2019 (2 Thunderbolt 3)',
+          priceA: '700',
+          priceB: '?',
+        },
+        {
+          id: '51',
+          name: 'MacBook Pro 13" 2019 (4 Thunderbolt 3)',
+          priceA: '750',
+          priceB: '?',
+        },
+        { id: '52', name: 'MacBook Pro 15" 2019 ', priceA: '750', priceB: '?' },
+        { id: '50', name: 'MacBook Pro 15" 2018', priceA: '678', priceB: '?' },
+        {
+          id: '50',
+          name: 'MacBook Pro 13" 2018 (4 Thunderbolt 3)',
+          priceA: '606',
+          priceB: '?',
+        },
+        {
+          id: '51',
+          name: 'Apple MacBook Pro 13" Mid 2017',
+          priceA: '556',
+          priceB: '?',
+        },
+        {
+          id: '52',
+          name: 'Apple MacBook Pro 13" Late 2016',
+          priceA: '400',
+          priceB: '?',
+        },
+        {
+          id: '50',
+          name: 'Apple MacBook Pro 13" 2017',
+          priceA: '638',
+          priceB: '?',
+        },
+        {
+          id: '51',
+          name: 'Apple MacBook Pro 13" Touch Bar Late 2016',
+          priceA: '500',
+          priceB: '?',
+        },
+        {
+          id: '52',
+          name: 'Apple MacBook Pro 13" Early 2015',
+          priceA: '400',
+          priceB: '?',
+        },
+        {
+          id: '50',
+          name: 'Apple MacBook Pro 15"  2017',
+          priceA: '800',
+          priceB: '?',
+        },
+        {
+          id: '51',
+          name: 'Apple MacBook Pro 15" 2016',
+          priceA: '600',
+          priceB: '?',
+        },
+        {
+          id: '52',
+          name: 'Apple MacBook Pro 15" Mid 2015 (DG)',
+          priceA: '550',
+          priceB: '?',
+        },
+        {
+          id: '50',
+          name: 'Apple MacBook Pro 15" Mid 2015 (IG)',
+          priceA: '500',
+          priceB: '?',
+        },
+        {
+          id: '51',
+          name: 'Apple MacBook Air Retina 13" 2020',
+          priceA: '642',
+          priceB: '?',
+        },
+        {
+          id: '52',
+          name: 'Apple MacBook Air Retina 13" 2019',
+          priceA: '570',
+          priceB: '?',
+        },
+        {
+          id: '50',
+          name: 'Apple MacBook Air Retina 13" 2018',
+          priceA: '498',
+          priceB: '?',
+        },
+        {
+          id: '51',
+          name: 'Apple MacBook Air 11" Early 2015',
+          priceA: '290',
+          priceB: '?',
+        },
+        {
+          id: '52',
+          name: 'Apple MacBook Air 13" 2017',
+          priceA: '369',
+          priceB: '?',
+        },
+        {
+          id: '50',
+          name: 'Apple MacBook Air 13" Early 2015',
+          priceA: '311',
+          priceB: '?',
+        },
+        {
+          id: '51',
+          name: 'Apple iMac M1 24 inches - 2 or 4 ports - 2021',
+          priceA: '800',
+          priceB: '?',
+        },
+        {
+          id: '52',
+          name: 'Apple iMac Retina  5K - 27 inches - 2020',
+          priceA: '800',
+          priceB: '?',
+        },
+        {
+          id: '50',
+          name: 'Apple iMac Retina 5K - 27 inches - 2019',
+          priceA: '700',
+          priceB: '?',
+        },
+        {
+          id: '51',
+          name: 'Apple iMac Retina 4K - 21,5 inches - 2019',
+          priceA: '640',
+          priceB: '?',
+        },
+        { id: '52', name: 'Apple Mini M1 - 2020', priceA: '450', priceB: '?' },
+        { id: '50', name: 'Apple Mac Mini - 2018', priceA: '220', priceB: '?' },
+        {
+          id: '51',
+          name: 'Apple iMac  Pro 27 inches - 2017',
+          priceA: '451',
+          priceB: '?',
+        },
+        {
+          id: '52',
+          name: 'Apple iMac Retina 5K - 27 inches - 2017',
+          priceA: '600',
+          priceB: '?',
+        },
+        {
+          id: '52',
+          name: 'Apple iMac Retina 4K - 21,5 inches - 2017',
+          priceA: '500',
+          priceB: '?',
+        },
+        {
+          id: '52',
+          name: 'Apple iMac 21,5 inches - 2017',
+          priceA: '360',
+          priceB: '?',
+        },
+        {
+          id: '52',
+          name: 'Apple iMac 21,5 inches - 2015',
+          priceA: '340',
+          priceB: '?',
+        },
+        {
+          id: '52',
+          name: 'Apple iMac Retina 4K, 21,5 inches - 2015',
+          priceA: '400',
+          priceB: '?',
+        },
+        {
+          id: '52',
+          name: 'Apple iMac Retina 5K, 27 inches - 2015',
+          priceA: '500',
+          priceB: '?',
+        },
       ],
     }
   },

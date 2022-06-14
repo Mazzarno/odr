@@ -2,14 +2,16 @@
   <div>
     <!-- GRID D'ACHAT LAPTOP OLED-->
     <vs-row class="mt2" justify="center" align="center"
-      ><vs-col w="6" justify="center" align="center"
-        ><h1>Découvrez la sélection OLED éligible</h1></vs-col
+      ><vs-col w="10" md="12" xs="12" justify="center" align="center"
+        ><h1 class="gradient-text">
+          Découvrez la sélection OLED éligible
+        </h1></vs-col
       >
     </vs-row>
     <vs-row justify="center" align="center">
-      <vs-col w="6" justify="center" align="center">
+      <vs-col w="10" md="10" xs="12" justify="center" align="center">
         <vs-row justify="center" align="center">
-          <vs-col w="4">
+          <vs-col w="4" md="6" xs="12">
             <a @click="CTA1 = true">
               <div class="OLED_card">
                 <img class="img_OLED_PC up" src="~/assets/img/OLED/UX325.png" />
@@ -28,14 +30,13 @@
               </div>
             </a>
           </vs-col>
-          <vs-col w="4">
+          <vs-col w="4" md="6" xs="12">
             <a @click="CTA2 = true">
               <div class="OLED_card">
                 <img
                   class="img_OLED_PC up"
                   src="~/assets/img/OLED/UX363.png"
                   alt=""
-                  srcset=""
                 />
                 <p>Zenbook Flip 13 OLED (UX363)</p>
                 <vs-button
@@ -52,7 +53,7 @@
               </div>
             </a>
           </vs-col>
-          <vs-col w="4">
+          <vs-col w="4" md="6" xs="12">
             <a @click="CTA3 = true">
               <div class="OLED_card">
                 <img
@@ -80,9 +81,9 @@
       </vs-col>
     </vs-row>
     <vs-row class="mt" justify="center" align="center">
-      <vs-col w="6" justify="center" align="center">
+      <vs-col w="10" md="12" xs="12" justify="center" align="center">
         <vs-row>
-          <vs-col w="4">
+          <vs-col w="4" md="6" xs="12">
             <a @click="CTA4 = true">
               <div class="OLED_card">
                 <img
@@ -106,7 +107,7 @@
               </div>
             </a>
           </vs-col>
-          <vs-col w="4">
+          <vs-col w="4" md="6" xs="12">
             <a @click="CTA5 = true">
               <div class="OLED_card">
                 <img
@@ -130,9 +131,14 @@
               </div>
             </a>
           </vs-col>
-          <vs-col w="4">
+          <vs-col w="4" md="6" xs="12">
             <a @click="CTA6 = true">
               <div class="OLED_card">
+                <figure class="img_OLED_PC">
+                  <figure
+                    src="/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/oled_video.jpg"
+                  ></figure>
+                </figure>
                 <img
                   class="img_OLED_PC up"
                   src="~/assets/img/OLED/S3400.png"
@@ -165,16 +171,16 @@
       </template>
       <div class="con-content">
         <vs-row class="mb-2 mt-2">
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/ASUS.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/fnac.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/darty.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/LDLC.jpg" alt="" srcset=""
           /></vs-col>
         </vs-row>
@@ -194,16 +200,16 @@
       </template>
       <div class="con-content">
         <vs-row class="mb-2 mt-2">
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/ASUS.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/fnac.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/darty.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/LDLC.jpg" alt="" srcset=""
           /></vs-col>
         </vs-row>
@@ -223,16 +229,16 @@
       </template>
       <div class="con-content">
         <vs-row class="mb-2 mt-2">
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/ASUS.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/fnac.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/darty.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/LDLC.jpg" alt="" srcset=""
           /></vs-col>
         </vs-row>
@@ -252,16 +258,16 @@
       </template>
       <div class="con-content">
         <vs-row class="mb-2 mt-2">
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/ASUS.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/fnac.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/darty.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/LDLC.jpg" alt="" srcset=""
           /></vs-col>
         </vs-row>
@@ -281,16 +287,16 @@
       </template>
       <div class="con-content">
         <vs-row class="mb-2 mt-2">
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/ASUS.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/fnac.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/darty.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/LDLC.jpg" alt="" srcset=""
           /></vs-col>
         </vs-row>
@@ -310,16 +316,16 @@
       </template>
       <div class="con-content">
         <vs-row class="mb-2 mt-2">
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/ASUS.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/fnac.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/darty.png" alt="" srcset=""
           /></vs-col>
-          <vs-col w="3"
+          <vs-col w="3" xs="6"
             ><img class="up" src="~/assets/img/LDLC.jpg" alt="" srcset=""
           /></vs-col>
         </vs-row>
@@ -333,11 +339,35 @@
       </template>
     </vs-dialog>
     <!-- END DIALOG CTA ACHAT -->
+    <vs-row class="mt-14 mb-14" justify="center" align="center">
+      <vs-col w="8" justify="center" align="center">
+        <VueCompareImage
+          :style="{ maxWidth: '100%' }"
+          leftImage="https://asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/animation/s3/before.webp"
+          rightImage="https://asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/animation/s3/after.webp"
+          rightLabel="ASUS OLED"
+          leftLabel="LCD"
+        />
+      </vs-col>
+    </vs-row>
+    <vs-row class="mt-14 mb-14" justify="center" align="center">
+      <vs-col w="8" justify="center" align="center">
+        <VueCompareImage
+          :style="{ maxWidth: '100%' }"
+          leftImage="https://asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/animation/s8/before.webp"
+          rightImage="https://asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/animation/s8/after.webp"
+          rightLabel="ASUS OLED"
+          leftLabel="LCD"
+        />
+      </vs-col>
+    </vs-row>
   </div>
 </template>
 <script>
 import aosMixin from '~/mixins/aos'
+import VueCompareImage from 'vue-compare-image'
 export default {
+  components: { VueCompareImage },
   mixins: [aosMixin],
   data() {
     return {

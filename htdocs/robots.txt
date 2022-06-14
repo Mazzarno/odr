@@ -1,0 +1,4 @@
+User-agent: Googlebot
+Disallow: 
+Allow: /
+Sitemap: https://www.asus.fr/event/trade-oled/sitemap.xml
