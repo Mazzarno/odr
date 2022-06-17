@@ -25,7 +25,4 @@ export default {
 .page-leave-to {
   opacity: 0;
 }
-html {
-  overflow-x: hidden !important;
-}
 </style>

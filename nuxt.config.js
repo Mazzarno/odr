@@ -10,7 +10,6 @@ export default {
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             { hid: 'description', name: 'description', content: "Offre de rembousement." },
             { name: 'format-detection', content: 'telephone=no' },
-            { hid: 'language', name: 'language', content: "French" },
             { hid: 'revisit-after', name: 'revisit-after', content: "1 days" },
             { name: 'format-detection', content: 'telephone=no' },
             // Open Graph / Facebook
@@ -34,7 +33,7 @@ export default {
     //loading: '~/components/loading.vue',
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-    plugins: ['~/plugins/vuesax', { src: '~/plugins/VueCompareImage', mode: 'client', ssr: false }],
+    plugins: ['~/plugins/vuesax', ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
@@ -44,6 +43,34 @@ export default {
     vuetify: {
         optionsPath: './vuetify.js',
         theme: { dark: true },
+    },
+    router: {
+        scrollBehavior: async(to, from, savedPosition) => {
+            if (savedPosition) {
+                return savedPosition
+            }
+
+            const findEl = async(hash, x) => {
+                return document.querySelector(hash) ||
+                    new Promise((resolve, reject) => {
+                        if (x > 50) {
+                            return resolve()
+                        }
+                        setTimeout(() => { resolve(findEl(hash, ++x || 1)) }, 100)
+                    })
+            }
+
+            if (to.hash) {
+                let el = await findEl(to.hash)
+                if ('scrollBehavior' in document.documentElement.style) {
+                    return window.scrollTo({ top: el.offsetTop, behavior: 'smooth' })
+                } else {
+                    return window.scrollTo(0, el.offsetTop)
+                }
+            }
+
+            return { x: 0, y: 0 }
+        }
     },
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
@@ -91,11 +118,6 @@ export default {
             changefreq: 'daily',
             priority: 1,
             lastmod: new Date()
-        }, {
-            url: 'https://www.asus.fr/event/trade-oled/oled',
-            changefreq: 'daily',
-            priority: 1,
-            lastmod: new Date()
-        }, ]
+        }]
     },
 }

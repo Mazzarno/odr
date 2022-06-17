@@ -1,52 +1,195 @@
 <template>
   <div>
     <section class="header">
-      <img align="start" class="OLED_header" src="~/assets/img/1920x756.jpg" />
+      <SVGUHD />
+      <SVGHD />
+      <SVGTABLET />
+      <SVGMOBILE />
+    </section>
+    <!-- FIN HEADER -->
+    <section class="section">
       <vs-row justify="center" align="center">
-        <vs-col w="10" sm="12" justify="center" align="center">
-          <vs-row justify="center" align="center">
-            <vs-col w="3" sm="6" xs="12"
-              ><vs-button class="mx-5" gradient size="xl" @click="CTA1 = true">
-                <p>Voir les conditions</p>
-              </vs-button></vs-col
+        <vs-col lg="12" w="12" sm="12" justify="center" align="center">
+          <h1 class="title-content mb-5 mt-5">
+            5 raisons de choisir les PC ASUS OLED
+          </h1>
+          <vs-row class="" justify="center" align="center"
+            ><vs-col
+              lg="2"
+              w="6"
+              sm="6"
+              xs="12"
+              justify="center"
+              align="center"
             >
-            <vs-col w="3" sm="6" xs="12">
-              <vs-button class="mx-5" @click="CTA1 = true" gradient size="xl">
-                <p>Acheter un PC ASUS OLED</p>
-              </vs-button></vs-col
-            ></vs-row
+              <nuxt-link :to="{ path: '/', hash: '#couleurs' }">
+                <vs-card type="2" class="ma-5"
+                  ><template #title>
+                    <h1>
+                      Espace de couleurs 100% DCI-P3, le meilleur de sa
+                      catégorie
+                    </h1> </template
+                  ><template #img>
+                    <img
+                      height="100%"
+                      class="img_card"
+                      src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_1.webp"
+                    />
+                  </template>
+                  <template #text>
+                    <p class="text-content2">
+                      Dalles aux couleurs vives pour gagner en précision sur vos
+                      projets de création et de colorisation ainsi que pour
+                      profiter de vos divertissements.
+                    </p>
+                  </template>
+                </vs-card>
+              </nuxt-link>
+            </vs-col>
+            <vs-col lg="2" w="6" sm="6" xs="12"
+              ><nuxt-link :to="{ path: '/', hash: '#bleu' }"
+                ><vs-card type="2" class="ma-5"
+                  ><template #title>
+                    <h1>70% de lumière bleue en moins</h1></template
+                  ><template #img>
+                    <img
+                      class="img_card"
+                      src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_2.webp"
+                      alt=""
+                    />
+                  </template>
+                  <template #text>
+                    <p class="text-content2">
+                      Avec leurs faibles niveaux d'émission de lumière bleue,
+                      les dalles OLED protègent vos yeux et améliorent la
+                      qualité de votre sommeil.
+                    </p>
+                  </template>
+                </vs-card>
+              </nuxt-link></vs-col
+            >
+            <vs-col lg="2" w="6" sm="6" xs="12">
+              <nuxt-link :to="{ path: '/', hash: '#lumos' }">
+                <vs-card type="2" class="ma-5"
+                  ><template #title>
+                    <h1>
+                      Des images plus nettes quel que soit le niveau de
+                      luminosité de l'écran
+                    </h1> </template
+                  ><template #img>
+                    <img
+                      class="img_card"
+                      height="100%"
+                      src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_3.webp"
+                      alt=""
+                    />
+                  </template>
+                  <template #text>
+                    <p class="text-content2">
+                      Des couleurs riches même à faible niveau de luminosité :
+                      toujours plus superbes !
+                    </p></template
+                  >
+                </vs-card>
+              </nuxt-link>
+            </vs-col>
+            <vs-col lg="2" w="6" sm="6" xs="12"
+              ><nuxt-link :to="{ path: '/', hash: '#contraste' }"
+                ><vs-card type="2" class="ma-5"
+                  ><template #title>
+                    <h1>
+                      DisplayHDR™ <br />
+                      500/600 True Black
+                    </h1> </template
+                  ><template #img>
+                    <img
+                      class="img_card"
+                      src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_4.webp"
+                      alt=""
+                    />
+                  </template>
+                  <template #text>
+                    <p class="text-content2">
+                      Les noirs profonds vous permettent de repérer des détails
+                      jusque là cachés dans les scènes sombres de vos films
+                      préférés.
+                    </p>
+                  </template>
+                </vs-card></nuxt-link
+              >
+            </vs-col>
+            <vs-col lg="2" w="6" sm="6" xs="12"
+              ><nuxt-link :to="{ path: '/', hash: '#ms' }"
+                ><vs-card type="2" class="ma-5"
+                  ><template #title>
+                    <h1>Temps de réponse ultra-rapide de 0,2 ms</h1></template
+                  ><template #img>
+                    <img
+                      class="img_card"
+                      src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_5.webp"
+                      alt=""
+                    />
+                  </template>
+                  <template #text>
+                    <p class="text-content2">
+                      Des jeux et films aux scènes d'action sans flou cinétique
+                      ; des textes que vous pouvez faire défiler en toute
+                      fluidité.
+                    </p>
+                  </template>
+                </vs-card></nuxt-link
+              >
+            </vs-col></vs-row
           >
+          <vs-row justify="center" align="center">
+            <vs-col w="6" sm="10">
+              <p class="text-content2 mt-14">
+                Les PC portables ASUS avec dalle OLED sont dotés de la meilleure
+                gamme de couleurs de leur catégorie. Ils reproduisent chaque
+                couleur avec une fidélité épatante pour un rendu plus vrai que
+                nature et des images d'une qualité professionnelle. Ces
+                ordinateurs conviennent particulièrement aux créateurs ou tout
+                utilisateur souhaitant profiter de couleurs exceptionnelles sur
+                son écran. Les dalles OLED sont composées de diodes
+                électroluminescentes organiques qui réduisent naturellement les
+                émissions de lumière bleue jusqu'à 70 % comparées aux dalles LCD
+                classiques. Ces dalles protègent l'utilisateur contre le risque
+                de dégradation de sa vue.
+              </p>
+            </vs-col>
+          </vs-row>
         </vs-col>
       </vs-row>
     </section>
-    <!-- FIN HEADER -->
-    <section class="section_fonctionnement">
-      <vs-row justify="center" align="center">
+    <section class="section_fonctionnement mt-14">
+      <vs-row class="mt-14" justify="center" align="center">
         <vs-col lg="10" w="12" sm="12" xs="12" justify="center" align="center">
           <h1 class="mb-14">Comment ça fonctionne ?</h1>
           <vs-row>
-            <vs-col w="3" sm="6" xs="12">
-              <vs-card class="ma-5" color="">
-                <template #title>
-                  <span class="mdi mdi-36px mdi-cart-outline"></span>
-                  <h2 class="my-5">Acheter un PC ASUS OLED</h2>
-                </template>
-                <template #text>
-                  <p class="mb-5">
-                    Cette offre de remboursement s’applique pour l’achat d’un PC
-                    de la sélection ASUS OLED présente sur la page suivante.
-                    Avec cette offre exclusive vous pourrez combiner le
-                    remboursement de votre ancien pc en plus des réductions liés
-                    soldes.
-                  </p>
-                </template>
-              </vs-card>
+            <vs-col lg="3" w="6" sm="6" xs="12">
+              <nuxt-link :to="{ path: '/', hash: '#couleurs' }">
+                <vs-card class="ma-2">
+                  <template #title>
+                    <span class="mdi mdi-36px mdi-cart-outline"></span>
+                    <h2 class="my-2">Acheter un PC ASUS OLED</h2>
+                  </template>
+                  <template #text>
+                    <p class="mb-5">
+                      Cette offre de remboursement s’applique pour l’achat d’un
+                      PC de la sélection ASUS OLED présente sur la page
+                      suivante. Avec cette offre exclusive vous pourrez combiner
+                      le remboursement de votre ancien pc en plus des réductions
+                      liés soldes.
+                    </p>
+                  </template>
+                </vs-card>
+              </nuxt-link>
             </vs-col>
             <vs-col w="3" sm="6" xs="12">
-              <vs-card type="1" class="ma-5" color="">
+              <vs-card type="1" class="ma-2" color="">
                 <template #title>
                   <span class="mdi mdi-36px mdi-file-sign"></span>
-                  <h2 class="my-5">Enregistrez-vous</h2>
+                  <h2 class="my-2">Enregistrez-vous</h2>
                 </template>
                 <template #text>
                   <p class="mb-5">
@@ -61,10 +204,10 @@
               </vs-card></vs-col
             >
             <vs-col w="3" sm="6" xs="12">
-              <vs-card class="ma-5" color="">
+              <vs-card class="ma-2">
                 <template #title>
                   <span class="mdi mdi-36px mdi-cube-send"></span>
-                  <h2 class="my-5">Renvoyez-nous votre ancien ordinateur</h2>
+                  <h2 class="my-2">Renvoyez-nous votre ancien ordinateur</h2>
                 </template>
                 <template #text>
                   <p class="mb-5">
@@ -77,10 +220,10 @@
               </vs-card></vs-col
             >
             <vs-col w="3" sm="6" xs="12">
-              <vs-card class="ma-5" color="">
+              <vs-card class="ma-2">
                 <template #title>
                   <span class="mdi mdi-36px mdi-wallet-outline"></span>
-                  <h2 class="my-5">Faites-vous rembourser</h2>
+                  <h2 class="my-2">Faites-vous rembourser</h2>
                 </template>
                 <template #text>
                   <p class="mb-5">
@@ -98,10 +241,10 @@
       >
     </section>
     <!-- FIN BLOC EXPLIQUATION -->
-    <section class="section">
+    <section class="section mt-14">
       <vs-row justify="center" align="center">
         <vs-col w="6" sm="10" xs="10" justify="center" align="center">
-          <h1 class="mb-14">
+          <h1 class="mb-14 mt-14">
             Découvrez le processeur de votre PC ou de votre MAC pour connaître
             le montant de votre remboursement
           </h1>
@@ -137,9 +280,9 @@
           </div>
         </vs-col>
       </vs-row>
-      <vs-row class="mt-14" justify="center" align="center"
+      <vs-row class="mt-14 table_data" justify="center" align="center"
         ><vs-col class="mt-14" w="6" sm="10" xs="none">
-          <div class="center">
+          <div class="center table_data">
             <vs-table striped vs-theme="dark">
               <template #thead>
                 <vs-tr class="center">
@@ -176,141 +319,14 @@
           </div> </vs-col
       ></vs-row>
     </section>
-    <section class="section">
-      <vs-row justify="center" align="center">
-        <vs-col w="10" sm="10" justify="center" align="center">
-          <h1 class="title-content">5 raisons de choisir les PC ASUS OLED</h1>
-          <vs-row class="mt-14" justify="center" align="center"
-            ><vs-col w="2" justify="center" align="center">
-              <vs-card
-                type="2"
-                @click="
-                  $router.push({
-                    hash: `#couleur`,
-                  })
-                "
-                ><template #title>
-                  <h1>
-                    Espace de couleurs 100% DCI-P3, le meilleur de sa catégorie
-                  </h1> </template
-                ><template #img>
-                  <img
-                    height="100%"
-                    class="img_card"
-                    src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_1.webp"
-                  />
-                </template>
-                <template #text
-                  >Dalles aux couleurs vives pour gagner en précision sur vos
-                  projets de création et de colorisation ainsi que pour profiter
-                  de vos divertissements.</template
-                >
-              </vs-card>
-            </vs-col>
-            <vs-col w="2"
-              ><vs-card type="2"
-                ><template #title>
-                  <h1>70% de lumière bleue en moins</h1></template
-                ><template #img>
-                  <img
-                    height="100%"
-                    src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_2.webp"
-                    alt=""
-                  />
-                </template>
-                <template #text
-                  >Avec leurs faibles niveaux d'émission de lumière bleue, les
-                  dalles OLED protègent vos yeux et améliorent la qualité de
-                  votre sommeil.</template
-                >
-              </vs-card></vs-col
-            >
-            <vs-col w="2"
-              ><vs-card type="2"
-                ><template #title>
-                  <h1>
-                    Des images plus nettes quel que soit le niveau de luminosité
-                    de l'écran
-                  </h1> </template
-                ><template #img>
-                  <img
-                    height="100%"
-                    src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_3.webp"
-                    alt=""
-                  />
-                </template>
-                <template #text
-                  >Des couleurs riches même à faible niveau de luminosité :
-                  toujours plus superbes !</template
-                >
-              </vs-card></vs-col
-            >
-            <vs-col w="2"
-              ><vs-card type="2"
-                ><template #title>
-                  <h1>
-                    DisplayHDR™ <br />
-                    500/600 True Black
-                  </h1> </template
-                ><template #img>
-                  <img
-                    height="100%"
-                    src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_4.webp"
-                    alt=""
-                  />
-                </template>
-                <template #text
-                  >Les noirs profonds vous permettent de repérer des détails
-                  jusque là cachés dans les scènes sombres de vos films
-                  préférés.</template
-                >
-              </vs-card>
-            </vs-col>
-            <vs-col w="2"
-              ><vs-card type="2"
-                ><template #title>
-                  <h1>Temps de réponse ultra-rapide de 0,2 ms</h1> </template
-                ><template #img>
-                  <img
-                    height="100%"
-                    src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_5.webp"
-                    alt=""
-                  />
-                </template>
-                <template #text
-                  >Des jeux et films aux scènes d'action sans flou cinétique ;
-                  des textes que vous pouvez faire défiler en toute
-                  fluidité.</template
-                >
-              </vs-card></vs-col
-            ></vs-row
-          >
-          <vs-row>
-            <p class="text-content mt-14">
-              Les PC portables ASUS avec dalle OLED sont dotés de la meilleure
-              gamme de couleurs de leur catégorie. Ils reproduisent chaque
-              couleur avec une fidélité épatante pour un rendu plus vrai que
-              nature et des images d'une qualité professionnelle. Ces
-              ordinateurs conviennent particulièrement aux créateurs ou tout
-              utilisateur souhaitant profiter de couleurs exceptionnelles sur
-              son écran. Les dalles OLED sont composées de diodes
-              électroluminescentes organiques qui réduisent naturellement les
-              émissions de lumière bleue jusqu'à 70 % comparées aux dalles LCD
-              classiques. Ces dalles protègent l'utilisateur contre le risque de
-              dégradation de sa vue.
-            </p>
-          </vs-row>
-        </vs-col>
-      </vs-row>
-    </section>
 
     <section id="couleurs" class="section">
-      <vs-row class="mb-14" justify="center" align="center">
+      <vs-row class="mb-14 mt-14" justify="center" align="center">
         <vs-row class="mb-14" justify="center" align="center"
-          ><vs-col w="6">
+          ><vs-col w="6" sm="10" xs="10">
             <h1 class="gradient-text">Haut en couleurs</h1>
             <h1 class="title-content mb-4">Affichage professionnel</h1>
-            <p class="text-content">
+            <p class="text-content2">
               Les PC portables ASUS avec dalle OLED sont capables d'afficher un
               niveau de détail et de réalisme tout bonnement exceptionnel
               notamment grâce à l'espace de couleurs 100 % DCI-P3. Cela signifie
@@ -320,16 +336,9 @@
             </p></vs-col
           ></vs-row
         >
-
-        <vs-col w="8" justify="center" align="center">
-          <VueCompareImage
-            :style="{ maxWidth: '100%' }"
-            leftImage="https://asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/animation/s3/before.webp"
-            rightImage="https://asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/animation/s3/after.webp"
-            rightLabel="ASUS OLED"
-            leftLabel="LCD"
-          />
-        </vs-col>
+        <vs-col lg="8" w="8" sm="6" xs="10" justify="center" align="center">
+          <img class="img_twenty" src="~/assets/img/OLED_couleur.jpg"
+        /></vs-col>
       </vs-row>
     </section>
 
@@ -337,7 +346,7 @@
       <vs-row justify="center" align="center">
         <vs-col w="10" justify="center" align="center">
           <vs-row justify="center" align="center">
-            <vs-col w="6" justify="center" align="center">
+            <vs-col w="6" sm="10" xs="12" justify="center" align="center">
               <vs-row justify="center" align="center">
                 <h1 class="gradient-text">Eye Care</h1>
                 <h1 align="start" class="title-content">
@@ -357,8 +366,9 @@
                   vos enfants.
                 </p></vs-row
               > </vs-col
-            ><vs-col w="6">
+            ><vs-col w="6" sm="10" xs="12">
               <img
+                class="img_twenty"
                 src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/1x/s6.jpg"
                 alt=""
             /></vs-col>
@@ -366,10 +376,10 @@
         </vs-col>
       </vs-row>
     </section>
-    <section id="lumos" class="section mt-14">
+    <section id="lumos" class="mt-14">
       <vs-row justify="center" align="center"
-        ><vs-col w="6">
-          <h1 class="gradient-text2">Luminosité perçue</h1>
+        ><vs-col w="6" sm="10" xs="10">
+          <h1 class="gradient-text2 mt-14">Luminosité perçue</h1>
           <h1 class="title-content my-5">
             L'OLED bénéficie d'une bien meilleure luminosité perçue
           </h1>
@@ -390,20 +400,41 @@
           <vs-row> </vs-row> </vs-col
       ></vs-row>
       <vs-row justify="center" align="center">
-        <vs-col w="8" justify="center" align="center">
-          <VueCompareImage
-            :style="{ maxWidth: '100%' }"
-            leftImage="https://asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/1x/animation/s7/before.jpg"
-            rightImage="https://asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/1x/animation/s7/after.jpg"
-            rightLabel="OLED"
-            leftLabel="LCD"
-          />
-        </vs-col>
+        <vs-col w="8" justify="center" align="center"> </vs-col>
       </vs-row>
     </section>
-    <section id="contraste" class="section">
+    <section class="mt-14">
+      <vs-row justify="center" align="center">
+        <vs-col lg="6" w="6" sm="6" xs="10">
+          <div class="mx">
+            <img
+              @click="popupVid1 = true"
+              src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/oled_video.jpg"
+              class="up img_oled responsive"
+              alt="Vivobook 13 Slate OLED"
+            />
+            <div class="img__oled-play" @click="popupVid1 = true"></div>
+          </div>
+        </vs-col>
+      </vs-row>
+
+      <vs-dialog width="60%" v-model="popupVid1" not-padding blur>
+        <div class="video-responsive">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/zgZlXb1c794"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe></div
+      ></vs-dialog>
+    </section>
+    <!-- FIN VIDEO -->
+    <section id="contraste mt-14" class="section">
       <vs-row class="mt-14" justify="center" align="center"
-        ><vs-col w="6">
+        ><vs-col w="6" sm="10" xs="10">
           <h1 class="gradient-text3 mt-14 mb-3">Contraste</h1>
           <h1 class="title-content">True black : voir l'imperceptible</h1>
           <p class="text-content2 my-5">
@@ -425,15 +456,15 @@
       <vs-row justify="center" align="center">
         <vs-col w="8">
           <vs-row>
-            <vs-col w="4"
+            <vs-col w="4" sm="10" xs="12"
               ><h1 class="gradient-text3 text-content">1 000 000:1</h1>
               <p>rapport de contraste</p></vs-col
             >
-            <vs-col w="4">
+            <vs-col w="4" sm="10" xs="12">
               <h1 class="gradient-text3 title-content">600nits</h1>
               <p>de luminosité maximale5</p>
             </vs-col>
-            <vs-col w="4"
+            <vs-col w="4" sm="10" xs="12"
               ><h1 class="gradient-text3 title-content">0,0005nits</h1>
               <p>true black</p></vs-col
             ></vs-row
@@ -441,20 +472,14 @@
         </vs-col>
       </vs-row>
       <vs-row class="mt-14" justify="center" align="center">
-        <vs-col w="8" justify="center" align="center">
-          <VueCompareImage
-            :style="{ maxWidth: '100%' }"
-            leftImage="https://asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/animation/s8/before.webp"
-            rightImage="https://asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/animation/s8/after.webp"
-            rightLabel="OLED"
-            leftLabel="LCD"
-          />
-        </vs-col>
+        <vs-col lg="8" w="8" sm="6" xs="10" justify="center" align="center">
+          <img class="img_twenty" src="~/assets/img/OLED_Black.jpg"
+        /></vs-col>
       </vs-row>
     </section>
     <section id="ms" class="section mt-14">
       <vs-row class="mt-14" justify="center" align="center">
-        <vs-col w="6">
+        <vs-col w="6" sm="10" xs="10">
           <h1 class="gradient-text">Temps de réponse</h1>
           <h1 class="title-content my-5">
             Le temps de réponse le plus rapide jamais observé sur un PC portable
@@ -484,20 +509,20 @@
       <vs-row justify="center" align="center"
         ><vs-col w="6">
           <vs-row>
-            <vs-col w="6"
+            <vs-col w="6" xs="12"
               ><h1 class="gradient-text">0,2ms</h1>
               <p>Temps de réponse ultrarapide</p></vs-col
-            ><vs-col w="6"
+            ><vs-col w="6" xs="12"
               ><h1 class="gradient-text">50X</h1>
               <p>Temps de réponse plus rapide</p></vs-col
             >
           </vs-row>
         </vs-col>
       </vs-row>
-      <vs-row class="mt-5" justify="center" align="center">
-        <vs-col w="8"
+      <vs-row class="mt-10" justify="center" align="center">
+        <vs-col w="10"
           ><vs-row justify="center" align="center">
-            <vs-col w="6"
+            <vs-col w="6" sm="12" xs="12"
               ><h1>LCD</h1>
               <h1>temps de réponse de 10 ms</h1>
               <video
@@ -521,7 +546,7 @@
                   type="video/webm"
                   src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/video/large/s9/video-s9-0.webm"
                 /></video></vs-col
-            ><vs-col w="6"
+            ><vs-col w="6" sm="12" xs="12"
               ><h1>OLED</h1>
               <h1>Temps de réponse ultra rapide de 0,2 ms</h1>
               <video
@@ -552,116 +577,169 @@
       </vs-row>
     </section>
 
-    <section class="section mt-14">
-      <vs-row class="mt-14" justify="center" align="center">
-        <vs-col class="mt-14" w="6" sm="10" xs="12">
-          <div class="mx">
-            <img
-              @click="popupVid1 = true"
-              src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/oled_video.jpg"
-              class="up img_oled responsive"
-              width="90%"
-              alt="Vivobook 13 Slate OLED"
-            />
-            <div class="img__oled-play" @click="popupVid1 = true"></div>
-          </div>
-        </vs-col>
-      </vs-row>
-      <v-row justify="center" align="center">
-        <v-col w="10" justify="center" align="center">
-          <nuxt-link :to="{ path: '/oled' }"
-            ><vs-button gradient size="xl">
-              <h3>DÉCOUVRIR L'OLED ASUS</h3>
-            </vs-button></nuxt-link
-          >
-        </v-col></v-row
-      >
-      <vs-dialog blur width="550px" not-center v-model="CTA1">
-        <template #header>
-          <h4 class="mt-2 mb-2">OÙ ACHETER</h4>
-        </template>
-        <div class="con-content">
-          <vs-row class="mb-2 mt-2">
-            <vs-col w="3" xs="6"
-              ><img
+    <v-row class="mb-14 mt-14" justify="center" align="center">
+      <v-col w="10" justify="center" align="center">
+        <vs-button gradient size="xl" @click="CTA1 = true">
+          <h3>ACHETER PC ÉLIGIBLE</h3>
+        </vs-button>
+      </v-col></v-row
+    >
+    <vs-dialog blur width="550px" not-center v-model="CTA1" vs-theme="dark">
+      <template #header>
+        <h4 class="mt-2 mb-2">OÙ ACHETER DES PC ASUS OLED ÉLIGIBLE</h4>
+      </template>
+      <div class="con-content">
+        <vs-row class="mb-2 mt-2">
+          <vs-col w="3" xs="6"
+            ><img
+              class="up ma-5"
+              src="~/assets/img/ASUS_grey.png"
+              alt=""
+              srcset=""
+          /></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              target="_blank"
+              href="https://www.amazon.fr/s?k=asus+oled&i=computers&rh=n%3A429879031%2Cp_89%3AASUS%2Cp_n_feature_browse-bin%3A27969065031&dc&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1655373492&rnid=27969061031&ref=sr_nr_p_n_feature_browse-bin_3"
+            >
+              <img
                 class="up ma-5"
-                src="~/assets/img/ASUS.png"
+                src="~/assets/img/amazon.png"
                 alt=""
                 srcset=""
-            /></vs-col>
-            <vs-col w="3" xs="6"
+            /></a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              target="_blank"
+              href="https://www.auchan.fr/recherche?text=asus+oled"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/auchan.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              target="_blank"
+              href="https://www.boulanger.com/resultats?tr=asus+oled"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/boulanger.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              target="_blank"
+              href="https://www.carrefour.fr/s?filters%5BFacet_vendeurs%5D%5B0%5D=Carrefour&q=asus%20oled&noRedirect=1"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/carrefour.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              target="_blank"
+              href="https://www.cdiscount.com/search/10/oled+asus.html?TechnicalForm.SiteMapNodeId=0&TechnicalForm.DepartmentId=10&TechnicalForm.ProductId=&hdnPageType=Search&TechnicalForm.ContentTypeId=16&TechnicalForm.SellerId=&TechnicalForm.PageType=SEARCH_AJAX&TechnicalForm.LazyLoading.ProductSheets=False&TechnicalForm.BrandLicenseId=0&NavigationForm.CurrentSelectedNavigationPath=categorycodepath%2F0K%7C0K0C%7C0K0C01&NavigationForm.FirstNavigationLinkCount=3&FacetForm.SelectedFacets.Index=0&FacetForm.SelectedFacets.Index=1&FacetForm.SelectedFacets%5B1%5D=Prix%2F500%20%C3%A0%201000%E2%82%AC&FacetForm.SelectedFacets%5B1%5D=Prix%2F1000%E2%82%AC%20et%20%2B&FacetForm.SelectedFacets.Index=2&FacetForm.SelectedFacets%5B2%5D=Marque%2Fasus&FacetForm.SelectedFacets.Index=3&FacetForm.SelectedFacets.Index=4&FacetForm.SelectedFacets.Index=5&FacetForm.SelectedFacets.Index=13&FacetForm.SelectedFacets.Index=6&FacetForm.SelectedFacets.Index=7&FacetForm.SelectedFacets.Index=8&FacetForm.SelectedFacets.Index=9&FacetForm.SelectedFacets%5B9%5D=Neuf%20ou%20occasion%2Fneuf&FacetForm.SelectedFacets.Index=10&FacetForm.SelectedFacets.Index=11&FacetForm.SelectedFacets.Index=12&FacetForm.SelectedFacets.Index=14&FacetForm.SelectedFacets.Index=15&FacetForm.SelectedFacets.Index=16&FacetForm.SelectedFacets.Index=17&FacetForm.SelectedFacets.Index=18&SortForm.SelectedSort=PERTINENCE&ProductListTechnicalForm.Keyword=oled%2Basus&ProductListTechnicalForm.TemplateName=InLine&&_his_"
               ><img
                 class="up ma-5"
-                src="~/assets/img/fnac.png"
+                src="~/assets/img/cdiscount.png"
                 alt=""
                 srcset=""
-            /></vs-col>
-            <vs-col w="3" xs="6"
-              ><img
+              />
+            </a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              target="_blank"
+              href="https://www.fnac.com/SearchResult/ResultList.aspx?SDM=list&Search=oled&SFilt=1!206%2c49343!23&sft=1"
+            >
+              <img
                 class="up ma-5"
                 src="~/assets/img/darty.png"
                 alt=""
                 srcset=""
-            /></vs-col>
-            <vs-col w="3" xs="6"
-              ><img
+              />
+            </a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              target="_blank"
+              href="https://www.amazon.fr/s?k=asus+oled&i=computers&rh=n%3A429879031%2Cp_89%3AASUS%2Cp_n_feature_browse-bin%3A27969065031&dc&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1655373492&rnid=27969061031&ref=sr_nr_p_n_feature_browse-bin_3"
+            >
+              <img
                 class="up ma-5"
+                src="~/assets/img/eleclerc.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a target="_blank" href="https://www.electrodepot.fr/">
+              <img
+                class="up ma-5"
+                src="~/assets/img/electro-depot.png"
+                alt=""
+                srcset=""
+              /> </a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              target="_blank"
+              href="https://www.fnac.com/SearchResult/ResultList.aspx?SDM=list&Search=oled&SFilt=1!206%2c49343!23&sft=1"
+            ></a>
+            <img class="up ma-5" src="~/assets/img/fnac.png" alt="" srcset=""
+          /></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              target="_blank"
+              href="https://www.ldlc.com/recherche/oled/+fb-C000000806+fcat-4265+fdi-1+foms-1+fps-1.html"
+            >
+              <img
+                class="up ma-5 id"
                 src="~/assets/img/LDLC.jpg"
                 alt=""
                 srcset=""
-            /></vs-col>
-            <vs-col w="3" xs="6"
+              /> </a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              target="_blank"
+              href="https://www.rueducommerce.fr/r/asus-oled/g-rue-du-commerce-25476,neuf-676918.html"
               ><img
                 class="up ma-5"
-                src="~/assets/img/LDLC.jpg"
+                src="~/assets/img/rue-du-commerce.png"
                 alt=""
                 srcset=""
-            /></vs-col>
-            <vs-col w="3" xs="6"
-              ><img
+              />
+            </a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a target="_blank" href="https://www.magasins-u.com/">
+              <img
                 class="up ma-5"
-                src="~/assets/img/LDLC.jpg"
+                src="~/assets/img/systeme-u.png"
                 alt=""
                 srcset=""
-            /></vs-col>
-            <vs-col w="3" xs="6"
-              ><img
-                class="up ma-5"
-                src="~/assets/img/LDLC.jpg"
-                alt=""
-                srcset=""
-            /></vs-col>
-            <vs-col w="3" xs="6"
-              ><img
-                class="up ma-5"
-                src="~/assets/img/LDLC.jpg"
-                alt=""
-                srcset=""
-            /></vs-col>
-          </vs-row>
+              />
+            </a>
+          </vs-col>
+        </vs-row>
+      </div>
+      <template #footer>
+        <div class="con-footer">
+          <vs-button size="xl" @click="CTA1 = false" transparent>
+            Ok
+          </vs-button>
         </div>
-        <template #footer>
-          <div class="con-footer">
-            <vs-button size="xl" @click="CTA1 = false" transparent>
-              Ok
-            </vs-button>
-          </div>
-        </template>
-      </vs-dialog>
-      <vs-dialog width="60%" v-model="popupVid1" not-padding blur>
-        <div class="video-responsive">
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/zgZlXb1c794"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe></div
-      ></vs-dialog>
-    </section>
-    <!-- FIN VIDEO -->
+      </template>
+    </vs-dialog>
   </div>
 </template>
 <style>
