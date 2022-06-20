@@ -75,6 +75,7 @@ export default {
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
         '@nuxtjs/robots',
+        '@nuxtjs/gtm',
         '@nuxtjs/sitemap',
         'nuxtjs-mdi-font', ['nuxt-compress',
             {
@@ -87,11 +88,15 @@ export default {
             },
         ]
     ],
+    gtm: {
+        id: 'GTM-WN9WSJR'
+    },
     generate: {
         dir: 'htdocs',
         fallback: '404.html',
         subFolders: false,
     },
+
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
         publicPath: 'https://www.asus.fr/event/trade-oled/',

@@ -25,6 +25,7 @@ body,
     width: 100% !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
+    word-break: break-word !important;
 }
 
 #app {
@@ -42,7 +43,7 @@ body,
 }
 
 h1 {
-    font-size: 1.500em !important;
+    font-size: 1.5em !important;
     margin: 0;
     padding: 0;
 }
@@ -50,13 +51,20 @@ h1 {
 h2 {
     margin: 0;
     padding: 0;
-    font-size: 1.375em;
+    font-size: 1.375em !important;
+    word-break: break-word;
+}
+
+.underlined {
+    -webkit-text-decoration: underline #007cde;
+    text-decoration: underline #007cde;
 }
 
 .gradient-text {
     background: -webkit-linear-gradient(150deg, #01e9bd 8%, #007cde 75%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    word-break: break-word;
 }
 
 .gradient-text2 {
@@ -72,15 +80,16 @@ h2 {
 }
 
 h3 {
-    font-size: 1.000em;
+    font-size: 1em;
+    word-break: break-word !important;
 }
 
 p {
-    font-size: 1.000em;
+    font-size: 1em;
 }
 
 span {
-    font-size: 1.250em;
+    font-size: 1.25em;
     white-space: nowrap;
     margin: 0;
     padding: 0;
@@ -103,18 +112,6 @@ span {
 
 
 /* RESIZE */
-
-@media screen and (min-width: 0px) and (max-width: 425px) {
-    .title-content {
-        font-size: 1.625em !important;
-    }
-    .text-content {
-        font-size: 1.125em !important;
-    }
-    .text-content2 {
-        font-size: 1em !important;
-    }
-}
 
 @media screen and (min-width: 1441px) {
     .SVGHD {
@@ -162,6 +159,15 @@ span {
     .SVGTABLET {
         display: none;
     }
+    .title-content {
+        font-size: 1.625em !important;
+    }
+    .text-content {
+        font-size: 1.125em !important;
+    }
+    .text-content2 {
+        font-size: 1em !important;
+    }
 }
 
 @media screen and (max-width: 605px) {
@@ -170,13 +176,50 @@ span {
     }
 }
 
-.SVGUHD {}
+.header {
+    height: calc(var(--vh, 1vh) * 100) !important;
+    width: calc(var(--vw, 1vw) * 100) !important;
+}
 
-.SVGHD {}
 
-.SVGTABLET {}
+/*#btn_condition {
+  position: absolute;
+  bottom: 10vh;
+  right: 100px;
+}
+#btn_condition {
+  position: absolute;
+}*/
 
-.SVGMOBILE {}
+.SVGUHD {
+    max-height: 100vh;
+    min-height: 100vh;
+    max-width: 100vw;
+    min-width: 100vw;
+}
+
+.SVGHD {
+    max-height: 100vh;
+    min-height: 100vh;
+    max-width: 100vw;
+    min-width: 100vw;
+}
+
+.SVGTABLET {
+    max-height: 100vh;
+    min-height: 100vh;
+    max-width: 100vw;
+    min-width: 100vw;
+}
+
+.SVGMOBILE {
+    max-height: 100vh;
+    min-height: 100vh;
+    max-width: 100vw;
+    min-width: 100vw;
+}
+
+@supports (-webkit-touch-callout: none) {}
 
 
 /* LAYOUT */
@@ -197,11 +240,6 @@ span {
     align-items: center;
 }
 
-.header {
-    height: auto;
-    width: 100vw !important;
-}
-
 .vs-card-content.type-2.vs-card-img {
     height: 500px;
 }
@@ -215,7 +253,28 @@ span {
     height: 120px;
     transform: translate3d(-50%, -50%, 0) rotate(0deg);
     transition: transform 500ms;
-    background-image: url(https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/icon/play.png);
+}
+
+.img__oled-play_tablet {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    transition: transform 500ms;
+}
+
+.img__oled-play_mobile {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    transition: transform 500ms;
 }
 
 .img_oled:hover,
@@ -287,16 +346,16 @@ span {
     padding: 0 !important;
 }
 
- ::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 5px;
 }
 
- ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: #030305;
-    border-radius: 5px
+    border-radius: 5px;
 }
 
- ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: #262626;
     border-radius: 10px;
 }
@@ -402,7 +461,7 @@ span {
         transform: translateY(0px);
     }
     100% {
-        transform: translateY(-25px);
+        transform: translateY(-5px);
     }
 }
 
@@ -411,6 +470,6 @@ span {
         transform: translateY(0px);
     }
     100% {
-        transform: translateY(-25px);
+        transform: translateY(-5px);
     }
 }

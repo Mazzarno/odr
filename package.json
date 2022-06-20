@@ -13,6 +13,7 @@
     },
     "dependencies": {
         "@mdi/font": "^6.7.96",
+        "@nuxtjs/gtm": "^2.4.0",
         "@nuxtjs/proxy": "^2.1.0",
         "@nuxtjs/robots": "^2.5.0",
         "@nuxtjs/sitemap": "^2.4.0",
@@ -25,7 +26,6 @@
         "vue-compare-image": "^0.2.0",
         "vue-server-renderer": "^2.6.14",
         "vue-template-compiler": "^2.6.14",
-        "vue-twentytwenty": "^1.0.0-1",
         "vuesax": "^4.0.1-alpha.25",
         "webpack": "^4.46.0"
     },

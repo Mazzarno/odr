@@ -1,16 +1,311 @@
 <template>
   <div>
-    <section class="header">
-      <SVGUHD />
-      <SVGHD />
-      <SVGTABLET />
-      <SVGMOBILE />
-    </section>
+    <SVGUHD />
+    <SVGHD />
+    <SVGTABLET />
+    <SVGMOBILE />
+
     <!-- FIN HEADER -->
-    <section class="section">
+    <section id="conditions" class="section_fonctionnement mt-14">
+      <vs-row class="mt-14" justify="center" align="center">
+        <vs-col lg="10" w="12" sm="12" xs="12" justify="center" align="center">
+          <h1 class="title-content mb-14">Comment se faire rembourser ?</h1>
+          <vs-row>
+            <vs-col lg="3" w="6" sm="6" xs="12">
+              <vs-card class="ma-2" @click="CTA1 = true">
+                <template #title>
+                  <span class="mdi mdi-36px mdi-cart-outline"></span>
+                  <h2 class="my-2">Acheter un PC ASUS OLED</h2>
+                </template>
+                <template #text>
+                  <p class="mb-5">
+                    Achetez un PC OLED Asus éligible auprès d’un revendeur
+                    participant (Amazon, Auchan, Boulanger, Carrefour,
+                    Cdiscount, Electro Dépôt, Asus eshop, Fnac-darty, groupe
+                    LDLC, Leclerc, Rue du commerce, Système U et Cost Co) en
+                    France métropolitaine entre le 22 juin et le 16 juillet
+                    2022.
+                    <!--      Cette offre de remboursement s’applique pour l’achat d’un PC
+              de la sélection ASUS OLED présente sur la page suivante.
+                    Avec cette offre exclusive vous pourrez combiner le
+                    remboursement de votre ancien pc en plus des réductions liés
+                    soldes. -->
+                  </p>
+                </template>
+              </vs-card>
+            </vs-col>
+            <vs-col w="3" sm="6" xs="12">
+              <vs-card type="1" class="ma-2" color="">
+                <template #title>
+                  <span class="mdi mdi-36px mdi-file-sign"></span>
+                  <h2 class="my-2">Enregistrez-vous</h2>
+                </template>
+                <template #text>
+                  <p class="mb-5">
+                    Enregistrez-vous sur le site asuspromotions.com/oled dans
+                    les 15 jours suivant votre achat. Nous vous inviterons à
+                    nous donner les détails de l’achat de votre nouvel
+                    ordinateur ainsi que certaines informations quant à l’ancien
+                    ordinateur que vous souhaitez faire reprendre.
+                    <!--       Enregistrez-vous en 5 minutes sur le site
+                    asuspromotions.com/oled dans les 15 jours suivant votre
+                    achat. Nous vous inviterons à nous donner les détails de
+                    l’achat de votre nouvel ordinateur ainsi que certaines
+                    informations quant à l’ancien ordinateur que vous souhaitez
+                    faire reprendre.-->
+                  </p>
+                </template>
+              </vs-card></vs-col
+            >
+            <vs-col w="3" sm="6" xs="12">
+              <vs-card class="ma-2">
+                <template #title>
+                  <span class="mdi mdi-36px mdi-cube-send"></span>
+                  <h2 class="my-2">Renvoyez-nous votre ancien ordinateur</h2>
+                </template>
+                <template #text>
+                  <p class="mb-5">
+                    Renvoyez-nous votre ancien ordinateur dans les 15 jours qui
+                    suivent l’approbation de votre enregistrement, à réception
+                    de l’email de confirmation précisant les instructions de
+                    renvoi.
+                    <!--  Dans les 15 jours qui suivent votre enregistrement et après
+                    approbation de notre part il faut impérativement renvoyer
+                    votre ancien ordinateur. Vous trouverez l’ensemble des
+                    informations sur la page asuspromotions.com/oled-->
+                  </p>
+                </template>
+              </vs-card></vs-col
+            >
+            <vs-col w="3" sm="6" xs="12">
+              <vs-card class="ma-2">
+                <template #title>
+                  <span class="mdi mdi-36px mdi-wallet-outline"></span>
+                  <h2 class="my-2">Faites-vous rembourser</h2>
+                </template>
+                <template #text>
+                  <p class="mb-5">
+                    Dès réception de votre ancien PC, nous vérifions sous 10
+                    jours qu’il correspond bien aux critères d’éligibilité à la
+                    promotion. Vous recevrez ensuite directement sur votre
+                    compte bancaire le montant de votre remboursement + 15€ de
+                    contribution forfaitaire aux frais de renvoi, dans les 30
+                    jours suivant la validation de bonne reprise de votre ancien
+                    PC.
+                    <!-- Cette offre de remboursement s’applique pour l’achat d’un PC
+                    de la sélection ASUS OLED présente sur la page suivante.
+                    Avec cette offre exclusive vous pourrez combiner le
+                    remboursement de votre ancien pc en plus des réductions liés
+                    soldes. -->
+                  </p>
+                </template>
+              </vs-card></vs-col
+            >
+          </vs-row>
+        </vs-col></vs-row
+      >
+    </section>
+    <!-- FIN BLOC EXPLIQUATION -->
+    <section class="section mt-14">
+      <vs-row justify="center" align="center">
+        <vs-col w="6" sm="10" xs="10" justify="center" align="center">
+          <h1 class="mb-5 mt-14">
+            Vous souhaitez connaître le montant de votre remboursement
+          </h1>
+          <h2>Entrez le modèle de votre processeur ou de votre MAC</h2>
+
+          <v-autocomplete
+            dark
+            :items="processors"
+            item-color="dark"
+            item-text="name"
+            label="Processeur"
+            v-model="selectedProcessor"
+            hide-data
+            hide-selected
+            item-value="API"
+            prepend-icon="mdi-chevron-right"
+            return-object
+            no-data-text="Pas de données pour votre processeur ou de votre MAC"
+          ></v-autocomplete>
+          <p class="text-content2">
+            Découvrez simplement comment connaitre le processeur de votre PC en
+            cliquant <a @click="explicationCTA = true"> ICI</a>
+          </p>
+          <vs-button
+            class="mt-5"
+            @click="sheet = true"
+            :disabled="!selectedProcessor"
+            gradient
+            size="xl"
+          >
+            <h3>RECHERCHE</h3>
+          </vs-button>
+
+          <v-bottom-sheet dark inset v-model="sheet">
+            <v-card>
+              <v-list>
+                <v-list-item-content>
+                  <v-list-item-title>
+                    <h2
+                      class="my-3 title-content"
+                      justify="center"
+                      align="center"
+                    >
+                      Vous avez sélectionné :
+                    </h2></v-list-item-title
+                  >
+                  <v-list-item-subtitle>
+                    <h3 class="text-content">
+                      {{ selectedProcessor.name }}
+                    </h3></v-list-item-subtitle
+                  >
+                  <v-list-item-subtitle
+                    ><h3 class="gradient-text my-3">
+                      Vous pouvez donc percevoir entre
+                      <span class="underlined">{{
+                        selectedProcessor.priceB
+                      }}</span>
+                      € et
+                      <span class="underlined">
+                        {{ this.selectedProcessor.priceA }}</span
+                      >
+                      € en fonction de l'état du matériel.
+                    </h3></v-list-item-subtitle
+                  >
+                </v-list-item-content>
+              </v-list>
+              <vs-row justify="center" align="center">
+                <vs-col w="6">
+                  <v-btn class="mb-5" color="primary" @click="sheet = false"
+                    >Compris !</v-btn
+                  >
+                </vs-col>
+              </vs-row></v-card
+            >
+          </v-bottom-sheet>
+          <!--          <div v-show="selectedProcessor">
+            <h2 align="start" class="gradient-text text-content">
+              Vous avez sélectionnée un processeur :
+              {{ selectedProcessor.name }}, vous pouvez donc percevoir entre
+              <span>{{ selectedProcessor.priceB }} €</span>
+              et
+              <span>{{ selectedProcessor.priceA }} €</span>
+              en fonction de l'état du matériel*.
+            </h2>
+          </div>
+          <div v-show="selectedProcessor">
+            <p align="start">
+              * L’ordinateur ne doit pas être âgé de plus de 7 ans (date de
+              production) et doit répondre aux critères de qualité attendus.
+            </p>
+          </div>-->
+        </vs-col>
+      </vs-row>
+      <vs-row class="mt-14 table_data" justify="center" align="center"
+        ><vs-col class="mt-14" w="6" sm="10" xs="none">
+          <div class="center table_data">
+            <vs-table striped vs-theme="dark">
+              <template #header>
+                <vs-input
+                  v-model="search"
+                  border
+                  placeholder="Rechercher votre processeur/MAC"
+                />
+              </template>
+              <template #thead>
+                <vs-tr class="center">
+                  <vs-th
+                    sort
+                    @click="
+                      processors = $vs.sortData($event, processors, 'name')
+                    "
+                  >
+                    Processeur
+                  </vs-th>
+                  <vs-th
+                    sort
+                    @click="
+                      processors = $vs.sortData($event, processors, 'priceA')
+                    "
+                  >
+                    Prix Maximum
+                  </vs-th>
+                  <vs-th
+                    sort
+                    @click="
+                      processors = $vs.sortData($event, processors, 'priceB')
+                    "
+                  >
+                    Prix Minimum
+                  </vs-th>
+                </vs-tr>
+              </template>
+              <template #tbody>
+                <vs-tr
+                  :key="i"
+                  v-for="(processors, i) in $vs.getPage(
+                    $vs.getSearch(processors, search),
+                    page,
+                    max
+                  )"
+                  :data="processors"
+                  class="center"
+                >
+                  <vs-td align="start">
+                    {{ processors.name }}
+                  </vs-td>
+                  <vs-td align="start">
+                    {{ processors.priceA }}
+                  </vs-td>
+                  <vs-td align="start">
+                    {{ processors.priceB }}
+                  </vs-td>
+                </vs-tr>
+              </template>
+              <template #footer>
+                <vs-pagination
+                  v-model="page"
+                  :length="
+                    $vs.getLength($vs.getSearch(processors, search), max)
+                  "
+                />
+              </template>
+            </vs-table>
+          </div> </vs-col
+      ></vs-row>
+    </section>
+
+    <section>
+      <v-row class="mb-14 mt-14" justify="center" align="center">
+        <v-col w="6" sm="8" xs="10" justify="center" align="center">
+          <vs-row>
+            <vs-col w="6" sm="10" xs="12">
+              <a
+                href="https://www.asus.fr/event/trade-oled/remboursement_asus_oled.pdf"
+                download
+              >
+                <vs-button gradient size="xl">
+                  <h3>TÉLÉCHARGER LE PDF DE L'OFFRE</h3>
+                </vs-button></a
+              ></vs-col
+            >
+            <vs-col w="6" sm="10" xs="12">
+              <vs-button gradient size="xl" @click="CTA1 = true">
+                <h3>ACHETER PC ÉLIGIBLE</h3>
+              </vs-button></vs-col
+            >
+          </vs-row>
+        </v-col></v-row
+      >
+    </section>
+
+    <section class="section mt-14">
       <vs-row justify="center" align="center">
         <vs-col lg="12" w="12" sm="12" justify="center" align="center">
-          <h1 class="title-content mb-5 mt-5">
+          <h1 class="title-content">DÉCOUVRIR L'OLED ASUS</h1>
+
+          <h1 class="title-content mb-10 mt-5">
             5 raisons de choisir les PC ASUS OLED
           </h1>
           <vs-row class="" justify="center" align="center"
@@ -23,122 +318,131 @@
               align="center"
             >
               <nuxt-link :to="{ path: '/', hash: '#couleurs' }">
-                <vs-card type="2" class="ma-5"
-                  ><template #title>
-                    <h1>
-                      Espace de couleurs 100% DCI-P3, le meilleur de sa
-                      catégorie
-                    </h1> </template
-                  ><template #img>
-                    <img
-                      height="100%"
-                      class="img_card"
-                      src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_1.webp"
-                    />
-                  </template>
-                  <template #text>
-                    <p class="text-content2">
-                      Dalles aux couleurs vives pour gagner en précision sur vos
-                      projets de création et de colorisation ainsi que pour
-                      profiter de vos divertissements.
-                    </p>
-                  </template>
-                </vs-card>
+                <v-card class="up ma-5"
+                  ><v-img
+                    class="flex justify-center align-center"
+                    height="500"
+                    :src="require('@/assets/img/s2_1.webp')"
+                  >
+                    <v-row class="flex justify-center align-center">
+                      <v-card-title>
+                        <h3>
+                          Espace de couleurs 100% DCI-P3, le meilleur de sa
+                          catégorie
+                        </h3>
+                      </v-card-title>
+                      <v-card-text
+                        ><p class="text-content2">
+                          Dalles aux couleurs vives pour gagner en précision sur
+                          vos projets de création et de colorisation ainsi que
+                          pour profiter de vos divertissements.
+                        </p></v-card-text
+                      ></v-row
+                    >
+                  </v-img></v-card
+                >
               </nuxt-link>
             </vs-col>
             <vs-col lg="2" w="6" sm="6" xs="12"
-              ><nuxt-link :to="{ path: '/', hash: '#bleu' }"
-                ><vs-card type="2" class="ma-5"
-                  ><template #title>
-                    <h1>70% de lumière bleue en moins</h1></template
-                  ><template #img>
-                    <img
-                      class="img_card"
-                      src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_2.webp"
-                      alt=""
-                    />
-                  </template>
-                  <template #text>
-                    <p class="text-content2">
-                      Avec leurs faibles niveaux d'émission de lumière bleue,
-                      les dalles OLED protègent vos yeux et améliorent la
-                      qualité de votre sommeil.
-                    </p>
-                  </template>
-                </vs-card>
+              ><nuxt-link :to="{ path: '/', hash: '#bleu' }">
+                <v-card class="up ma-5"
+                  ><v-img
+                    height="500"
+                    class="flex justify-center align-center"
+                    :src="require('@/assets/img/s2_2.webp')"
+                  >
+                    <v-row class="flex justify-center align-center">
+                      <v-card-title>
+                        <h3>70% de lumière bleue en moins</h3>
+                      </v-card-title>
+                      <v-card-text
+                        ><p class="text-content2">
+                          Avec leurs faibles niveaux d'émission de lumière
+                          bleue, les dalles OLED protègent vos yeux et
+                          améliorent la qualité de votre sommeil.
+                        </p></v-card-text
+                      ></v-row
+                    >
+                  </v-img></v-card
+                >
               </nuxt-link></vs-col
             >
             <vs-col lg="2" w="6" sm="6" xs="12">
               <nuxt-link :to="{ path: '/', hash: '#lumos' }">
-                <vs-card type="2" class="ma-5"
-                  ><template #title>
-                    <h1>
-                      Des images plus nettes quel que soit le niveau de
-                      luminosité de l'écran
-                    </h1> </template
-                  ><template #img>
-                    <img
-                      class="img_card"
-                      height="100%"
-                      src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_3.webp"
-                      alt=""
-                    />
-                  </template>
-                  <template #text>
-                    <p class="text-content2">
-                      Des couleurs riches même à faible niveau de luminosité :
-                      toujours plus superbes !
-                    </p></template
+                <v-card class="up ma-5"
+                  ><v-img
+                    height="500"
+                    class="flex justify-center align-center"
+                    :src="require('@/assets/img/s2_3.webp')"
                   >
-                </vs-card>
+                    <v-row class="flex justify-center align-center">
+                      <v-card-title>
+                        <h3>
+                          Des images plus nettes quel que soit le niveau de
+                          luminosité de l'écran
+                        </h3>
+                      </v-card-title>
+                      <v-card-text
+                        ><p class="text-content2">
+                          Des couleurs riches même à faible niveau de luminosité
+                          : toujours plus superbes !
+                        </p></v-card-text
+                      ></v-row
+                    >
+                  </v-img></v-card
+                >
               </nuxt-link>
             </vs-col>
             <vs-col lg="2" w="6" sm="6" xs="12"
-              ><nuxt-link :to="{ path: '/', hash: '#contraste' }"
-                ><vs-card type="2" class="ma-5"
-                  ><template #title>
-                    <h1>
-                      DisplayHDR™ <br />
-                      500/600 True Black
-                    </h1> </template
-                  ><template #img>
-                    <img
-                      class="img_card"
-                      src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_4.webp"
-                      alt=""
-                    />
-                  </template>
-                  <template #text>
-                    <p class="text-content2">
-                      Les noirs profonds vous permettent de repérer des détails
-                      jusque là cachés dans les scènes sombres de vos films
-                      préférés.
-                    </p>
-                  </template>
-                </vs-card></nuxt-link
-              >
+              ><nuxt-link :to="{ path: '/', hash: '#black' }">
+                <v-card class="up ma-5"
+                  ><v-img
+                    height="500"
+                    class="flex justify-center align-center"
+                    :src="require('@/assets/img/s2_4.webp')"
+                  >
+                    <v-row class="flex justify-center align-center">
+                      <v-card-title>
+                        <h3>
+                          DisplayHDR™ <br />
+                          500/600 True Black
+                        </h3>
+                      </v-card-title>
+                      <v-card-text
+                        ><p class="text-content2">
+                          Les noirs profonds vous permettent de repérer des
+                          détails jusque là cachés dans les scènes sombres de
+                          vos films préférés.
+                        </p></v-card-text
+                      ></v-row
+                    >
+                  </v-img></v-card
+                >
+              </nuxt-link>
             </vs-col>
             <vs-col lg="2" w="6" sm="6" xs="12"
-              ><nuxt-link :to="{ path: '/', hash: '#ms' }"
-                ><vs-card type="2" class="ma-5"
-                  ><template #title>
-                    <h1>Temps de réponse ultra-rapide de 0,2 ms</h1></template
-                  ><template #img>
-                    <img
-                      class="img_card"
-                      src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/s2_5.webp"
-                      alt=""
-                    />
-                  </template>
-                  <template #text>
-                    <p class="text-content2">
-                      Des jeux et films aux scènes d'action sans flou cinétique
-                      ; des textes que vous pouvez faire défiler en toute
-                      fluidité.
-                    </p>
-                  </template>
-                </vs-card></nuxt-link
-              >
+              ><nuxt-link :to="{ path: '/', hash: '#ms' }">
+                <v-card class="up ma-5"
+                  ><v-img
+                    height="500"
+                    class="flex justify-center align-center"
+                    :src="require('@/assets/img/s2_5.webp')"
+                  >
+                    <v-row class="flex justify-center align-center">
+                      <v-card-title>
+                        <h3>Temps de réponse ultra-rapide de 0,2 ms</h3>
+                      </v-card-title>
+                      <v-card-text
+                        ><p class="text-content2">
+                          Des jeux et films aux scènes d'action sans flou
+                          cinétique ; des textes que vous pouvez faire défiler
+                          en toute fluidité.
+                        </p></v-card-text
+                      ></v-row
+                    >
+                  </v-img></v-card
+                >
+              </nuxt-link>
             </vs-col></vs-row
           >
           <vs-row justify="center" align="center">
@@ -161,168 +465,9 @@
         </vs-col>
       </vs-row>
     </section>
-    <section class="section_fonctionnement mt-14">
-      <vs-row class="mt-14" justify="center" align="center">
-        <vs-col lg="10" w="12" sm="12" xs="12" justify="center" align="center">
-          <h1 class="mb-14">Comment ça fonctionne ?</h1>
-          <vs-row>
-            <vs-col lg="3" w="6" sm="6" xs="12">
-              <nuxt-link :to="{ path: '/', hash: '#couleurs' }">
-                <vs-card class="ma-2">
-                  <template #title>
-                    <span class="mdi mdi-36px mdi-cart-outline"></span>
-                    <h2 class="my-2">Acheter un PC ASUS OLED</h2>
-                  </template>
-                  <template #text>
-                    <p class="mb-5">
-                      Cette offre de remboursement s’applique pour l’achat d’un
-                      PC de la sélection ASUS OLED présente sur la page
-                      suivante. Avec cette offre exclusive vous pourrez combiner
-                      le remboursement de votre ancien pc en plus des réductions
-                      liés soldes.
-                    </p>
-                  </template>
-                </vs-card>
-              </nuxt-link>
-            </vs-col>
-            <vs-col w="3" sm="6" xs="12">
-              <vs-card type="1" class="ma-2" color="">
-                <template #title>
-                  <span class="mdi mdi-36px mdi-file-sign"></span>
-                  <h2 class="my-2">Enregistrez-vous</h2>
-                </template>
-                <template #text>
-                  <p class="mb-5">
-                    Enregistrez-vous en 5 minutes sur le site
-                    asuspromotions.com/oled dans les 15 jours suivant votre
-                    achat. Nous vous inviterons à nous donner les détails de
-                    l’achat de votre nouvel ordinateur ainsi que certaines
-                    informations quant à l’ancien ordinateur que vous souhaitez
-                    faire reprendre.
-                  </p>
-                </template>
-              </vs-card></vs-col
-            >
-            <vs-col w="3" sm="6" xs="12">
-              <vs-card class="ma-2">
-                <template #title>
-                  <span class="mdi mdi-36px mdi-cube-send"></span>
-                  <h2 class="my-2">Renvoyez-nous votre ancien ordinateur</h2>
-                </template>
-                <template #text>
-                  <p class="mb-5">
-                    Dans les 15 jours qui suivent votre enregistrement et après
-                    approbation de notre part il faut impérativement renvoyer
-                    votre ancien ordinateur. Vous trouverez l’ensemble des
-                    informations sur la page asuspromotions.com/oled
-                  </p>
-                </template>
-              </vs-card></vs-col
-            >
-            <vs-col w="3" sm="6" xs="12">
-              <vs-card class="ma-2">
-                <template #title>
-                  <span class="mdi mdi-36px mdi-wallet-outline"></span>
-                  <h2 class="my-2">Faites-vous rembourser</h2>
-                </template>
-                <template #text>
-                  <p class="mb-5">
-                    Cette offre de remboursement s’applique pour l’achat d’un PC
-                    de la sélection ASUS OLED présente sur la page suivante.
-                    Avec cette offre exclusive vous pourrez combiner le
-                    remboursement de votre ancien pc en plus des réductions liés
-                    soldes.
-                  </p>
-                </template>
-              </vs-card></vs-col
-            >
-          </vs-row>
-        </vs-col></vs-row
-      >
-    </section>
-    <!-- FIN BLOC EXPLIQUATION -->
-    <section class="section mt-14">
-      <vs-row justify="center" align="center">
-        <vs-col w="6" sm="10" xs="10" justify="center" align="center">
-          <h1 class="mb-14 mt-14">
-            Découvrez le processeur de votre PC ou de votre MAC pour connaître
-            le montant de votre remboursement
-          </h1>
-          <v-autocomplete
-            dark
-            :items="processors"
-            item-color="dark"
-            item-text="name"
-            label="Processeur"
-            v-model="selectedProcessor"
-            hide-data
-            hide-selected
-            item-value="API"
-            prepend-icon="mdi-chevron-right"
-            return-object
-            no-data-text="Pas de données pour votre processeur"
-          ></v-autocomplete>
-          <div v-show="selectedProcessor">
-            <h2 class="gradient-text">
-              Vous avez sélectionnée un processeur :
-              {{ selectedProcessor.name }}, vous pouvez donc percevoir entre
-              <span>{{ selectedProcessor.priceB }} €</span>
-              et
-              <span>{{ selectedProcessor.priceA }} €</span>
-              en fonction de l'état du matériel*.
-            </h2>
-          </div>
-          <div v-show="selectedProcessor">
-            <p>
-              * L’ordinateur ne doit pas être âgé de plus de 7 ans (date de
-              production) et doit répondre aux critères de qualité attendus.
-            </p>
-          </div>
-        </vs-col>
-      </vs-row>
-      <vs-row class="mt-14 table_data" justify="center" align="center"
-        ><vs-col class="mt-14" w="6" sm="10" xs="none">
-          <div class="center table_data">
-            <vs-table striped vs-theme="dark">
-              <template #thead>
-                <vs-tr class="center">
-                  <vs-th> Processeur </vs-th>
-                  <vs-th> Prix Maximum </vs-th>
-                  <vs-th> Prix Minimum </vs-th>
-                </vs-tr>
-              </template>
-              <template #tbody>
-                <vs-tr
-                  :key="i"
-                  v-for="(processors, i) in $vs.getPage(processors, page, max)"
-                  :data="processors"
-                  class="center"
-                >
-                  <vs-td>
-                    {{ processors.name }}
-                  </vs-td>
-                  <vs-td>
-                    {{ processors.priceA }}
-                  </vs-td>
-                  <vs-td>
-                    {{ processors.priceB }}
-                  </vs-td>
-                </vs-tr>
-              </template>
-              <template #footer>
-                <vs-pagination
-                  v-model="page"
-                  :length="$vs.getLength(processors, max)"
-                />
-              </template>
-            </vs-table>
-          </div> </vs-col
-      ></vs-row>
-    </section>
-
     <section id="couleurs" class="section">
       <vs-row class="mb-14 mt-14" justify="center" align="center">
-        <vs-row class="mb-14" justify="center" align="center"
+        <vs-row class="mb-14 mt-14" justify="center" align="center"
           ><vs-col w="6" sm="10" xs="10">
             <h1 class="gradient-text">Haut en couleurs</h1>
             <h1 class="title-content mb-4">Affichage professionnel</h1>
@@ -337,7 +482,9 @@
           ></vs-row
         >
         <vs-col lg="8" w="8" sm="6" xs="10" justify="center" align="center">
-          <img class="img_twenty" src="~/assets/img/OLED_couleur.jpg"
+          <img
+            class="img_twenty"
+            :src="require('@/assets/img/OLED_couleur.jpg')"
         /></vs-col>
       </vs-row>
     </section>
@@ -369,7 +516,7 @@
             ><vs-col w="6" sm="10" xs="12">
               <img
                 class="img_twenty"
-                src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/1x/s6.jpg"
+                :src="require('@/assets/img/s6.jpg')"
                 alt=""
             /></vs-col>
           </vs-row>
@@ -405,15 +552,16 @@
     </section>
     <section class="mt-14">
       <vs-row justify="center" align="center">
-        <vs-col lg="6" w="6" sm="6" xs="10">
+        <vs-col lg="6" w="6" sm="12" xs="12">
           <div class="mx">
-            <img
+            <v-img
               @click="popupVid1 = true"
-              src="https://www.asus.com/websites/global/productcustomizedTab/8332/v9/features/images/large/2x/oled_video.jpg"
+              :src="require('@/assets/img/oled_video.jpg')"
               class="up img_oled responsive"
-              alt="Vivobook 13 Slate OLED"
-            />
-            <div class="img__oled-play" @click="popupVid1 = true"></div>
+              alt="5 raisons de choisir l'OLED ASUS"
+            >
+            </v-img>
+            <img />
           </div>
         </vs-col>
       </vs-row>
@@ -432,10 +580,10 @@
       ></vs-dialog>
     </section>
     <!-- FIN VIDEO -->
-    <section id="contraste mt-14" class="section">
+    <section class="section mt-14">
       <vs-row class="mt-14" justify="center" align="center"
         ><vs-col w="6" sm="10" xs="10">
-          <h1 class="gradient-text3 mt-14 mb-3">Contraste</h1>
+          <h1 id="black" class="gradient-text3 mt-14 mb-3">Contraste</h1>
           <h1 class="title-content">True black : voir l'imperceptible</h1>
           <p class="text-content2 my-5">
             Les PC portables ASUS OLED reproduisent les noirs à la perfection.
@@ -473,7 +621,7 @@
       </vs-row>
       <vs-row class="mt-14" justify="center" align="center">
         <vs-col lg="8" w="8" sm="6" xs="10" justify="center" align="center">
-          <img class="img_twenty" src="~/assets/img/OLED_Black.jpg"
+          <img class="img_twenty" :src="require('@/assets/img/OLED_Black.jpg')"
         /></vs-col>
       </vs-row>
     </section>
@@ -520,11 +668,11 @@
         </vs-col>
       </vs-row>
       <vs-row class="mt-10" justify="center" align="center">
-        <vs-col w="10"
+        <vs-col w="8" lg="8" md="10" xs="12"
           ><vs-row justify="center" align="center">
             <vs-col w="6" sm="12" xs="12"
               ><h1>LCD</h1>
-              <h1>temps de réponse de 10 ms</h1>
+              <h1 class="mb-5">temps de réponse de 10 ms</h1>
               <video
                 autoplay
                 width="100%"
@@ -548,7 +696,7 @@
                 /></video></vs-col
             ><vs-col w="6" sm="12" xs="12"
               ><h1>OLED</h1>
-              <h1>Temps de réponse ultra rapide de 0,2 ms</h1>
+              <h1 class="mb-5">Temps de réponse ultra rapide de 0,2 ms</h1>
               <video
                 autoplay
                 width="100%"
@@ -578,27 +726,62 @@
     </section>
 
     <v-row class="mb-14 mt-14" justify="center" align="center">
-      <v-col w="10" justify="center" align="center">
+      <v-col w="6" sm="8" xs="10" justify="center" align="center">
         <vs-button gradient size="xl" @click="CTA1 = true">
-          <h3>ACHETER PC ÉLIGIBLE</h3>
+          <h3>ACHETER PC OLED ASUS ÉLIGIBLE</h3>
         </vs-button>
       </v-col></v-row
     >
-    <vs-dialog blur width="550px" not-center v-model="CTA1" vs-theme="dark">
+    <vs-dialog blur width="550px" not-center v-model="explicationCTA">
       <template #header>
-        <h4 class="mt-2 mb-2">OÙ ACHETER DES PC ASUS OLED ÉLIGIBLE</h4>
+        <h2 class="mt-2 mb-2">Comment identifier mon processeur</h2>
       </template>
       <div class="con-content">
         <vs-row class="mb-2 mt-2">
-          <vs-col w="3" xs="6"
-            ><img
-              class="up ma-5"
-              src="~/assets/img/ASUS_grey.png"
-              alt=""
-              srcset=""
-          /></vs-col>
+          <p align="start" class="text-content2">
+            1. Appuyez sur la touche Windows de votre clavier et commencez à
+            taper Système, choisissez Informations système/Spécification système
+            qui affichera les informations sur le processeur avec le nom, le
+            numéro et la vitesse du processeur.
+          </p>
+          <p align="start" class="text-content2 mt-5">
+            2. Si la touche Windows n'est pas disponible sur votre clavier, à
+            l'aide de votre souris, accédez à l'icône Windows située dans le
+            coin inférieur gauche de votre écran, faites un clic droit dessus et
+            choisissez Système. Recherchez le nom et le numéro du processeur
+            dans les informations sur le processeur.
+          </p>
+        </vs-row>
+      </div>
+      <template #footer>
+        <div class="con-footer">
+          <vs-button size="xl" @click="explicationCTA = false" transparent>
+            Ok
+          </vs-button>
+        </div>
+      </template>
+    </vs-dialog>
+    <vs-dialog blur width="550px" not-center v-model="CTA1">
+      <template #header>
+        <p class="my-2 text-content">OÙ ACHETER DES PC ASUS OLED ÉLIGIBLE</p>
+      </template>
+      <div class="con-content">
+        <vs-row class="mb-2 mt-2">
           <vs-col w="3" xs="6">
             <a
+              id="asus"
+              target="_blank"
+              href="https://www.asus.com/fr/Laptops/For-Home/All-series/filter?Category=OLED-display"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/ASUS.png"
+                alt=""
+                srcset=""
+              /> </a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              id="amazon"
               target="_blank"
               href="https://www.amazon.fr/s?k=asus+oled&i=computers&rh=n%3A429879031%2Cp_89%3AASUS%2Cp_n_feature_browse-bin%3A27969065031&dc&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1655373492&rnid=27969061031&ref=sr_nr_p_n_feature_browse-bin_3"
             >
@@ -611,6 +794,7 @@
           </vs-col>
           <vs-col w="3" xs="6">
             <a
+              id="auchan"
               target="_blank"
               href="https://www.auchan.fr/recherche?text=asus+oled"
             >
@@ -622,6 +806,7 @@
           ></vs-col>
           <vs-col w="3" xs="6">
             <a
+              id="boulanger"
               target="_blank"
               href="https://www.boulanger.com/resultats?tr=asus+oled"
             >
@@ -633,6 +818,7 @@
           ></vs-col>
           <vs-col w="3" xs="6">
             <a
+              id="carrefour"
               target="_blank"
               href="https://www.carrefour.fr/s?filters%5BFacet_vendeurs%5D%5B0%5D=Carrefour&q=asus%20oled&noRedirect=1"
             >
@@ -644,6 +830,7 @@
           ></vs-col>
           <vs-col w="3" xs="6">
             <a
+              id="cdiscount"
               target="_blank"
               href="https://www.cdiscount.com/search/10/oled+asus.html?TechnicalForm.SiteMapNodeId=0&TechnicalForm.DepartmentId=10&TechnicalForm.ProductId=&hdnPageType=Search&TechnicalForm.ContentTypeId=16&TechnicalForm.SellerId=&TechnicalForm.PageType=SEARCH_AJAX&TechnicalForm.LazyLoading.ProductSheets=False&TechnicalForm.BrandLicenseId=0&NavigationForm.CurrentSelectedNavigationPath=categorycodepath%2F0K%7C0K0C%7C0K0C01&NavigationForm.FirstNavigationLinkCount=3&FacetForm.SelectedFacets.Index=0&FacetForm.SelectedFacets.Index=1&FacetForm.SelectedFacets%5B1%5D=Prix%2F500%20%C3%A0%201000%E2%82%AC&FacetForm.SelectedFacets%5B1%5D=Prix%2F1000%E2%82%AC%20et%20%2B&FacetForm.SelectedFacets.Index=2&FacetForm.SelectedFacets%5B2%5D=Marque%2Fasus&FacetForm.SelectedFacets.Index=3&FacetForm.SelectedFacets.Index=4&FacetForm.SelectedFacets.Index=5&FacetForm.SelectedFacets.Index=13&FacetForm.SelectedFacets.Index=6&FacetForm.SelectedFacets.Index=7&FacetForm.SelectedFacets.Index=8&FacetForm.SelectedFacets.Index=9&FacetForm.SelectedFacets%5B9%5D=Neuf%20ou%20occasion%2Fneuf&FacetForm.SelectedFacets.Index=10&FacetForm.SelectedFacets.Index=11&FacetForm.SelectedFacets.Index=12&FacetForm.SelectedFacets.Index=14&FacetForm.SelectedFacets.Index=15&FacetForm.SelectedFacets.Index=16&FacetForm.SelectedFacets.Index=17&FacetForm.SelectedFacets.Index=18&SortForm.SelectedSort=PERTINENCE&ProductListTechnicalForm.Keyword=oled%2Basus&ProductListTechnicalForm.TemplateName=InLine&&_his_"
               ><img
@@ -656,6 +843,7 @@
           </vs-col>
           <vs-col w="3" xs="6">
             <a
+              id="darty"
               target="_blank"
               href="https://www.fnac.com/SearchResult/ResultList.aspx?SDM=list&Search=oled&SFilt=1!206%2c49343!23&sft=1"
             >
@@ -669,8 +857,9 @@
           </vs-col>
           <vs-col w="3" xs="6">
             <a
+              id="eleclerc"
               target="_blank"
-              href="https://www.amazon.fr/s?k=asus+oled&i=computers&rh=n%3A429879031%2Cp_89%3AASUS%2Cp_n_feature_browse-bin%3A27969065031&dc&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1655373492&rnid=27969061031&ref=sr_nr_p_n_feature_browse-bin_3"
+              href="https://www.e.leclerc/recherche?q=asus%20oled"
             >
               <img
                 class="up ma-5"
@@ -681,23 +870,20 @@
             </a>
           </vs-col>
           <vs-col w="3" xs="6">
-            <a target="_blank" href="https://www.electrodepot.fr/">
+            <a
+              id="fnac"
+              target="_blank"
+              href="https://www.fnac.com/SearchResult/ResultList.aspx?SDM=list&Search=oled&SFilt=1!206%2c49343!23&sft=1"
+            >
               <img
                 class="up ma-5"
-                src="~/assets/img/electro-depot.png"
+                src="~/assets/img/fnac.png"
                 alt=""
-                srcset=""
-              /> </a
+                srcset="" /></a
           ></vs-col>
           <vs-col w="3" xs="6">
             <a
-              target="_blank"
-              href="https://www.fnac.com/SearchResult/ResultList.aspx?SDM=list&Search=oled&SFilt=1!206%2c49343!23&sft=1"
-            ></a>
-            <img class="up ma-5" src="~/assets/img/fnac.png" alt="" srcset=""
-          /></vs-col>
-          <vs-col w="3" xs="6">
-            <a
+              id="ldlc"
               target="_blank"
               href="https://www.ldlc.com/recherche/oled/+fb-C000000806+fcat-4265+fdi-1+foms-1+fps-1.html"
             >
@@ -710,21 +896,12 @@
           ></vs-col>
           <vs-col w="3" xs="6">
             <a
+              id="rueducommerce"
               target="_blank"
               href="https://www.rueducommerce.fr/r/asus-oled/g-rue-du-commerce-25476,neuf-676918.html"
               ><img
                 class="up ma-5"
                 src="~/assets/img/rue-du-commerce.png"
-                alt=""
-                srcset=""
-              />
-            </a>
-          </vs-col>
-          <vs-col w="3" xs="6">
-            <a target="_blank" href="https://www.magasins-u.com/">
-              <img
-                class="up ma-5"
-                src="~/assets/img/systeme-u.png"
                 alt=""
                 srcset=""
               />
@@ -750,13 +927,32 @@ import aosMixin from '~/mixins/aos'
 export default {
   mixins: [aosMixin],
   computed: {},
-  methods: {},
+  methods: {
+    openNotification(position = null, color, duration) {
+      const noti = this.$vs.notification({
+        position,
+        color,
+        duration,
+        title: `<h2 justify="center" align="center">Vous avez sélectionnée un processeur : ${this.selectedProcessor.name}</h2>`,
+        text: `<p class="gradient-text text-content">vous pouvez donc percevoir entre
+              <span class="underline">${this.selectedProcessor.priceB}  €</span>
+              et
+             <span> ${this.selectedProcessor.priceA} €</span>
+              en fonction de l'état du matériel*.</p>`,
+      })
+    },
+  },
   data() {
     return {
+      sheet: false,
+      hasSaved: false,
+      isEditing: null,
+      search: '',
       CTA1: false,
       page: 1,
-      max: 11,
+      max: 3,
       conditions: false,
+      explicationCTA: false,
       selectedProcessor: '',
       popupVid1: false,
       processors: [
@@ -969,228 +1165,253 @@ export default {
           id: '41',
           name: 'Apple MacBook 12" 2017',
           priceA: '525',
-          priceB: '?',
+          priceB: '525',
         },
         {
           id: '42',
           name: 'Apple MacBook 12" Early 2016',
           priceA: '434',
-          priceB: '?',
+          priceB: '434',
         },
         {
           id: '43',
           name: 'Apple MacBook 12" Early 2015',
           priceA: '349',
-          priceB: '?',
+          priceB: '349',
         },
         {
           id: '44',
           name: 'Apple MacBook Pro 14" 2021',
           priceA: '1000',
-          priceB: '?',
+          priceB: '1000',
         },
         {
           id: '45',
           name: 'Apple MacBook Air (M1 2020)',
           priceA: '650',
-          priceB: '?',
+          priceB: '650',
         },
         {
           id: '46',
           name: 'Apple MacBook Pro 13" (M1 2020)',
           priceA: '800',
-          priceB: '?',
+          priceB: '800',
         },
         {
           id: '47',
           name: 'Apple MacBook Pro 13" 2020 (2 Thunderbolt 3) ',
           priceA: '850',
-          priceB: '?',
+          priceB: '850',
         },
         {
           id: '48',
           name: 'Apple MacBook Pro 13" 2020 (4 Thunderbolt 3)',
           priceA: '900',
-          priceB: '?',
+          priceB: '900',
         },
-        { id: '49', name: 'MacBook Pro 16" 2019', priceA: '900', priceB: '?' },
+        {
+          id: '49',
+          name: 'MacBook Pro 16" 2019',
+          priceA: '900',
+          priceB: '900',
+        },
         {
           id: '50',
           name: 'MacBook Pro 13" 2019 (2 Thunderbolt 3)',
           priceA: '700',
-          priceB: '?',
+          priceB: '700',
         },
         {
           id: '51',
           name: 'MacBook Pro 13" 2019 (4 Thunderbolt 3)',
           priceA: '750',
-          priceB: '?',
+          priceB: '750',
         },
-        { id: '52', name: 'MacBook Pro 15" 2019 ', priceA: '750', priceB: '?' },
-        { id: '50', name: 'MacBook Pro 15" 2018', priceA: '678', priceB: '?' },
+        {
+          id: '52',
+          name: 'MacBook Pro 15" 2019 ',
+          priceA: '750',
+          priceB: '750',
+        },
+        {
+          id: '50',
+          name: 'MacBook Pro 15" 2018',
+          priceA: '678',
+          priceB: '678',
+        },
         {
           id: '50',
           name: 'MacBook Pro 13" 2018 (4 Thunderbolt 3)',
           priceA: '606',
-          priceB: '?',
+          priceB: '606',
         },
         {
           id: '51',
           name: 'Apple MacBook Pro 13" Mid 2017',
           priceA: '556',
-          priceB: '?',
+          priceB: '556',
         },
         {
           id: '52',
           name: 'Apple MacBook Pro 13" Late 2016',
           priceA: '400',
-          priceB: '?',
+          priceB: '400',
         },
         {
           id: '50',
           name: 'Apple MacBook Pro 13" 2017',
           priceA: '638',
-          priceB: '?',
+          priceB: '638',
         },
         {
           id: '51',
           name: 'Apple MacBook Pro 13" Touch Bar Late 2016',
           priceA: '500',
-          priceB: '?',
+          priceB: '500',
         },
         {
           id: '52',
           name: 'Apple MacBook Pro 13" Early 2015',
           priceA: '400',
-          priceB: '?',
+          priceB: '400',
         },
         {
           id: '50',
           name: 'Apple MacBook Pro 15"  2017',
           priceA: '800',
-          priceB: '?',
+          priceB: '800',
         },
         {
           id: '51',
           name: 'Apple MacBook Pro 15" 2016',
           priceA: '600',
-          priceB: '?',
+          priceB: '600',
         },
         {
           id: '52',
           name: 'Apple MacBook Pro 15" Mid 2015 (DG)',
           priceA: '550',
-          priceB: '?',
+          priceB: '550',
         },
         {
           id: '50',
           name: 'Apple MacBook Pro 15" Mid 2015 (IG)',
           priceA: '500',
-          priceB: '?',
+          priceB: '500',
         },
         {
           id: '51',
           name: 'Apple MacBook Air Retina 13" 2020',
           priceA: '642',
-          priceB: '?',
+          priceB: '642',
         },
         {
           id: '52',
           name: 'Apple MacBook Air Retina 13" 2019',
           priceA: '570',
-          priceB: '?',
+          priceB: '570',
         },
         {
           id: '50',
           name: 'Apple MacBook Air Retina 13" 2018',
           priceA: '498',
-          priceB: '?',
+          priceB: '498',
         },
         {
           id: '51',
           name: 'Apple MacBook Air 11" Early 2015',
           priceA: '290',
-          priceB: '?',
+          priceB: '290',
         },
         {
           id: '52',
           name: 'Apple MacBook Air 13" 2017',
           priceA: '369',
-          priceB: '?',
+          priceB: '369',
         },
         {
           id: '50',
           name: 'Apple MacBook Air 13" Early 2015',
           priceA: '311',
-          priceB: '?',
+          priceB: '311',
         },
         {
           id: '51',
           name: 'Apple iMac M1 24 inches - 2 or 4 ports - 2021',
           priceA: '800',
-          priceB: '?',
+          priceB: '800',
         },
         {
           id: '52',
           name: 'Apple iMac Retina  5K - 27 inches - 2020',
           priceA: '800',
-          priceB: '?',
+          priceB: '800',
         },
         {
           id: '50',
           name: 'Apple iMac Retina 5K - 27 inches - 2019',
           priceA: '700',
-          priceB: '?',
+          priceB: '700',
         },
         {
           id: '51',
           name: 'Apple iMac Retina 4K - 21,5 inches - 2019',
           priceA: '640',
-          priceB: '?',
+          priceB: '640',
         },
-        { id: '52', name: 'Apple Mini M1 - 2020', priceA: '450', priceB: '?' },
-        { id: '50', name: 'Apple Mac Mini - 2018', priceA: '220', priceB: '?' },
+        {
+          id: '52',
+          name: 'Apple Mini M1 - 2020',
+          priceA: '450',
+          priceB: '450',
+        },
+        {
+          id: '50',
+          name: 'Apple Mac Mini - 2018',
+          priceA: '220',
+          priceB: '220',
+        },
         {
           id: '51',
           name: 'Apple iMac  Pro 27 inches - 2017',
           priceA: '451',
-          priceB: '?',
+          priceB: '451',
         },
         {
           id: '52',
           name: 'Apple iMac Retina 5K - 27 inches - 2017',
           priceA: '600',
-          priceB: '?',
+          priceB: '600',
         },
         {
           id: '52',
           name: 'Apple iMac Retina 4K - 21,5 inches - 2017',
           priceA: '500',
-          priceB: '?',
+          priceB: '500',
         },
         {
           id: '52',
           name: 'Apple iMac 21,5 inches - 2017',
           priceA: '360',
-          priceB: '?',
+          priceB: '360',
         },
         {
           id: '52',
           name: 'Apple iMac 21,5 inches - 2015',
           priceA: '340',
-          priceB: '?',
+          priceB: '340',
         },
         {
           id: '52',
           name: 'Apple iMac Retina 4K, 21,5 inches - 2015',
           priceA: '400',
-          priceB: '?',
+          priceB: '400',
         },
         {
           id: '52',
           name: 'Apple iMac Retina 5K, 27 inches - 2015',
           priceA: '500',
-          priceB: '?',
+          priceB: '500',
         },
       ],
     }
