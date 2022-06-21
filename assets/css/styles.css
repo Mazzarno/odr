@@ -89,8 +89,8 @@ p {
 }
 
 span {
-    font-size: 1.25em;
     white-space: nowrap;
+    word-break: break-word !important;
     margin: 0;
     padding: 0;
 }

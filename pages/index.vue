@@ -202,7 +202,8 @@
           </div>-->
         </vs-col>
       </vs-row>
-      <vs-row class="mt-14 table_data" justify="center" align="center"
+      <!--
+     <vs-row class="mt-14 table_data" justify="center" align="center"
         ><vs-col class="mt-14" w="6" sm="10" xs="none">
           <div class="center table_data">
             <vs-table striped vs-theme="dark">
@@ -273,7 +274,7 @@
               </template>
             </vs-table>
           </div> </vs-col
-      ></vs-row>
+      ></vs-row> -->
     </section>
 
     <section>
@@ -286,13 +287,13 @@
                 download
               >
                 <vs-button gradient size="xl">
-                  <h3>TÉLÉCHARGER LE PDF DE L'OFFRE</h3>
+                  <h3>DÉCOUVREZ LES MODALITÉS DE L'OFFRE</h3>
                 </vs-button></a
               ></vs-col
             >
             <vs-col w="6" sm="10" xs="12">
               <vs-button gradient size="xl" @click="CTA1 = true">
-                <h3>ACHETER PC ÉLIGIBLE</h3>
+                <h3>ACHETER UN PC OLED ÉLIGIBLE</h3>
               </vs-button></vs-col
             >
           </vs-row>
@@ -303,11 +304,7 @@
     <section class="section mt-14">
       <vs-row justify="center" align="center">
         <vs-col lg="12" w="12" sm="12" justify="center" align="center">
-          <h1 class="title-content">DÉCOUVRIR L'OLED ASUS</h1>
-
-          <h1 class="title-content mb-10 mt-5">
-            5 raisons de choisir les PC ASUS OLED
-          </h1>
+          <h1 class="title-content mt-5">DÉCOUVREZ L'OLED ASUS</h1>
           <vs-row class="" justify="center" align="center"
             ><vs-col
               lg="2"
@@ -553,6 +550,9 @@
     <section class="mt-14">
       <vs-row justify="center" align="center">
         <vs-col lg="6" w="6" sm="12" xs="12">
+          <h1 class="title-content mb-10 mt-5">
+            5 raisons de choisir les PC ASUS OLED
+          </h1>
           <div class="mx">
             <v-img
               @click="popupVid1 = true"
@@ -571,7 +571,7 @@
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/zgZlXb1c794"
+            src="https://www.youtube.com/embed/z9ZG58oDVx4"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -581,9 +581,9 @@
     </section>
     <!-- FIN VIDEO -->
     <section class="section mt-14">
-      <vs-row class="mt-14" justify="center" align="center"
+      <vs-row justify="center" align="center"
         ><vs-col w="6" sm="10" xs="10">
-          <h1 id="black" class="gradient-text3 mt-14 mb-3">Contraste</h1>
+          <h1 id="black" class="gradient-text3 mb-3">Contraste</h1>
           <h1 class="title-content">True black : voir l'imperceptible</h1>
           <p class="text-content2 my-5">
             Les PC portables ASUS OLED reproduisent les noirs à la perfection.
@@ -728,35 +728,71 @@
     <v-row class="mb-14 mt-14" justify="center" align="center">
       <v-col w="6" sm="8" xs="10" justify="center" align="center">
         <vs-button gradient size="xl" @click="CTA1 = true">
-          <h3>ACHETER PC OLED ASUS ÉLIGIBLE</h3>
+          <h3>ACHETER UN PC OLED ÉLIGIBLE</h3>
         </vs-button>
       </v-col></v-row
     >
     <vs-dialog blur width="550px" not-center v-model="explicationCTA">
       <template #header>
-        <h2 class="mt-2 mb-2">Comment identifier mon processeur</h2>
+        <h2 class="mt-2">Comment identifier mon processeur/mon MAC</h2>
       </template>
-      <div class="con-content">
-        <vs-row class="mb-2 mt-2">
+      <div class="con-content ma-5">
+        <vs-row class="">
+          <h3>Pour Windows</h3>
           <p align="start" class="text-content2">
-            1. Appuyez sur la touche Windows de votre clavier et commencez à
-            taper Système, choisissez Informations système/Spécification système
-            qui affichera les informations sur le processeur avec le nom, le
-            numéro et la vitesse du processeur.
-          </p>
-          <p align="start" class="text-content2 mt-5">
-            2. Si la touche Windows n'est pas disponible sur votre clavier, à
-            l'aide de votre souris, accédez à l'icône Windows située dans le
-            coin inférieur gauche de votre écran, faites un clic droit dessus et
-            choisissez Système. Recherchez le nom et le numéro du processeur
-            dans les informations sur le processeur.
+            Dans la barre de recherche Windows
+            <i class="mdi mdi-microsoft-windows"></i> taper "Panneau de
+            configuration" et choisissez Système qui affichera les informations
+            sur le processeur avec le nom, le numéro et la vitesse du
+            processeur.
           </p>
         </vs-row>
+        <vs-row class="mt-5">
+          <h3>Pour MAC</h3>
+          <p align="start" class="text-content2">
+            Dans le menu Apple <i class="mdi mdi-apple"></i> dans le coin
+            supérieur gauche de votre écran choisissez "À propos de ce Mac". La
+            fenêtre qui s’affiche vous présente les caractéristiques de votre
+            Mac, notamment le nom du modèle dans l'onglet "Aperçu".
+          </p></vs-row
+        >
       </div>
       <template #footer>
         <div class="con-footer">
           <vs-button size="xl" @click="explicationCTA = false" transparent>
-            Ok
+            Compris !
+          </vs-button>
+        </div>
+      </template>
+    </vs-dialog>
+    <vs-dialog blur width="550px" not-center v-model="explicationCTA">
+      <template #header>
+        <h2 class="mt-2">Asus respecte votre vie privée.</h2>
+      </template>
+      <div class="con-content ma-5">
+        <vs-row class="">
+          <h3>Pour Windows</h3>
+          <p align="start" class="text-content2">
+            Ce site utilise des cookies pour nous aid à mesurer les résultats et
+            adapter le contenue de notre site web pour améliorer votre
+            expérience sur notre site internet.
+          </p>
+        </vs-row>
+        <vs-row class="mt-5">
+          <h3>Pour MAC</h3>
+          <p align="start" class="text-content2">
+            Puisque nous respectons votre vie privée, nous vous demandons votre
+            autorisation pour utiliser ces technologies.
+          </p></vs-row
+        >
+      </div>
+      <template #footer>
+        <div class="con-footer">
+          <vs-button size="xl" @click="explicationCTA = false" error>
+            Tout accepter
+          </vs-button>
+          <vs-button size="xl" @click="explicationCTA = false" error>
+            Tout refuser
           </vs-button>
         </div>
       </template>
@@ -909,14 +945,8 @@
           </vs-col>
         </vs-row>
       </div>
-      <template #footer>
-        <div class="con-footer">
-          <vs-button size="xl" @click="CTA1 = false" transparent>
-            Ok
-          </vs-button>
-        </div>
-      </template>
     </vs-dialog>
+    <vs-dialog></vs-dialog>
   </div>
 </template>
 <style>

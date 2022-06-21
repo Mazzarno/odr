@@ -148,20 +148,15 @@
           </vs-col>
         </vs-row>
       </div>
-      <template #footer>
-        <div class="con-footer">
-          <vs-button size="xl" @click="CTA1 = false" transparent>
-            Ok
-          </vs-button>
-        </div>
-      </template>
     </vs-dialog>
+
     <svg
+      viewBox="0 0 425 764"
+      preserveAspectRatio="none"
       class="SVGMOBILE"
       fill="none"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <g id="SVGMOBILE">
         <rect id="425x764" height="100%" width="100%" fill="url(#pattern30)" />
@@ -170,22 +165,12 @@
           class="up"
           @click="CTA1 = true"
           x="32%"
-          y="80%"
+          y="78%"
           width="150"
           height="60"
           fill="url(#pattern31)"
         />
-        <nuxt-link :to="{ path: '/', hash: '#conditions' }">
-          <rect
-            id="btn_condition_mobile"
-            class="up"
-            x="32%"
-            y="90%"
-            width="150"
-            height="60"
-            fill="url(#pattern32)"
-          />
-        </nuxt-link>
+
         <a
           href="https://www.asus.com/fr/Content/Laptop-OLED/"
           target="_blank"

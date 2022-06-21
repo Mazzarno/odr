@@ -148,13 +148,6 @@
           </vs-col>
         </vs-row>
       </div>
-      <template #footer>
-        <div class="con-footer">
-          <vs-button size="xl" @click="CTA1 = false" transparent>
-            Ok
-          </vs-button>
-        </div>
-      </template>
     </vs-dialog>
     <svg
       class="SVGHD"
@@ -163,6 +156,17 @@
       version="1.1"
       xmlns:xlink="http://www.w3.org/1999/xlink"
     >
+      <!--        <nuxt-link :to="{ path: '/', hash: '#conditions' }">
+          <rect
+            id="btn_condition10"
+            class="up"
+            x="28%"
+            y="85%"
+            width="190"
+            height="76"
+            fill="url(#pattern12)"
+          />
+        </nuxt-link>-->
       <g id="SVGHD">
         <rect
           id="1440x800 1"
@@ -185,23 +189,13 @@
             fill="url(#pattern11)"
           />
         </a>
-        <nuxt-link :to="{ path: '/', hash: '#conditions' }">
-          <rect
-            id="btn_condition10"
-            class="up"
-            x="28%"
-            y="85%"
-            width="190"
-            height="76"
-            fill="url(#pattern12)"
-          />
-        </nuxt-link>
+
         <rect
           class="up"
           @click="CTA1 = true"
           id="btn_acheter1"
-          x="58.5%"
-          y="85%"
+          x="43%"
+          y="83%"
           width="190"
           height="76"
           fill="url(#pattern13)"

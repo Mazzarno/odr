@@ -148,13 +148,6 @@
           </vs-col>
         </vs-row>
       </div>
-      <template #footer>
-        <div class="con-footer">
-          <vs-button size="xl" @click="CTA1 = false" transparent>
-            Ok
-          </vs-button>
-        </div>
-      </template>
     </vs-dialog>
     <svg
       class="SVGTABLET"
@@ -170,7 +163,7 @@
           width="100%"
           fill="url(#pattern20)"
         />
-        <nuxt-link :to="{ path: '/', hash: '#conditions' }">
+        <!-- <nuxt-link :to="{ path: '/', hash: '#conditions' }">
           <rect
             id="btn_condition20"
             class="up"
@@ -180,12 +173,12 @@
             height="76"
             fill="url(#pattern21)"
           />
-        </nuxt-link>
+        </nuxt-link>-->
         <rect
           id="btn_acheter20"
           @click="CTA1 = true"
           class="up"
-          x="58%"
+          x="37%"
           y="85%"
           width="190"
           height="76"
