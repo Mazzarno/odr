@@ -1,8 +1,8 @@
 <template>
   <div>
-    <vs-dialog blur width="550px" not-center v-model="CTA1">
+    <vs-dialog blur width="550px" center v-model="CTA1">
       <template #header>
-        <h4 class="my-2 text-content">OÙ ACHETER DES PC ASUS OLED ÉLIGIBLE</h4>
+        <p class="my-2 text-content">OÙ ACHETER UN PC ASUS OLED ÉLIGIBLE</p>
       </template>
       <div class="con-content">
         <vs-row class="mb-2 mt-2">
@@ -10,7 +10,8 @@
             <a
               id="asus"
               target="_blank"
-              href="https://www.asus.com/fr/Laptops/For-Home/All-series/filter?Category=OLED-display"
+              onclick="dataLayer.push({'event': 'asus', 'location':'SVG', 'device':'mobile'});"
+              href="https://www.asus.com/fr/Laptops/For-Home/All-series/filter?Category=OLED-display&Spec=126640"
               ><img
                 class="up ma-5"
                 src="~/assets/img/ASUS.png"
@@ -20,6 +21,7 @@
           ></vs-col>
           <vs-col w="3" xs="6">
             <a
+              onclick="dataLayer.push({'event': 'amazon', 'location':'SVG', 'device':'mobile'});"
               id="amazon"
               target="_blank"
               href="https://www.amazon.fr/s?k=asus+oled&i=computers&rh=n%3A429879031%2Cp_89%3AASUS%2Cp_n_feature_browse-bin%3A27969065031&dc&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1655373492&rnid=27969061031&ref=sr_nr_p_n_feature_browse-bin_3"
@@ -33,6 +35,7 @@
           </vs-col>
           <vs-col w="3" xs="6">
             <a
+              onclick="dataLayer.push({'event': 'auchan', 'location':'SVG', 'device':'mobile'});"
               id="auchan"
               target="_blank"
               href="https://www.auchan.fr/recherche?text=asus+oled"
@@ -45,6 +48,7 @@
           ></vs-col>
           <vs-col w="3" xs="6">
             <a
+              onclick="dataLayer.push({'event': 'boulanger', 'location':'SVG', 'device':'mobile'});"
               id="boulanger"
               target="_blank"
               href="https://www.boulanger.com/resultats?tr=asus+oled"
@@ -57,6 +61,7 @@
           ></vs-col>
           <vs-col w="3" xs="6">
             <a
+              onclick="dataLayer.push({'event': 'carrefour', 'location':'SVG', 'device':'mobile'});"
               id="carrefour"
               target="_blank"
               href="https://www.carrefour.fr/s?filters%5BFacet_vendeurs%5D%5B0%5D=Carrefour&q=asus%20oled&noRedirect=1"
@@ -69,6 +74,7 @@
           ></vs-col>
           <vs-col w="3" xs="6">
             <a
+              onclick="dataLayer.push({'event': 'cdiscount', 'location':'SVG', 'device':'mobile'});"
               id="cdiscount"
               target="_blank"
               href="https://www.cdiscount.com/search/10/oled+asus.html?TechnicalForm.SiteMapNodeId=0&TechnicalForm.DepartmentId=10&TechnicalForm.ProductId=&hdnPageType=Search&TechnicalForm.ContentTypeId=16&TechnicalForm.SellerId=&TechnicalForm.PageType=SEARCH_AJAX&TechnicalForm.LazyLoading.ProductSheets=False&TechnicalForm.BrandLicenseId=0&NavigationForm.CurrentSelectedNavigationPath=categorycodepath%2F0K%7C0K0C%7C0K0C01&NavigationForm.FirstNavigationLinkCount=3&FacetForm.SelectedFacets.Index=0&FacetForm.SelectedFacets.Index=1&FacetForm.SelectedFacets%5B1%5D=Prix%2F500%20%C3%A0%201000%E2%82%AC&FacetForm.SelectedFacets%5B1%5D=Prix%2F1000%E2%82%AC%20et%20%2B&FacetForm.SelectedFacets.Index=2&FacetForm.SelectedFacets%5B2%5D=Marque%2Fasus&FacetForm.SelectedFacets.Index=3&FacetForm.SelectedFacets.Index=4&FacetForm.SelectedFacets.Index=5&FacetForm.SelectedFacets.Index=13&FacetForm.SelectedFacets.Index=6&FacetForm.SelectedFacets.Index=7&FacetForm.SelectedFacets.Index=8&FacetForm.SelectedFacets.Index=9&FacetForm.SelectedFacets%5B9%5D=Neuf%20ou%20occasion%2Fneuf&FacetForm.SelectedFacets.Index=10&FacetForm.SelectedFacets.Index=11&FacetForm.SelectedFacets.Index=12&FacetForm.SelectedFacets.Index=14&FacetForm.SelectedFacets.Index=15&FacetForm.SelectedFacets.Index=16&FacetForm.SelectedFacets.Index=17&FacetForm.SelectedFacets.Index=18&SortForm.SelectedSort=PERTINENCE&ProductListTechnicalForm.Keyword=oled%2Basus&ProductListTechnicalForm.TemplateName=InLine&&_his_"
@@ -82,9 +88,10 @@
           </vs-col>
           <vs-col w="3" xs="6">
             <a
+              onclick="dataLayer.push({'event': 'darty', 'location':'SVG', 'device':'mobile'});"
               id="darty"
               target="_blank"
-              href="https://www.fnac.com/SearchResult/ResultList.aspx?SDM=list&Search=oled&SFilt=1!206%2c49343!23&sft=1"
+              href="https://www.fnac.com/SearchResult/ResultList.aspx?PageIndex=2&SDM=list&Search=asus+oled&sft=1"
             >
               <img
                 class="up ma-5"
@@ -96,6 +103,7 @@
           </vs-col>
           <vs-col w="3" xs="6">
             <a
+              onclick="dataLayer.push({'event': 'elecerc', 'location':'SVG', 'device':'mobile'});"
               id="eleclerc"
               target="_blank"
               href="https://www.e.leclerc/recherche?q=asus%20oled"
@@ -110,9 +118,10 @@
           </vs-col>
           <vs-col w="3" xs="6">
             <a
+              onclick="dataLayer.push({'event': 'fnac', 'location':'SVG', 'device':'mobile'});"
               id="fnac"
               target="_blank"
-              href="https://www.fnac.com/SearchResult/ResultList.aspx?SDM=list&Search=oled&SFilt=1!206%2c49343!23&sft=1"
+              href="https://www.fnac.com/SearchResult/ResultList.aspx?PageIndex=2&SDM=list&Search=asus+oled&sft=1"
             >
               <img
                 class="up ma-5"
@@ -122,6 +131,7 @@
           ></vs-col>
           <vs-col w="3" xs="6">
             <a
+              onclick="dataLayer.push({'event': 'ldlc', 'location':'SVG', 'device':'mobile'});"
               id="ldlc"
               target="_blank"
               href="https://www.ldlc.com/recherche/oled/+fb-C000000806+fcat-4265+fdi-1+foms-1+fps-1.html"
@@ -135,6 +145,7 @@
           ></vs-col>
           <vs-col w="3" xs="6">
             <a
+              onclick="dataLayer.push({'event': 'rueducommerce', 'location':'SVG', 'device':'mobile'});"
               id="rueducommerce"
               target="_blank"
               href="https://www.rueducommerce.fr/r/asus-oled/g-rue-du-commerce-25476,neuf-676918.html"
@@ -166,12 +177,13 @@
           @click="CTA1 = true"
           x="32%"
           y="78%"
-          width="150"
-          height="60"
+          width="140"
+          height="50"
           fill="url(#pattern31)"
         />
 
         <a
+          onclick="dataLayer.push({'event': 'SVGASUSOLED', 'location':'SVG', 'device':'mobile'});"
           href="https://www.asus.com/fr/Content/Laptop-OLED/"
           target="_blank"
           rel="noopener noreferrer"

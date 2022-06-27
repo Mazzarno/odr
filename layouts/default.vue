@@ -31,6 +31,7 @@ export default {
   mounted() {
     window.axeptioSettings = {
       clientId: '62b092f8f3c32a399ddd3467',
+      cookiesVersion: 'odr oled-fr',
     }
     ;(function (d, s) {
       var t = d.getElementsByTagName(s)[0],
@@ -39,6 +40,9 @@ export default {
       e.src = '//static.axept.io/sdk.js'
       t.parentNode.insertBefore(e, t)
     })(document, 'script')
+    window.dataLayer.push({
+      event: 'userConnected',
+    })
   },
 }
 </script>

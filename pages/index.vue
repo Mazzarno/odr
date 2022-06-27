@@ -1,13 +1,83 @@
 <template>
   <div>
-    <SVGUHD />
-    <SVGHD />
-    <SVGTABLET />
-    <SVGMOBILE />
+    <section class="header-uhd">
+      <img class="SVGUHD" src="~/assets/img/header_uhd.jpg" />
+      <vs-button
+        class="btn-achat-uhd up axeptio_link"
+        size="xl"
+        gradient
+        active
+        circle
+        id="axeptio_link"
+        onclick="dataLayer.push({'event': 'btn-acheter', 'location':'HEADER', 'device':'UHD'});"
+        @click="CTA4 = true"
+      >
+        <h3>ACHETER UN PC ASUS OLED ÉLIGIBLE</h3>
+      </vs-button>
+    </section>
+    <section class="header-hd">
+      <img class="SVGHD" src="~/assets/img/header_hd.jpg" />
+      <vs-button
+        class="btn-achat-hd up axeptio_link"
+        size="xl"
+        gradient
+        active
+        circle
+        id="axeptio_link"
+        onclick="dataLayer.push({'event': 'btn-acheter', 'location':'HEADER', 'device':'HD'});"
+        @click="CTA5 = true"
+      >
+        <h3>ACHETER UN PC ASUS OLED ÉLIGIBLE</h3>
+      </vs-button>
+    </section>
+    <section class="header-desktop">
+      <img class="SVGDESKTOP" src="~/assets/img/header_desktop.jpg" />
+      <vs-button
+        class="btn-achat-desktop up axeptio_link"
+        size="large"
+        gradient
+        active
+        circle
+        id="axeptio_link"
+        onclick="dataLayer.push({'event': 'btn-acheter', 'location':'HEADER', 'device':'DESKTOP'});"
+        @click="CTA6 = true"
+      >
+        <h3>ACHETER UN PC ÉLIGIBLE</h3>
+      </vs-button>
+    </section>
+    <section class="header-tablet">
+      <img class="SVGTABLET" src="~/assets/img/header_tablet.jpg" />
+      <vs-button
+        class="btn-achat-tablet up axeptio_link"
+        size="large"
+        gradient
+        circle
+        active
+        id="axeptio_link"
+        onclick="dataLayer.push({'event': 'btn-acheter', 'location':'HEADER', 'device':'TABLET'});"
+        @click="CTA7 = true"
+      >
+        <h3>ACHETER UN PC ÉLIGIBLE</h3>
+      </vs-button>
+    </section>
+    <section class="header-mobile">
+      <img class="SVGMOBILE" src="~/assets/img/header_mobile.jpg" />
+      <vs-button
+        class="btn-achat-mobile up axeptio_link"
+        size="large"
+        gradient
+        active
+        circle
+        id="axeptio_link"
+        onclick="dataLayer.push({'event': 'btn-acheter', 'location':'HEADER', 'device':'MOBILE'});"
+        @click="CTA8 = true"
+      >
+        <h4>ACHETER UN PC ÉLIGIBLE</h4>
+      </vs-button>
+    </section>
 
-    <!-- FIN HEADER -->
-    <section id="conditions" class="section_fonctionnement mt-14">
-      <vs-row class="mt-14" justify="center" align="center">
+    <section id="conditions" class="section_fonctionnement mt-5">
+      <vs-row justify="center" align="center">
         <vs-col lg="10" w="12" sm="12" xs="12" justify="center" align="center">
           <h1 class="title-content mb-14">Comment se faire rembourser ?</h1>
           <vs-row>
@@ -35,27 +105,36 @@
               </vs-card>
             </vs-col>
             <vs-col w="3" sm="6" xs="12">
-              <vs-card type="1" class="ma-2" color="">
-                <template #title>
-                  <span class="mdi mdi-36px mdi-file-sign"></span>
-                  <h2 class="my-2">Enregistrez-vous</h2>
-                </template>
-                <template #text>
-                  <p class="mb-5">
-                    Enregistrez-vous sur le site asuspromotions.com/oled dans
-                    les 15 jours suivant votre achat. Nous vous inviterons à
-                    nous donner les détails de l’achat de votre nouvel
-                    ordinateur ainsi que certaines informations quant à l’ancien
-                    ordinateur que vous souhaitez faire reprendre.
-                    <!--       Enregistrez-vous en 5 minutes sur le site
+              <a
+                id="axeptio_link"
+                class="axeptio_link"
+                onclick="dataLayer.push({'event': 'btn-opia', 'location':'card-top', 'device':'all'});"
+                href="https://asuspromotions.com/oled/fr-FR"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <vs-card type="1" class="ma-2" color="">
+                  <template #title>
+                    <span class="mdi mdi-36px mdi-file-sign"></span>
+                    <h2 class="my-2">Enregistrez-vous</h2>
+                  </template>
+                  <template #text>
+                    <p class="mb-5">
+                      Enregistrez-vous sur le site asuspromotions.com/oled/fr-FR
+                      dans les 15 jours suivant votre achat. Nous vous
+                      inviterons à nous donner les détails de l’achat de votre
+                      nouvel ordinateur ainsi que certaines informations quant à
+                      l’ancien ordinateur que vous souhaitez faire reprendre.
+                      <!--       Enregistrez-vous en 5 minutes sur le site
                     asuspromotions.com/oled dans les 15 jours suivant votre
                     achat. Nous vous inviterons à nous donner les détails de
                     l’achat de votre nouvel ordinateur ainsi que certaines
                     informations quant à l’ancien ordinateur que vous souhaitez
                     faire reprendre.-->
-                  </p>
-                </template>
-              </vs-card></vs-col
+                    </p>
+                  </template>
+                </vs-card>
+              </a></vs-col
             >
             <vs-col w="3" sm="6" xs="12">
               <vs-card class="ma-2">
@@ -109,17 +188,24 @@
     <section class="section mt-14">
       <vs-row justify="center" align="center">
         <vs-col w="6" sm="10" xs="10" justify="center" align="center">
-          <h1 class="mb-5 mt-14">
+          <h1 class="mb-5 mt-14 title-content">
             Vous souhaitez connaître le montant de votre remboursement
           </h1>
-          <h2>Entrez le modèle de votre processeur ou de votre MAC</h2>
-
+          <h2 class="mb-5">
+            Entrez le modèle de votre processeur ou de votre MAC
+          </h2>
+          <p class="text-content2">
+            <a @click="explicationCTA = true">
+              Cliquez ici pour connaître le modèle de votre processeur ou de
+              votre MAC
+            </a>
+          </p>
           <v-autocomplete
             dark
             :items="processors"
             item-color="dark"
             item-text="name"
-            label="Processeur"
+            label="Processeur/Mac"
             v-model="selectedProcessor"
             hide-data
             hide-selected
@@ -128,12 +214,10 @@
             return-object
             no-data-text="Pas de données pour votre processeur ou de votre MAC"
           ></v-autocomplete>
-          <p class="text-content2">
-            Découvrez simplement comment connaitre le processeur de votre PC en
-            cliquant <a @click="explicationCTA = true"> ICI</a>
-          </p>
           <vs-button
-            class="mt-5"
+            id="axeptio_link"
+            class="axeptio_link mt-5"
+            onclick="dataLayer.push({'event': 'btn-autocomplete', 'location':'autocomplete', 'device':'all'});"
             @click="sheet = true"
             :disabled="!selectedProcessor"
             gradient
@@ -161,7 +245,7 @@
                     </h3></v-list-item-subtitle
                   >
                   <v-list-item-subtitle
-                    ><h3 class="gradient-text my-3">
+                    ><h3 class="gradient-text text-content ma-3">
                       Vous pouvez donc percevoir entre
                       <span class="underlined">{{
                         selectedProcessor.priceB
@@ -278,21 +362,31 @@
     </section>
 
     <section>
-      <v-row class="mb-14 mt-14" justify="center" align="center">
+      <v-row class="mb-14 mt-5" justify="center" align="center">
         <v-col w="6" sm="8" xs="10" justify="center" align="center">
           <vs-row>
             <vs-col w="6" sm="10" xs="12">
               <a
+                id="axeptio_link"
+                class="axeptio_link"
+                onclick="dataLayer.push({'event': 'btn-pdf', 'location':'btn-top', 'device':'all'});"
                 href="https://www.asus.fr/event/trade-oled/remboursement_asus_oled.pdf"
                 download
               >
-                <vs-button gradient size="xl">
-                  <h3>DÉCOUVREZ LES MODALITÉS DE L'OFFRE</h3>
+                <vs-button class="ma-3" gradient size="xl">
+                  <h5>DÉCOUVREZ LES MODALITÉS DE L'OFFRE</h5>
                 </vs-button></a
               ></vs-col
             >
             <vs-col w="6" sm="10" xs="12">
-              <vs-button gradient size="xl" @click="CTA1 = true">
+              <vs-button
+                id="axeptio_link ma-3"
+                class="axeptio_link"
+                onclick="dataLayer.push({'event': 'btn-acheter', 'location':'autocomplete', 'device':'UHD'});"
+                gradient
+                size="xl"
+                @click="CTA2 = true"
+              >
                 <h3>ACHETER UN PC OLED ÉLIGIBLE</h3>
               </vs-button></vs-col
             >
@@ -555,9 +649,11 @@
           </h1>
           <div class="mx">
             <v-img
+              id="axeptio_link"
+              onclick="dataLayer.push({'event': 'video', 'location':'video', 'device':'all'});"
               @click="popupVid1 = true"
               :src="require('@/assets/img/oled_video.jpg')"
-              class="up img_oled responsive"
+              class="up img_oled responsive axeptio_link"
               alt="5 raisons de choisir l'OLED ASUS"
             >
             </v-img>
@@ -580,7 +676,7 @@
       ></vs-dialog>
     </section>
     <!-- FIN VIDEO -->
-    <section class="section mt-14">
+    <section class="section">
       <vs-row justify="center" align="center"
         ><vs-col w="6" sm="10" xs="10">
           <h1 id="black" class="gradient-text3 mb-3">Contraste</h1>
@@ -725,14 +821,42 @@
       </vs-row>
     </section>
 
-    <v-row class="mb-14 mt-14" justify="center" align="center">
-      <v-col w="6" sm="8" xs="10" justify="center" align="center">
-        <vs-button gradient size="xl" @click="CTA1 = true">
-          <h3>ACHETER UN PC OLED ÉLIGIBLE</h3>
-        </vs-button>
-      </v-col></v-row
-    >
-    <vs-dialog blur width="550px" not-center v-model="explicationCTA">
+    <section>
+      <v-row class="mb-14 mt-5" justify="center" align="center">
+        <v-col w="6" sm="8" xs="10" justify="center" align="center">
+          <vs-row>
+            <vs-col w="6" sm="10" xs="12">
+              <a
+                href="https://asuspromotions.com/oled/fr-FR"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="axeptio_link"
+                class="axeptio_link"
+                onclick="dataLayer.push({'event': 'btn-opia', 'location':'btn-bottom', 'device':'all'});"
+              >
+                <vs-button class="ma-3" gradient size="xl">
+                  <h5>DÉCOUVREZ L'OFFRE DE REMBOURSEMENT</h5>
+                </vs-button></a
+              ></vs-col
+            >
+            <vs-col w="6" sm="10" xs="12">
+              <vs-button
+                class="ma-3 axeptio_link"
+                gradient
+                size="xl"
+                @click="CTA3 = true"
+                id="axeptio_link"
+                onclick="dataLayer.push({'event': 'btn-acheter', 'location':'BOTTOM', 'device':'UHD'});"
+              >
+                <h3>ACHETER UN PC OLED ÉLIGIBLE</h3>
+              </vs-button></vs-col
+            >
+          </vs-row>
+        </v-col></v-row
+      >
+    </section>
+
+    <vs-dialog blur width="550px" center v-model="explicationCTA">
       <template #header>
         <h2 class="mt-2">Comment identifier mon processeur/mon MAC</h2>
       </template>
@@ -765,49 +889,19 @@
         </div>
       </template>
     </vs-dialog>
-    <vs-dialog blur width="550px" not-center v-model="explicationCTA">
+    <vs-dialog blur width="550px" center v-model="CTA1">
       <template #header>
-        <h2 class="mt-2">Asus respecte votre vie privée.</h2>
-      </template>
-      <div class="con-content ma-5">
-        <vs-row class="">
-          <h3>Pour Windows</h3>
-          <p align="start" class="text-content2">
-            Ce site utilise des cookies pour nous aid à mesurer les résultats et
-            adapter le contenue de notre site web pour améliorer votre
-            expérience sur notre site internet.
-          </p>
-        </vs-row>
-        <vs-row class="mt-5">
-          <h3>Pour MAC</h3>
-          <p align="start" class="text-content2">
-            Puisque nous respectons votre vie privée, nous vous demandons votre
-            autorisation pour utiliser ces technologies.
-          </p></vs-row
-        >
-      </div>
-      <template #footer>
-        <div class="con-footer">
-          <vs-button size="xl" @click="explicationCTA = false" error>
-            Tout accepter
-          </vs-button>
-          <vs-button size="xl" @click="explicationCTA = false" error>
-            Tout refuser
-          </vs-button>
-        </div>
-      </template>
-    </vs-dialog>
-    <vs-dialog blur width="550px" not-center v-model="CTA1">
-      <template #header>
-        <p class="my-2 text-content">OÙ ACHETER DES PC ASUS OLED ÉLIGIBLE</p>
+        <p class="my-2 text-content">OÙ ACHETER UN PC ASUS OLED ÉLIGIBLE</p>
       </template>
       <div class="con-content">
         <vs-row class="mb-2 mt-2">
           <vs-col w="3" xs="6">
             <a
-              id="asus"
+              id="axeptio_link"
+              class="axeptio_link"
               target="_blank"
-              href="https://www.asus.com/fr/Laptops/For-Home/All-series/filter?Category=OLED-display"
+              onclick="dataLayer.push({'event': 'asus', 'location':'card-achat', 'device':'all'});"
+              href="https://www.asus.com/fr/Laptops/For-Home/All-series/filter?Category=OLED-display&Spec=126640"
               ><img
                 class="up ma-5"
                 src="~/assets/img/ASUS.png"
@@ -817,7 +911,9 @@
           ></vs-col>
           <vs-col w="3" xs="6">
             <a
-              id="amazon"
+              onclick="dataLayer.push({'event': 'amazon', 'location':'card-achat', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
               target="_blank"
               href="https://www.amazon.fr/s?k=asus+oled&i=computers&rh=n%3A429879031%2Cp_89%3AASUS%2Cp_n_feature_browse-bin%3A27969065031&dc&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1655373492&rnid=27969061031&ref=sr_nr_p_n_feature_browse-bin_3"
             >
@@ -830,7 +926,9 @@
           </vs-col>
           <vs-col w="3" xs="6">
             <a
-              id="auchan"
+              onclick="dataLayer.push({'event': 'auchan', 'location':'card-achat', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
               target="_blank"
               href="https://www.auchan.fr/recherche?text=asus+oled"
             >
@@ -842,9 +940,11 @@
           ></vs-col>
           <vs-col w="3" xs="6">
             <a
-              id="boulanger"
+              onclick="dataLayer.push({'event': 'boulanger', 'location':'card-achat', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
               target="_blank"
-              href="https://www.boulanger.com/resultats?tr=asus+oled"
+              href="https://www.boulanger.com/opeco/odr622mico"
             >
               <img
                 class="up ma-5"
@@ -854,7 +954,9 @@
           ></vs-col>
           <vs-col w="3" xs="6">
             <a
-              id="carrefour"
+              onclick="dataLayer.push({'event': 'carrefour', 'location':'card-achat', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
               target="_blank"
               href="https://www.carrefour.fr/s?filters%5BFacet_vendeurs%5D%5B0%5D=Carrefour&q=asus%20oled&noRedirect=1"
             >
@@ -866,7 +968,9 @@
           ></vs-col>
           <vs-col w="3" xs="6">
             <a
-              id="cdiscount"
+              onclick="dataLayer.push({'event': 'cdiscount', 'location':'card-achat', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
               target="_blank"
               href="https://www.cdiscount.com/search/10/oled+asus.html?TechnicalForm.SiteMapNodeId=0&TechnicalForm.DepartmentId=10&TechnicalForm.ProductId=&hdnPageType=Search&TechnicalForm.ContentTypeId=16&TechnicalForm.SellerId=&TechnicalForm.PageType=SEARCH_AJAX&TechnicalForm.LazyLoading.ProductSheets=False&TechnicalForm.BrandLicenseId=0&NavigationForm.CurrentSelectedNavigationPath=categorycodepath%2F0K%7C0K0C%7C0K0C01&NavigationForm.FirstNavigationLinkCount=3&FacetForm.SelectedFacets.Index=0&FacetForm.SelectedFacets.Index=1&FacetForm.SelectedFacets%5B1%5D=Prix%2F500%20%C3%A0%201000%E2%82%AC&FacetForm.SelectedFacets%5B1%5D=Prix%2F1000%E2%82%AC%20et%20%2B&FacetForm.SelectedFacets.Index=2&FacetForm.SelectedFacets%5B2%5D=Marque%2Fasus&FacetForm.SelectedFacets.Index=3&FacetForm.SelectedFacets.Index=4&FacetForm.SelectedFacets.Index=5&FacetForm.SelectedFacets.Index=13&FacetForm.SelectedFacets.Index=6&FacetForm.SelectedFacets.Index=7&FacetForm.SelectedFacets.Index=8&FacetForm.SelectedFacets.Index=9&FacetForm.SelectedFacets%5B9%5D=Neuf%20ou%20occasion%2Fneuf&FacetForm.SelectedFacets.Index=10&FacetForm.SelectedFacets.Index=11&FacetForm.SelectedFacets.Index=12&FacetForm.SelectedFacets.Index=14&FacetForm.SelectedFacets.Index=15&FacetForm.SelectedFacets.Index=16&FacetForm.SelectedFacets.Index=17&FacetForm.SelectedFacets.Index=18&SortForm.SelectedSort=PERTINENCE&ProductListTechnicalForm.Keyword=oled%2Basus&ProductListTechnicalForm.TemplateName=InLine&&_his_"
               ><img
@@ -877,23 +981,12 @@
               />
             </a>
           </vs-col>
+
           <vs-col w="3" xs="6">
             <a
-              id="darty"
-              target="_blank"
-              href="https://www.fnac.com/SearchResult/ResultList.aspx?SDM=list&Search=oled&SFilt=1!206%2c49343!23&sft=1"
-            >
-              <img
-                class="up ma-5"
-                src="~/assets/img/darty.png"
-                alt=""
-                srcset=""
-              />
-            </a>
-          </vs-col>
-          <vs-col w="3" xs="6">
-            <a
-              id="eleclerc"
+              onclick="dataLayer.push({'event': 'leclerc', 'location':'card-achat', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
               target="_blank"
               href="https://www.e.leclerc/recherche?q=asus%20oled"
             >
@@ -907,9 +1000,11 @@
           </vs-col>
           <vs-col w="3" xs="6">
             <a
-              id="fnac"
+              onclick="dataLayer.push({'event': 'fnac', 'location':'card-achat', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
               target="_blank"
-              href="https://www.fnac.com/SearchResult/ResultList.aspx?SDM=list&Search=oled&SFilt=1!206%2c49343!23&sft=1"
+              href="https://www.fnac.com/SearchResult/ResultList.aspx?PageIndex=2&SDM=list&Search=asus+oled&sft=1"
             >
               <img
                 class="up ma-5"
@@ -919,7 +1014,9 @@
           ></vs-col>
           <vs-col w="3" xs="6">
             <a
-              id="ldlc"
+              onclick="dataLayer.push({'event': 'ldlc', 'location':'card-achat', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
               target="_blank"
               href="https://www.ldlc.com/recherche/oled/+fb-C000000806+fcat-4265+fdi-1+foms-1+fps-1.html"
             >
@@ -932,7 +1029,9 @@
           ></vs-col>
           <vs-col w="3" xs="6">
             <a
-              id="rueducommerce"
+              onclick="dataLayer.push({'event': 'rueducommerce', 'location':'card-achat', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
               target="_blank"
               href="https://www.rueducommerce.fr/r/asus-oled/g-rue-du-commerce-25476,neuf-676918.html"
               ><img
@@ -946,7 +1045,1095 @@
         </vs-row>
       </div>
     </vs-dialog>
-    <vs-dialog></vs-dialog>
+    <vs-dialog blur width="550px" center v-model="CTA2">
+      <template #header>
+        <p class="my-2 text-content">OÙ ACHETER UN PC ASUS OLED ÉLIGIBLE</p>
+      </template>
+      <div class="con-content">
+        <vs-row class="mb-2 mt-2">
+          <vs-col w="3" xs="6">
+            <a
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              onclick="dataLayer.push({'event': 'asus', 'location':'btn-top', 'device':'all'});"
+              href="https://www.asus.com/fr/Laptops/For-Home/All-series/filter?Category=OLED-display&Spec=126640"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/ASUS.png"
+                alt=""
+                srcset=""
+              /> </a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'amazon', 'location':'btn-top', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.amazon.fr/s?k=asus+oled&i=computers&rh=n%3A429879031%2Cp_89%3AASUS%2Cp_n_feature_browse-bin%3A27969065031&dc&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1655373492&rnid=27969061031&ref=sr_nr_p_n_feature_browse-bin_3"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/amazon.png"
+                alt=""
+                srcset=""
+            /></a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'auchan', 'location':'btn-top', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.auchan.fr/recherche?text=asus+oled"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/auchan.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'boulanger', 'location':'btn-top', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.boulanger.com/opeco/odr622mico"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/boulanger.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'carrefour', 'location':'btn-top', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.carrefour.fr/s?filters%5BFacet_vendeurs%5D%5B0%5D=Carrefour&q=asus%20oled&noRedirect=1"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/carrefour.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'cdiscount', 'location':'btn-top', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.cdiscount.com/search/10/oled+asus.html?TechnicalForm.SiteMapNodeId=0&TechnicalForm.DepartmentId=10&TechnicalForm.ProductId=&hdnPageType=Search&TechnicalForm.ContentTypeId=16&TechnicalForm.SellerId=&TechnicalForm.PageType=SEARCH_AJAX&TechnicalForm.LazyLoading.ProductSheets=False&TechnicalForm.BrandLicenseId=0&NavigationForm.CurrentSelectedNavigationPath=categorycodepath%2F0K%7C0K0C%7C0K0C01&NavigationForm.FirstNavigationLinkCount=3&FacetForm.SelectedFacets.Index=0&FacetForm.SelectedFacets.Index=1&FacetForm.SelectedFacets%5B1%5D=Prix%2F500%20%C3%A0%201000%E2%82%AC&FacetForm.SelectedFacets%5B1%5D=Prix%2F1000%E2%82%AC%20et%20%2B&FacetForm.SelectedFacets.Index=2&FacetForm.SelectedFacets%5B2%5D=Marque%2Fasus&FacetForm.SelectedFacets.Index=3&FacetForm.SelectedFacets.Index=4&FacetForm.SelectedFacets.Index=5&FacetForm.SelectedFacets.Index=13&FacetForm.SelectedFacets.Index=6&FacetForm.SelectedFacets.Index=7&FacetForm.SelectedFacets.Index=8&FacetForm.SelectedFacets.Index=9&FacetForm.SelectedFacets%5B9%5D=Neuf%20ou%20occasion%2Fneuf&FacetForm.SelectedFacets.Index=10&FacetForm.SelectedFacets.Index=11&FacetForm.SelectedFacets.Index=12&FacetForm.SelectedFacets.Index=14&FacetForm.SelectedFacets.Index=15&FacetForm.SelectedFacets.Index=16&FacetForm.SelectedFacets.Index=17&FacetForm.SelectedFacets.Index=18&SortForm.SelectedSort=PERTINENCE&ProductListTechnicalForm.Keyword=oled%2Basus&ProductListTechnicalForm.TemplateName=InLine&&_his_"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/cdiscount.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'leclerc', 'location':'btn-top', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.e.leclerc/recherche?q=asus%20oled"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/eleclerc.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'fnac', 'location':'btn-top', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.fnac.com/SearchResult/ResultList.aspx?PageIndex=2&SDM=list&Search=asus+oled&sft=1"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/fnac.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'ldlc', 'location':'btn-top', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.ldlc.com/recherche/oled/+fb-C000000806+fcat-4265+fdi-1+foms-1+fps-1.html"
+            >
+              <img
+                class="up ma-5 id"
+                src="~/assets/img/LDLC.jpg"
+                alt=""
+                srcset=""
+              /> </a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'rueducommerce', 'location':'btn-top', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.rueducommerce.fr/r/asus-oled/g-rue-du-commerce-25476,neuf-676918.html"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/rue-du-commerce.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+        </vs-row>
+      </div>
+    </vs-dialog>
+    <vs-dialog blur width="550px" center v-model="CTA3">
+      <template #header>
+        <p class="my-2 text-content">OÙ ACHETER UN PC ASUS OLED ÉLIGIBLE</p>
+      </template>
+      <div class="con-content">
+        <vs-row class="mb-2 mt-2">
+          <vs-col w="3" xs="6">
+            <a
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              onclick="dataLayer.push({'event': 'asus', 'location':'btn-bottom', 'device':'all'});"
+              href="https://www.asus.com/fr/Laptops/For-Home/All-series/filter?Category=OLED-display&Spec=126640"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/ASUS.png"
+                alt=""
+                srcset=""
+              /> </a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'amazon', 'location':'btn-bottom', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.amazon.fr/s?k=asus+oled&i=computers&rh=n%3A429879031%2Cp_89%3AASUS%2Cp_n_feature_browse-bin%3A27969065031&dc&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1655373492&rnid=27969061031&ref=sr_nr_p_n_feature_browse-bin_3"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/amazon.png"
+                alt=""
+                srcset=""
+            /></a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'auchan', 'location':'btn-bottom', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.auchan.fr/recherche?text=asus+oled"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/auchan.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'boulanger', 'location':'btn-bottom', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.boulanger.com/opeco/odr622mico"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/boulanger.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'carrefour', 'location':'btn-bottom', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.carrefour.fr/s?filters%5BFacet_vendeurs%5D%5B0%5D=Carrefour&q=asus%20oled&noRedirect=1"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/carrefour.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'cdiscount', 'location':'btn-bottom', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.cdiscount.com/search/10/oled+asus.html?TechnicalForm.SiteMapNodeId=0&TechnicalForm.DepartmentId=10&TechnicalForm.ProductId=&hdnPageType=Search&TechnicalForm.ContentTypeId=16&TechnicalForm.SellerId=&TechnicalForm.PageType=SEARCH_AJAX&TechnicalForm.LazyLoading.ProductSheets=False&TechnicalForm.BrandLicenseId=0&NavigationForm.CurrentSelectedNavigationPath=categorycodepath%2F0K%7C0K0C%7C0K0C01&NavigationForm.FirstNavigationLinkCount=3&FacetForm.SelectedFacets.Index=0&FacetForm.SelectedFacets.Index=1&FacetForm.SelectedFacets%5B1%5D=Prix%2F500%20%C3%A0%201000%E2%82%AC&FacetForm.SelectedFacets%5B1%5D=Prix%2F1000%E2%82%AC%20et%20%2B&FacetForm.SelectedFacets.Index=2&FacetForm.SelectedFacets%5B2%5D=Marque%2Fasus&FacetForm.SelectedFacets.Index=3&FacetForm.SelectedFacets.Index=4&FacetForm.SelectedFacets.Index=5&FacetForm.SelectedFacets.Index=13&FacetForm.SelectedFacets.Index=6&FacetForm.SelectedFacets.Index=7&FacetForm.SelectedFacets.Index=8&FacetForm.SelectedFacets.Index=9&FacetForm.SelectedFacets%5B9%5D=Neuf%20ou%20occasion%2Fneuf&FacetForm.SelectedFacets.Index=10&FacetForm.SelectedFacets.Index=11&FacetForm.SelectedFacets.Index=12&FacetForm.SelectedFacets.Index=14&FacetForm.SelectedFacets.Index=15&FacetForm.SelectedFacets.Index=16&FacetForm.SelectedFacets.Index=17&FacetForm.SelectedFacets.Index=18&SortForm.SelectedSort=PERTINENCE&ProductListTechnicalForm.Keyword=oled%2Basus&ProductListTechnicalForm.TemplateName=InLine&&_his_"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/cdiscount.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'leclerc', 'location':'btn-bottom', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.e.leclerc/recherche?q=asus%20oled"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/eleclerc.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'fnac', 'location':'btn-bottom', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.fnac.com/SearchResult/ResultList.aspx?PageIndex=2&SDM=list&Search=asus+oled&sft=1"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/fnac.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'ldlc', 'location':'btn-bottom', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.ldlc.com/recherche/oled/+fb-C000000806+fcat-4265+fdi-1+foms-1+fps-1.html"
+            >
+              <img
+                class="up ma-5 id"
+                src="~/assets/img/LDLC.jpg"
+                alt=""
+                srcset=""
+              /> </a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'rueducommerce', 'location':'btn-bottom', 'device':'all'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.rueducommerce.fr/r/asus-oled/g-rue-du-commerce-25476,neuf-676918.html"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/rue-du-commerce.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+        </vs-row>
+      </div>
+    </vs-dialog>
+    <vs-dialog blur width="550px" center v-model="CTA4">
+      <template #header>
+        <p class="my-2 text-content">OÙ ACHETER UN PC ASUS OLED ÉLIGIBLE</p>
+      </template>
+      <div class="con-content">
+        <vs-row class="mb-2 mt-2">
+          <vs-col w="3" xs="6">
+            <a
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              onclick="dataLayer.push({'event': 'asus', 'location':'HEADER', 'device':'UHD'});"
+              href="https://www.asus.com/fr/Laptops/For-Home/All-series/filter?Category=OLED-display&Spec=126640"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/ASUS.png"
+                alt=""
+                srcset=""
+              /> </a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'amazon', 'location':'HEADER', 'device':'UHD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.amazon.fr/s?k=asus+oled&i=computers&rh=n%3A429879031%2Cp_89%3AASUS%2Cp_n_feature_browse-bin%3A27969065031&dc&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1655373492&rnid=27969061031&ref=sr_nr_p_n_feature_browse-bin_3"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/amazon.png"
+                alt=""
+                srcset=""
+            /></a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'auchan', 'location':'HEADER', 'device':'UHD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.auchan.fr/recherche?text=asus+oled"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/auchan.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'boulanger', 'location':'HEADER', 'device':'UHD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.boulanger.com/opeco/odr622mico"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/boulanger.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'carrefour', 'location':'HEADER', 'device':'UHD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.carrefour.fr/s?filters%5BFacet_vendeurs%5D%5B0%5D=Carrefour&q=asus%20oled&noRedirect=1"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/carrefour.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'cdiscount', 'location':'HEADER', 'device':'UHD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.cdiscount.com/search/10/oled+asus.html?TechnicalForm.SiteMapNodeId=0&TechnicalForm.DepartmentId=10&TechnicalForm.ProductId=&hdnPageType=Search&TechnicalForm.ContentTypeId=16&TechnicalForm.SellerId=&TechnicalForm.PageType=SEARCH_AJAX&TechnicalForm.LazyLoading.ProductSheets=False&TechnicalForm.BrandLicenseId=0&NavigationForm.CurrentSelectedNavigationPath=categorycodepath%2F0K%7C0K0C%7C0K0C01&NavigationForm.FirstNavigationLinkCount=3&FacetForm.SelectedFacets.Index=0&FacetForm.SelectedFacets.Index=1&FacetForm.SelectedFacets%5B1%5D=Prix%2F500%20%C3%A0%201000%E2%82%AC&FacetForm.SelectedFacets%5B1%5D=Prix%2F1000%E2%82%AC%20et%20%2B&FacetForm.SelectedFacets.Index=2&FacetForm.SelectedFacets%5B2%5D=Marque%2Fasus&FacetForm.SelectedFacets.Index=3&FacetForm.SelectedFacets.Index=4&FacetForm.SelectedFacets.Index=5&FacetForm.SelectedFacets.Index=13&FacetForm.SelectedFacets.Index=6&FacetForm.SelectedFacets.Index=7&FacetForm.SelectedFacets.Index=8&FacetForm.SelectedFacets.Index=9&FacetForm.SelectedFacets%5B9%5D=Neuf%20ou%20occasion%2Fneuf&FacetForm.SelectedFacets.Index=10&FacetForm.SelectedFacets.Index=11&FacetForm.SelectedFacets.Index=12&FacetForm.SelectedFacets.Index=14&FacetForm.SelectedFacets.Index=15&FacetForm.SelectedFacets.Index=16&FacetForm.SelectedFacets.Index=17&FacetForm.SelectedFacets.Index=18&SortForm.SelectedSort=PERTINENCE&ProductListTechnicalForm.Keyword=oled%2Basus&ProductListTechnicalForm.TemplateName=InLine&&_his_"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/cdiscount.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'leclerc', 'location':'HEADER', 'device':'UHD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.e.leclerc/recherche?q=asus%20oled"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/eleclerc.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'fnac', 'location':'HEADER', 'device':'UHD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.fnac.com/SearchResult/ResultList.aspx?PageIndex=2&SDM=list&Search=asus+oled&sft=1"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/fnac.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'ldlc', 'location':'HEADER', 'device':'UHD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.ldlc.com/recherche/oled/+fb-C000000806+fcat-4265+fdi-1+foms-1+fps-1.html"
+            >
+              <img
+                class="up ma-5 id"
+                src="~/assets/img/LDLC.jpg"
+                alt=""
+                srcset=""
+              /> </a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'rueducommerce', 'location':'HEADER', 'device':'UHD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.rueducommerce.fr/r/asus-oled/g-rue-du-commerce-25476,neuf-676918.html"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/rue-du-commerce.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+        </vs-row>
+      </div>
+    </vs-dialog>
+    <vs-dialog blur width="550px" center v-model="CTA5">
+      <template #header>
+        <p class="my-2 text-content">OÙ ACHETER UN PC ASUS OLED ÉLIGIBLE</p>
+      </template>
+      <div class="con-content">
+        <vs-row class="mb-2 mt-2">
+          <vs-col w="3" xs="6">
+            <a
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              onclick="dataLayer.push({'event': 'asus', 'location':'HEADER', 'device':'HD'});"
+              href="https://www.asus.com/fr/Laptops/For-Home/All-series/filter?Category=OLED-display&Spec=126640"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/ASUS.png"
+                alt=""
+                srcset=""
+              /> </a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'amazon', 'location':'HEADER', 'device':'HD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.amazon.fr/s?k=asus+oled&i=computers&rh=n%3A429879031%2Cp_89%3AASUS%2Cp_n_feature_browse-bin%3A27969065031&dc&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1655373492&rnid=27969061031&ref=sr_nr_p_n_feature_browse-bin_3"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/amazon.png"
+                alt=""
+                srcset=""
+            /></a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'auchan', 'location':'HEADER', 'device':'HD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.auchan.fr/recherche?text=asus+oled"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/auchan.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'boulanger', 'location':'HEADER', 'device':'HD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.boulanger.com/opeco/odr622mico"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/boulanger.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'carrefour', 'location':'HEADER', 'device':'HD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.carrefour.fr/s?filters%5BFacet_vendeurs%5D%5B0%5D=Carrefour&q=asus%20oled&noRedirect=1"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/carrefour.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'cdiscount', 'location':'HEADER', 'device':'HD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.cdiscount.com/search/10/oled+asus.html?TechnicalForm.SiteMapNodeId=0&TechnicalForm.DepartmentId=10&TechnicalForm.ProductId=&hdnPageType=Search&TechnicalForm.ContentTypeId=16&TechnicalForm.SellerId=&TechnicalForm.PageType=SEARCH_AJAX&TechnicalForm.LazyLoading.ProductSheets=False&TechnicalForm.BrandLicenseId=0&NavigationForm.CurrentSelectedNavigationPath=categorycodepath%2F0K%7C0K0C%7C0K0C01&NavigationForm.FirstNavigationLinkCount=3&FacetForm.SelectedFacets.Index=0&FacetForm.SelectedFacets.Index=1&FacetForm.SelectedFacets%5B1%5D=Prix%2F500%20%C3%A0%201000%E2%82%AC&FacetForm.SelectedFacets%5B1%5D=Prix%2F1000%E2%82%AC%20et%20%2B&FacetForm.SelectedFacets.Index=2&FacetForm.SelectedFacets%5B2%5D=Marque%2Fasus&FacetForm.SelectedFacets.Index=3&FacetForm.SelectedFacets.Index=4&FacetForm.SelectedFacets.Index=5&FacetForm.SelectedFacets.Index=13&FacetForm.SelectedFacets.Index=6&FacetForm.SelectedFacets.Index=7&FacetForm.SelectedFacets.Index=8&FacetForm.SelectedFacets.Index=9&FacetForm.SelectedFacets%5B9%5D=Neuf%20ou%20occasion%2Fneuf&FacetForm.SelectedFacets.Index=10&FacetForm.SelectedFacets.Index=11&FacetForm.SelectedFacets.Index=12&FacetForm.SelectedFacets.Index=14&FacetForm.SelectedFacets.Index=15&FacetForm.SelectedFacets.Index=16&FacetForm.SelectedFacets.Index=17&FacetForm.SelectedFacets.Index=18&SortForm.SelectedSort=PERTINENCE&ProductListTechnicalForm.Keyword=oled%2Basus&ProductListTechnicalForm.TemplateName=InLine&&_his_"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/cdiscount.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'leclerc', 'location':'HEADER', 'device':'HD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.e.leclerc/recherche?q=asus%20oled"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/eleclerc.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'fnac', 'location':'HEADER', 'device':'HD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.fnac.com/SearchResult/ResultList.aspx?PageIndex=2&SDM=list&Search=asus+oled&sft=1"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/fnac.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'ldlc', 'location':'HEADER', 'device':'HD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.ldlc.com/recherche/oled/+fb-C000000806+fcat-4265+fdi-1+foms-1+fps-1.html"
+            >
+              <img
+                class="up ma-5 id"
+                src="~/assets/img/LDLC.jpg"
+                alt=""
+                srcset=""
+              /> </a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'rueducommerce', 'location':'HEADER', 'device':'HD'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.rueducommerce.fr/r/asus-oled/g-rue-du-commerce-25476,neuf-676918.html"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/rue-du-commerce.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+        </vs-row>
+      </div>
+    </vs-dialog>
+    <vs-dialog blur width="550px" center v-model="CTA6">
+      <template #header>
+        <p class="my-2 text-content">OÙ ACHETER UN PC ASUS OLED ÉLIGIBLE</p>
+      </template>
+      <div class="con-content">
+        <vs-row class="mb-2 mt-2">
+          <vs-col w="3" xs="6">
+            <a
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              onclick="dataLayer.push({'event': 'asus', 'location':'HEADER', 'device':'DESKTOP'});"
+              href="https://www.asus.com/fr/Laptops/For-Home/All-series/filter?Category=OLED-display&Spec=126640"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/ASUS.png"
+                alt=""
+                srcset=""
+              /> </a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'amazon', 'location':'HEADER', 'device':'DESKTOP'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.amazon.fr/s?k=asus+oled&i=computers&rh=n%3A429879031%2Cp_89%3AASUS%2Cp_n_feature_browse-bin%3A27969065031&dc&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1655373492&rnid=27969061031&ref=sr_nr_p_n_feature_browse-bin_3"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/amazon.png"
+                alt=""
+                srcset=""
+            /></a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'auchan', 'location':'HEADER', 'device':'DESKTOP'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.auchan.fr/recherche?text=asus+oled"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/auchan.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'boulanger', 'location':'HEADER', 'device':'DESKTOP'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.boulanger.com/opeco/odr622mico"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/boulanger.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'carrefour', 'location':'HEADER', 'device':'DESKTOP'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.carrefour.fr/s?filters%5BFacet_vendeurs%5D%5B0%5D=Carrefour&q=asus%20oled&noRedirect=1"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/carrefour.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'cdiscount', 'location':'HEADER', 'device':'DESKTOP'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.cdiscount.com/search/10/oled+asus.html?TechnicalForm.SiteMapNodeId=0&TechnicalForm.DepartmentId=10&TechnicalForm.ProductId=&hdnPageType=Search&TechnicalForm.ContentTypeId=16&TechnicalForm.SellerId=&TechnicalForm.PageType=SEARCH_AJAX&TechnicalForm.LazyLoading.ProductSheets=False&TechnicalForm.BrandLicenseId=0&NavigationForm.CurrentSelectedNavigationPath=categorycodepath%2F0K%7C0K0C%7C0K0C01&NavigationForm.FirstNavigationLinkCount=3&FacetForm.SelectedFacets.Index=0&FacetForm.SelectedFacets.Index=1&FacetForm.SelectedFacets%5B1%5D=Prix%2F500%20%C3%A0%201000%E2%82%AC&FacetForm.SelectedFacets%5B1%5D=Prix%2F1000%E2%82%AC%20et%20%2B&FacetForm.SelectedFacets.Index=2&FacetForm.SelectedFacets%5B2%5D=Marque%2Fasus&FacetForm.SelectedFacets.Index=3&FacetForm.SelectedFacets.Index=4&FacetForm.SelectedFacets.Index=5&FacetForm.SelectedFacets.Index=13&FacetForm.SelectedFacets.Index=6&FacetForm.SelectedFacets.Index=7&FacetForm.SelectedFacets.Index=8&FacetForm.SelectedFacets.Index=9&FacetForm.SelectedFacets%5B9%5D=Neuf%20ou%20occasion%2Fneuf&FacetForm.SelectedFacets.Index=10&FacetForm.SelectedFacets.Index=11&FacetForm.SelectedFacets.Index=12&FacetForm.SelectedFacets.Index=14&FacetForm.SelectedFacets.Index=15&FacetForm.SelectedFacets.Index=16&FacetForm.SelectedFacets.Index=17&FacetForm.SelectedFacets.Index=18&SortForm.SelectedSort=PERTINENCE&ProductListTechnicalForm.Keyword=oled%2Basus&ProductListTechnicalForm.TemplateName=InLine&&_his_"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/cdiscount.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'leclerc', 'location':'HEADER', 'device':'DESKTOP'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.e.leclerc/recherche?q=asus%20oled"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/eleclerc.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'fnac', 'location':'HEADER', 'device':'DESKTOP'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.fnac.com/SearchResult/ResultList.aspx?PageIndex=2&SDM=list&Search=asus+oled&sft=1"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/fnac.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'ldlc', 'location':'HEADER', 'device':'DESKTOP'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.ldlc.com/recherche/oled/+fb-C000000806+fcat-4265+fdi-1+foms-1+fps-1.html"
+            >
+              <img
+                class="up ma-5 id"
+                src="~/assets/img/LDLC.jpg"
+                alt=""
+                srcset=""
+              /> </a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'rueducommerce', 'location':'HEADER', 'device':'DESKTOP'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.rueducommerce.fr/r/asus-oled/g-rue-du-commerce-25476,neuf-676918.html"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/rue-du-commerce.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+        </vs-row>
+      </div>
+    </vs-dialog>
+    <vs-dialog blur width="550px" center v-model="CTA7">
+      <template #header>
+        <p class="my-2 text-content">OÙ ACHETER UN PC ASUS OLED ÉLIGIBLE</p>
+      </template>
+      <div class="con-content">
+        <vs-row class="mb-2 mt-2">
+          <vs-col w="3" xs="6">
+            <a
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              onclick="dataLayer.push({'event': 'asus', 'location':'HEADER', 'device':'TABLET'});"
+              href="https://www.asus.com/fr/Laptops/For-Home/All-series/filter?Category=OLED-display&Spec=126640"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/ASUS.png"
+                alt=""
+                srcset=""
+              /> </a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'amazon', 'location':'HEADER', 'device':'TABLET'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.amazon.fr/s?k=asus+oled&i=computers&rh=n%3A429879031%2Cp_89%3AASUS%2Cp_n_feature_browse-bin%3A27969065031&dc&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1655373492&rnid=27969061031&ref=sr_nr_p_n_feature_browse-bin_3"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/amazon.png"
+                alt=""
+                srcset=""
+            /></a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'auchan', 'location':'HEADER', 'device':'TABLET'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.auchan.fr/recherche?text=asus+oled"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/auchan.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'boulanger', 'location':'HEADER', 'device':'TABLET'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.boulanger.com/opeco/odr622mico"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/boulanger.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'carrefour', 'location':'HEADER', 'device':'TABLET'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.carrefour.fr/s?filters%5BFacet_vendeurs%5D%5B0%5D=Carrefour&q=asus%20oled&noRedirect=1"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/carrefour.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'cdiscount', 'location':'HEADER', 'device':'TABLET'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.cdiscount.com/search/10/oled+asus.html?TechnicalForm.SiteMapNodeId=0&TechnicalForm.DepartmentId=10&TechnicalForm.ProductId=&hdnPageType=Search&TechnicalForm.ContentTypeId=16&TechnicalForm.SellerId=&TechnicalForm.PageType=SEARCH_AJAX&TechnicalForm.LazyLoading.ProductSheets=False&TechnicalForm.BrandLicenseId=0&NavigationForm.CurrentSelectedNavigationPath=categorycodepath%2F0K%7C0K0C%7C0K0C01&NavigationForm.FirstNavigationLinkCount=3&FacetForm.SelectedFacets.Index=0&FacetForm.SelectedFacets.Index=1&FacetForm.SelectedFacets%5B1%5D=Prix%2F500%20%C3%A0%201000%E2%82%AC&FacetForm.SelectedFacets%5B1%5D=Prix%2F1000%E2%82%AC%20et%20%2B&FacetForm.SelectedFacets.Index=2&FacetForm.SelectedFacets%5B2%5D=Marque%2Fasus&FacetForm.SelectedFacets.Index=3&FacetForm.SelectedFacets.Index=4&FacetForm.SelectedFacets.Index=5&FacetForm.SelectedFacets.Index=13&FacetForm.SelectedFacets.Index=6&FacetForm.SelectedFacets.Index=7&FacetForm.SelectedFacets.Index=8&FacetForm.SelectedFacets.Index=9&FacetForm.SelectedFacets%5B9%5D=Neuf%20ou%20occasion%2Fneuf&FacetForm.SelectedFacets.Index=10&FacetForm.SelectedFacets.Index=11&FacetForm.SelectedFacets.Index=12&FacetForm.SelectedFacets.Index=14&FacetForm.SelectedFacets.Index=15&FacetForm.SelectedFacets.Index=16&FacetForm.SelectedFacets.Index=17&FacetForm.SelectedFacets.Index=18&SortForm.SelectedSort=PERTINENCE&ProductListTechnicalForm.Keyword=oled%2Basus&ProductListTechnicalForm.TemplateName=InLine&&_his_"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/cdiscount.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'leclerc', 'location':'HEADER', 'device':'TABLET'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.e.leclerc/recherche?q=asus%20oled"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/eleclerc.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'fnac', 'location':'HEADER', 'device':'TABLET'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.fnac.com/SearchResult/ResultList.aspx?PageIndex=2&SDM=list&Search=asus+oled&sft=1"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/fnac.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'ldlc', 'location':'HEADER', 'device':'TABLET'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.ldlc.com/recherche/oled/+fb-C000000806+fcat-4265+fdi-1+foms-1+fps-1.html"
+            >
+              <img
+                class="up ma-5 id"
+                src="~/assets/img/LDLC.jpg"
+                alt=""
+                srcset=""
+              /> </a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'rueducommerce', 'location':'HEADER', 'device':'TABLET'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.rueducommerce.fr/r/asus-oled/g-rue-du-commerce-25476,neuf-676918.html"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/rue-du-commerce.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+        </vs-row>
+      </div>
+    </vs-dialog>
+    <vs-dialog blur width="550px" center v-model="CTA8">
+      <template #header>
+        <p class="my-2 text-content">OÙ ACHETER UN PC ASUS OLED ÉLIGIBLE</p>
+      </template>
+      <div class="con-content">
+        <vs-row class="mb-2 mt-2">
+          <vs-col w="3" xs="6">
+            <a
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              onclick="dataLayer.push({'event': 'asus', 'location':'HEADER', 'device':'MOBILE'});"
+              href="https://www.asus.com/fr/Laptops/For-Home/All-series/filter?Category=OLED-display&Spec=126640"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/ASUS.png"
+                alt=""
+                srcset=""
+              /> </a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'amazon', 'location':'HEADER', 'device':'MOBILE'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.amazon.fr/s?k=asus+oled&i=computers&rh=n%3A429879031%2Cp_89%3AASUS%2Cp_n_feature_browse-bin%3A27969065031&dc&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&qid=1655373492&rnid=27969061031&ref=sr_nr_p_n_feature_browse-bin_3"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/amazon.png"
+                alt=""
+                srcset=""
+            /></a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'auchan', 'location':'HEADER', 'device':'MOBILE'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.auchan.fr/recherche?text=asus+oled"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/auchan.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'boulanger', 'location':'HEADER', 'device':'MOBILE'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.boulanger.com/opeco/odr622mico"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/boulanger.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'carrefour', 'location':'HEADER', 'device':'MOBILE'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.carrefour.fr/s?filters%5BFacet_vendeurs%5D%5B0%5D=Carrefour&q=asus%20oled&noRedirect=1"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/carrefour.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'cdiscount', 'location':'HEADER', 'device':'MOBILE'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.cdiscount.com/search/10/oled+asus.html?TechnicalForm.SiteMapNodeId=0&TechnicalForm.DepartmentId=10&TechnicalForm.ProductId=&hdnPageType=Search&TechnicalForm.ContentTypeId=16&TechnicalForm.SellerId=&TechnicalForm.PageType=SEARCH_AJAX&TechnicalForm.LazyLoading.ProductSheets=False&TechnicalForm.BrandLicenseId=0&NavigationForm.CurrentSelectedNavigationPath=categorycodepath%2F0K%7C0K0C%7C0K0C01&NavigationForm.FirstNavigationLinkCount=3&FacetForm.SelectedFacets.Index=0&FacetForm.SelectedFacets.Index=1&FacetForm.SelectedFacets%5B1%5D=Prix%2F500%20%C3%A0%201000%E2%82%AC&FacetForm.SelectedFacets%5B1%5D=Prix%2F1000%E2%82%AC%20et%20%2B&FacetForm.SelectedFacets.Index=2&FacetForm.SelectedFacets%5B2%5D=Marque%2Fasus&FacetForm.SelectedFacets.Index=3&FacetForm.SelectedFacets.Index=4&FacetForm.SelectedFacets.Index=5&FacetForm.SelectedFacets.Index=13&FacetForm.SelectedFacets.Index=6&FacetForm.SelectedFacets.Index=7&FacetForm.SelectedFacets.Index=8&FacetForm.SelectedFacets.Index=9&FacetForm.SelectedFacets%5B9%5D=Neuf%20ou%20occasion%2Fneuf&FacetForm.SelectedFacets.Index=10&FacetForm.SelectedFacets.Index=11&FacetForm.SelectedFacets.Index=12&FacetForm.SelectedFacets.Index=14&FacetForm.SelectedFacets.Index=15&FacetForm.SelectedFacets.Index=16&FacetForm.SelectedFacets.Index=17&FacetForm.SelectedFacets.Index=18&SortForm.SelectedSort=PERTINENCE&ProductListTechnicalForm.Keyword=oled%2Basus&ProductListTechnicalForm.TemplateName=InLine&&_his_"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/cdiscount.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'leclerc', 'location':'HEADER', 'device':'MOBILE'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.e.leclerc/recherche?q=asus%20oled"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/eleclerc.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'fnac', 'location':'HEADER', 'device':'MOBILE'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.fnac.com/SearchResult/ResultList.aspx?PageIndex=2&SDM=list&Search=asus+oled&sft=1"
+            >
+              <img
+                class="up ma-5"
+                src="~/assets/img/fnac.png"
+                alt=""
+                srcset="" /></a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'ldlc', 'location':'HEADER', 'device':'MOBILE'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.ldlc.com/recherche/oled/+fb-C000000806+fcat-4265+fdi-1+foms-1+fps-1.html"
+            >
+              <img
+                class="up ma-5 id"
+                src="~/assets/img/LDLC.jpg"
+                alt=""
+                srcset=""
+              /> </a
+          ></vs-col>
+          <vs-col w="3" xs="6">
+            <a
+              onclick="dataLayer.push({'event': 'rueducommerce', 'location':'HEADER', 'device':'MOBILE'});"
+              id="axeptio_link"
+              class="axeptio_link"
+              target="_blank"
+              href="https://www.rueducommerce.fr/r/asus-oled/g-rue-du-commerce-25476,neuf-676918.html"
+              ><img
+                class="up ma-5"
+                src="~/assets/img/rue-du-commerce.png"
+                alt=""
+                srcset=""
+              />
+            </a>
+          </vs-col>
+        </vs-row>
+      </div>
+    </vs-dialog>
   </div>
 </template>
 <style>
@@ -957,21 +2144,7 @@ import aosMixin from '~/mixins/aos'
 export default {
   mixins: [aosMixin],
   computed: {},
-  methods: {
-    openNotification(position = null, color, duration) {
-      const noti = this.$vs.notification({
-        position,
-        color,
-        duration,
-        title: `<h2 justify="center" align="center">Vous avez sélectionnée un processeur : ${this.selectedProcessor.name}</h2>`,
-        text: `<p class="gradient-text text-content">vous pouvez donc percevoir entre
-              <span class="underline">${this.selectedProcessor.priceB}  €</span>
-              et
-             <span> ${this.selectedProcessor.priceA} €</span>
-              en fonction de l'état du matériel*.</p>`,
-      })
-    },
-  },
+  methods: {},
   data() {
     return {
       sheet: false,
@@ -979,6 +2152,13 @@ export default {
       isEditing: null,
       search: '',
       CTA1: false,
+      CTA2: false,
+      CTA3: false,
+      CTA4: false,
+      CTA5: false,
+      CTA6: false,
+      CTA7: false,
+      CTA8: false,
       page: 1,
       max: 3,
       conditions: false,
@@ -1446,7 +2626,5 @@ export default {
       ],
     }
   },
-  components: {},
-  created() {},
 }
 </script>
